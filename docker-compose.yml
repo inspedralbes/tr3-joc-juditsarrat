@@ -1,0 +1,39 @@
+services:
+  gateway:
+    build: ./backend/gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - servei-auth
+      - servei-joc
+      - servei-estadistiques
+    networks:
+      - bomberman-network
+
+  servei-auth:
+    build: ./backend/servei-auth
+    environment:
+      - PORT=3001
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+  servei-joc:
+    build: ./backend/servei-joc
+    environment:
+      - PORT=3002
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+  servei-estadistiques:
+    build: ./backend/servei-estadistiques
+    environment:
+      - PORT=3003
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+networks:
+  bomberman-network:
+    driver: bridge
