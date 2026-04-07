@@ -1,4 +1,24 @@
-# Dependencias
+# Unity
+BomberMan_PROJ3/Library/
+BomberMan_PROJ3/Temp/
+BomberMan_PROJ3/Logs/
+BomberMan_PROJ3/UserSettings/
+BomberMan_PROJ3/.vs/
+BomberMan_PROJ3/obj/
+
+# Node.js
 node_modules/
-# Variables de entorno / Secretos
+**/node_modules/
+
+# Variables d'entorn
 .env
+**/.env
+
+# Logs
+*.log
+**/logs/
+
+# Build
+dist/
+build/
+**/dist/
