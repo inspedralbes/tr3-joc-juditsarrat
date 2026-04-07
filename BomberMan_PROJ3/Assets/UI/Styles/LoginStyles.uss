@@ -1,0 +1,126 @@
+/* ── ROOT ──────────────────────────────────────────── */
+.root {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 25);
+}
+
+/* ── CARD ──────────────────────────────────────────── */
+.card {
+    width: 380px;
+    padding: 40px;
+    background-color: rgb(25, 25, 40);
+    border-radius: 16px;
+    border-width: 1px;
+    border-color: rgb(60, 60, 90);
+
+    /* Ombra simulada amb un segon border */
+    -unity-slice-left: 0;
+    -unity-slice-right: 0;
+}
+
+/* ── TÍTOL ─────────────────────────────────────────── */
+.titol {
+    font-size: 28px;
+    color: rgb(255, 200, 0);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+}
+
+/* ── LABELS ────────────────────────────────────────── */
+.label {
+    font-size: 12px;
+    color: rgb(160, 160, 190);
+    margin-bottom: 4px;
+    margin-top: 12px;
+    -unity-font-style: bold;
+}
+
+/* ── INPUTS ────────────────────────────────────────── */
+.input {
+    height: 40px;
+    background-color: rgb(35, 35, 55);
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: rgb(70, 70, 100);
+    color: rgb(220, 220, 255);
+    font-size: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.input:focus {
+    border-color: rgb(255, 200, 0);
+    background-color: rgb(40, 40, 65);
+}
+
+/* Cursor i text del placeholder */
+.input > .unity-text-element {
+    color: rgb(220, 220, 255);
+}
+
+/* ── TEXT ERROR ────────────────────────────────────── */
+.text-error {
+    font-size: 12px;
+    color: rgb(255, 80, 80);
+    margin-top: 8px;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    min-height: 16px;
+}
+
+/* ── BOTONS ────────────────────────────────────────── */
+.boto {
+    height: 44px;
+    border-radius: 8px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    border-width: 0;
+    margin-top: 12px;
+    letter-spacing: 1px;
+    cursor: link;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+}
+
+.boto-primary {
+    background-color: rgb(255, 200, 0);
+    color: rgb(15, 15, 25);
+}
+
+.boto-primary:hover {
+    background-color: rgb(255, 220, 50);
+}
+
+.boto-primary:active {
+    background-color: rgb(200, 155, 0);
+}
+
+.boto-primary:disabled {
+    background-color: rgb(100, 90, 20);
+    color: rgb(80, 80, 80);
+}
+
+.boto-secondary {
+    background-color: transparent;
+    color: rgb(160, 160, 200);
+    border-width: 1px;
+    border-color: rgb(70, 70, 100);
+}
+
+.boto-secondary:hover {
+    background-color: rgb(35, 35, 55);
+    color: rgb(220, 220, 255);
+}
+
+/* ── PANELLS ───────────────────────────────────────── */
+.panell {
+    flex-direction: column;
+}
+
+.panell-ocult {
+    display: none;
+}

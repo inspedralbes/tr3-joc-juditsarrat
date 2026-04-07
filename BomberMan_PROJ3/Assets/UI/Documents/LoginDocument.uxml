@@ -1,0 +1,90 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+
+    <ui:Template name="Login" src="LoginDocument.uxml" />
+
+    <Style src="../Styles/LoginStyles.uss" />
+
+    <ui:VisualElement name="root" class="root">
+
+        <ui:VisualElement name="card" class="card">
+
+            <!-- Títol -->
+            <ui:Label name="titol" text="💣 BOMBERMAN" class="titol" />
+
+            <!-- Formulari login -->
+            <ui:VisualElement name="panell-login" class="panell">
+
+                <ui:Label text="Correu electrònic" class="label" />
+                <ui:TextField
+                    name="camp-email"
+                    class="input"
+                    placeholder-text="jugador@exemple.com" />
+
+                <ui:Label text="Contrasenya" class="label" />
+                <ui:TextField
+                    name="camp-password"
+                    class="input"
+                    placeholder-text="••••••••"
+                    password="true" />
+
+                <ui:Label
+                    name="text-error"
+                    text=""
+                    class="text-error" />
+
+                <ui:Button
+                    name="boto-login"
+                    text="ENTRAR"
+                    class="boto boto-primary" />
+
+                <ui:Button
+                    name="boto-mostrar-registre"
+                    text="Crear compte nou"
+                    class="boto boto-secondary" />
+
+            </ui:VisualElement>
+
+            <!-- Formulari registre (amagat per defecte) -->
+            <ui:VisualElement name="panell-registre" class="panell panell-ocult">
+
+                <ui:Label text="Nom d'usuari" class="label" />
+                <ui:TextField
+                    name="camp-usuari"
+                    class="input"
+                    placeholder-text="el_teu_nom" />
+
+                <ui:Label text="Correu electrònic" class="label" />
+                <ui:TextField
+                    name="camp-email-registre"
+                    class="input"
+                    placeholder-text="jugador@exemple.com" />
+
+                <ui:Label text="Contrasenya" class="label" />
+                <ui:TextField
+                    name="camp-password-registre"
+                    class="input"
+                    placeholder-text="mínim 6 caràcters"
+                    password="true" />
+
+                <ui:Label
+                    name="text-error-registre"
+                    text=""
+                    class="text-error" />
+
+                <ui:Button
+                    name="boto-confirmar-registre"
+                    text="REGISTRAR-SE"
+                    class="boto boto-primary" />
+
+                <ui:Button
+                    name="boto-cancelar-registre"
+                    text="← Tornar al login"
+                    class="boto boto-secondary" />
+
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+
+</ui:UXML>
