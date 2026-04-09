@@ -1,90 +1,28 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-
-    <ui:Template name="Login" src="LoginDocument.uxml" />
-
-    <Style src="../Styles/LoginStyles.uss" />
-
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/LoginStyles.uss?fileID=7433441132597879392&amp;guid=1dc8d30291765b31c934ef36f7d44cd6&amp;type=3#LoginStyles" />
     <ui:VisualElement name="root" class="root">
-
         <ui:VisualElement name="card" class="card">
-
-            <!-- Títol -->
-            <ui:Label name="titol" text="💣 BOMBERMAN" class="titol" />
-
-            <!-- Formulari login -->
+            <ui:Label name="titol" text="BOMBERMAN" class="titol" />
             <ui:VisualElement name="panell-login" class="panell">
-
                 <ui:Label text="Correu electrònic" class="label" />
-                <ui:TextField
-                    name="camp-email"
-                    class="input"
-                    placeholder-text="jugador@exemple.com" />
-
+                <ui:TextField name="camp-email" placeholder-text="jugador@exemple.com" class="input" />
                 <ui:Label text="Contrasenya" class="label" />
-                <ui:TextField
-                    name="camp-password"
-                    class="input"
-                    placeholder-text="••••••••"
-                    password="true" />
-
-                <ui:Label
-                    name="text-error"
-                    text=""
-                    class="text-error" />
-
-                <ui:Button
-                    name="boto-login"
-                    text="ENTRAR"
-                    class="boto boto-primary" />
-
-                <ui:Button
-                    name="boto-mostrar-registre"
-                    text="Crear compte nou"
-                    class="boto boto-secondary" />
-
+                <ui:TextField name="camp-password" placeholder-text="••••••••" password="true" class="input" />
+                <ui:Label name="text-error" class="text-error" />
+                <ui:Button name="boto-login" text="ENTRAR" class="boto boto-primary" />
+                <ui:Button name="boto-mostrar-registre" text="Crear compte nou" class="boto boto-secondary" />
             </ui:VisualElement>
-
-            <!-- Formulari registre (amagat per defecte) -->
             <ui:VisualElement name="panell-registre" class="panell panell-ocult">
-
-                <ui:Label text="Nom d'usuari" class="label" />
-                <ui:TextField
-                    name="camp-usuari"
-                    class="input"
-                    placeholder-text="el_teu_nom" />
-
+                <ui:Label text="Nom d&apos;usuari" class="label" />
+                <ui:TextField name="camp-usuari" placeholder-text="el_teu_nom" class="input" />
                 <ui:Label text="Correu electrònic" class="label" />
-                <ui:TextField
-                    name="camp-email-registre"
-                    class="input"
-                    placeholder-text="jugador@exemple.com" />
-
+                <ui:TextField name="camp-email-registre" placeholder-text="jugador@exemple.com" class="input" />
                 <ui:Label text="Contrasenya" class="label" />
-                <ui:TextField
-                    name="camp-password-registre"
-                    class="input"
-                    placeholder-text="mínim 6 caràcters"
-                    password="true" />
-
-                <ui:Label
-                    name="text-error-registre"
-                    text=""
-                    class="text-error" />
-
-                <ui:Button
-                    name="boto-confirmar-registre"
-                    text="REGISTRAR-SE"
-                    class="boto boto-primary" />
-
-                <ui:Button
-                    name="boto-cancelar-registre"
-                    text="← Tornar al login"
-                    class="boto boto-secondary" />
-
+                <ui:TextField name="camp-password-registre" placeholder-text="mínim 6 caràcters" password="true" class="input" />
+                <ui:Label name="text-error-registre" class="text-error" />
+                <ui:Button name="boto-confirmar-registre" text="REGISTRAR-SE" class="boto boto-primary" />
+                <ui:Button name="boto-cancelar-registre" text="← Tornar al login" class="boto boto-secondary" />
             </ui:VisualElement>
-
         </ui:VisualElement>
-
     </ui:VisualElement>
-
 </ui:UXML>
