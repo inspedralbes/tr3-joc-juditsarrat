@@ -36,36 +36,36 @@ class AuthController {
             if (message === "El correu electrònic ja està registrat.") {
                 return res.status(400).json({ error: message });
             }
-
+console.error("ERROR REGISTER:", err);
             return res.status(500).json({ error: "Error intern durant el registre." });
         }
     }
 
     async login(req, res) {
-        try {
-            const email = req.body.email;
-            const password = req.body.password;
-
-            const token = await this.authService.login(email, password);
-
-            return res.status(200).json({
-                message: "Login correcte.",
-                token: token
-            });
-        } catch (err) {
-            const message = err.message;
-
-            if (message === "Credencials incorrectes.") {
-                return res.status(401).json({ error: message });
-            }
-            if (message === "Cal proporcionar email i contrasenya.") {
-                return res.status(400).json({ error: message });
-            }
-
-            return res.status(500).json({ error: "Error intern durant el login." });
+    try {
+        const email = req.body.email;
+        const password = req.body.password;
+        
+        // ✅ Ahora authService.login retorna { token, user }
+        const { token, user } = await this.authService.login(email, password);
+        
+        return res.status(200).json({
+            message: "Login correcte.",
+            token: token,
+            user: user  // ✅ Añadido
+        });
+    } catch (err) {
+        const message = err.message;
+        if (message === "Credencials incorrectes.") {
+            return res.status(401).json({ error: message });
         }
+        if (message === "Cal proporcionar email i contrasenya.") {
+            return res.status(400).json({ error: message });
+        }
+        console.error("ERROR LOGIN:", err);
+        return res.status(500).json({ error: "Error intern durant el login." });
     }
-
+}
     async me(req, res) {
         try {
             const userId = req.user.id;
@@ -76,6 +76,7 @@ class AuthController {
             if (err.message === "Usuari no trobat.") {
                 return res.status(404).json({ error: err.message });
             }
+            console.error("ERROR REGISTER:", err);
             return res.status(500).json({ error: "Error intern en obtenir les dades." });
         }
     }

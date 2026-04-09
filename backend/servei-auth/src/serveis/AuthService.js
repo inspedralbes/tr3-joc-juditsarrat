@@ -10,6 +10,9 @@ class AuthService {
     }
 
     async register(username, email, password) {
+
+        
+    console.log("REGISTER:", username, email, password);
         if (username === "" || email === "" || password === "") {
             throw new Error("Tots els camps (username, email, password) són obligatoris.");
         }
@@ -52,32 +55,36 @@ class AuthService {
     }
 
     async login(email, password) {
-        if (email === "" || password === "") {
-            throw new Error("Cal proporcionar email i contrasenya.");
-        }
-
-        const user = await this.userRepository.findByEmail(email);
-
-        if (user === null) {
-            throw new Error("Credencials incorrectes.");
-        }
-
-        const isMatch = await bcrypt.compare(password, user.passwordHash);
-
-        if (isMatch === false) {
-            throw new Error("Credencials incorrectes.");
-        }
-
-        // Dades per al token
-        const payload = {
-            id: user._id || user.id,
-            username: user.username,
-            email: user.email
-        };
-
-        const token = jwt.sign(payload, this.jwtSecret, { expiresIn: '1h' });
-        return token;
+    if (email === "" || password === "") {
+        throw new Error("Cal proporcionar email i contrasenya.");
     }
+    const user = await this.userRepository.findByEmail(email);
+    console.log("USUARI TROBAT:", user);
+    console.log("PASSWORD HASH:", user?.passwordHash);
+    if (user === null) {
+        throw new Error("Credencials incorrectes.");
+    }
+    const isMatch = await bcrypt.compare(password, user.passwordHash);
+    if (isMatch === false) {
+        throw new Error("Credencials incorrectes.");
+    }
+    // Dades per al token
+    const payload = {
+        id: user._id || user.id,
+        username: user.username,
+        email: user.email
+    };
+    const token = jwt.sign(payload, this.jwtSecret, { expiresIn: '1h' });
+    
+    // ✅ RETORNAR TOKEN Y USUARIO
+    const publicUser = {
+        id: user._id || user.id,
+        username: user.username,
+        email: user.email
+    };
+    
+    return { token, user: publicUser }; // ← CAMBIADO AQUI
+}
 
     async getUserById(id) {
         const user = await this.userRepository.findById(id);

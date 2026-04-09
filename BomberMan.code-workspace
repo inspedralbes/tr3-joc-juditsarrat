@@ -1,0 +1,33 @@
+    {
+    "folders": [
+        {
+            "name": "🎮 Unity - BomberMan",
+            "path": "./BomberMan_PROJ3"
+        },
+        {
+            "name": "🔐 servei-auth",
+            "path": "./backend/servei-auth"
+        },
+        {
+            "name": "🎲 servei-joc",
+            "path": "./backend/servei-joc"
+        },
+        {
+            "name": "📊 servei-estadistiques",
+            "path": "./backend/servei-estadistiques"
+        },
+        {
+            "name": "🌐 gateway",
+            "path": "./backend/gateway"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/Library": true,
+            "**/Temp": true,
+            "**/Logs": true,
+            "**/.git": false
+        }
+    }
+}

@@ -2,7 +2,7 @@ services:
   gateway:
     build: ./backend/gateway
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - servei-auth
       - servei-joc
@@ -14,6 +14,9 @@ services:
     build: ./backend/servei-auth
     environment:
       - PORT=3001
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
+      - BCRYPT_SALT_ROUNDS=10
     networks:
       - bomberman-network
     # Els ports no s'exposen a l'exterior
@@ -22,6 +25,8 @@ services:
     build: ./backend/servei-joc
     environment:
       - PORT=3002
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
     networks:
       - bomberman-network
     # Els ports no s'exposen a l'exterior
@@ -30,6 +35,8 @@ services:
     build: ./backend/servei-estadistiques
     environment:
       - PORT=3003
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
     networks:
       - bomberman-network
     # Els ports no s'exposen a l'exterior

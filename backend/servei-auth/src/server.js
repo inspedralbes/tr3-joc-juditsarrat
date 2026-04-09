@@ -22,7 +22,7 @@ mongoose.connect(mongoUri)
     });
 
 
-app.use('/auth', authRoutes);
+app.use('/', authRoutes);
 
 
 app.get('/', function (req, res) {

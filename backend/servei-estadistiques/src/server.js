@@ -35,7 +35,7 @@ const statsService = new EstadistiquesService(resultRepo, userStatsRepo);
 const statsController = new StatsController(statsService);
 
 
-app.use('/estadistiques', createStatsRouter(statsController));
+app.use('/', createStatsRouter(statsController));
 
 
 app.get('/', function (req, res) {

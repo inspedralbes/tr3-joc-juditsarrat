@@ -15,16 +15,41 @@ class JocController {
         this.obtenirResultats = this.obtenirResultats.bind(this);
     }
 
-    async crear(req, res) {
-        try {
-            const hostId = req.body.hostId;
-            const config = req.body.config;
-            const game = await this.jocService.crearPartida(hostId, config);
-            return res.status(201).json(game);
-        } catch (err) {
-            return res.status(500).json({ error: "Error en crear la partida." });
+  async crear(req, res) {
+    console.log("Petició rebuda a crear:", req.method, req.url);
+    console.log("Headers:", req.headers);
+    console.log("Body:", req.body);
+    
+    try {
+        const hostId = req.body.hostId;
+        const config = req.body.config;
+        
+        if (!hostId) {
+            return res.status(400).json({ error: 'hostId és obligatori' });
         }
+        
+        const game = await this.jocService.crearPartida(hostId, config);
+        
+        // ✅ Convierte el ObjectId a string
+        const gameResponse = {
+            _id: game._id.toString(),
+            hostId: game.hostId,
+            status: game.status,
+            players: game.players,
+            config: game.config,
+            createdAt: game.createdAt,
+            updatedAt: game.updatedAt,
+            __v: game.__v
+        };
+        
+        console.log("✅ Resposta enviada:", gameResponse);
+        return res.status(201).json(gameResponse);
+        
+    } catch (err) {
+        console.error("❌ Error en JocController.crear:", err);
+        return res.status(500).json({ error: "Error en crear la partida." });
     }
+}
 
     async llistarDisponibles(req, res) {
         try {
@@ -49,16 +74,37 @@ class JocController {
     }
 
     async unirse(req, res) {
-        try {
-            const gameId = req.params.id;
-            const playerId = req.body.playerId;
-            const game = await this.jocService.unirsePartida(gameId, playerId);
-            return res.status(200).json(game);
-        } catch (err) {
-            return res.status(400).json({ error: err.message });
+    try {
+        const gameId = req.params.id;
+        const playerId = req.body.playerId;
+        
+        if (!playerId) {
+            return res.status(400).json({ error: 'playerId es obligatorio' });
         }
+        
+        console.log("Jugador " + playerId + " uniéndose a sala: " + gameId);
+        
+        const game = await this.jocService.unirsePartida(gameId, playerId);
+        
+        // ✅ Convierte a formato JSON válido
+        const gameResponse = {
+            _id: game._id.toString(),
+            hostId: game.hostId,
+            status: game.status,
+            players: game.players,
+            config: game.config,
+            createdAt: game.createdAt,
+            updatedAt: game.updatedAt
+        };
+        
+        console.log("✅ Jugador unido. Total jugadores:", game.players.length);
+        return res.status(200).json(gameResponse);
+        
+    } catch (err) {
+        console.error("Error:", err);
+        return res.status(400).json({ error: err.message });
     }
-
+}
     async iniciar(req, res) {
         try {
             const gameId = req.params.id;
