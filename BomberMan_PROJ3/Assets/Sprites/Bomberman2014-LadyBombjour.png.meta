@@ -1,0 +1,5317 @@
+fileFormatVersion: 2
+guid: 8176f67a994c6deb088aa41e02627052
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1107982703338519716
+    second: Bomberman2014-LadyBombjour_0
+  - first:
+      213: 5493818401686890088
+    second: Bomberman2014-LadyBombjour_1
+  - first:
+      213: 5098968809229783722
+    second: Bomberman2014-LadyBombjour_2
+  - first:
+      213: -5756241819225765562
+    second: Bomberman2014-LadyBombjour_3
+  - first:
+      213: -3581486884901618562
+    second: Bomberman2014-LadyBombjour_4
+  - first:
+      213: -2294127846892472583
+    second: Bomberman2014-LadyBombjour_5
+  - first:
+      213: 3771143108257475157
+    second: Bomberman2014-LadyBombjour_6
+  - first:
+      213: 2447003779901118965
+    second: Bomberman2014-LadyBombjour_7
+  - first:
+      213: 8274628966093876194
+    second: Bomberman2014-LadyBombjour_8
+  - first:
+      213: 2045643391672509094
+    second: Bomberman2014-LadyBombjour_9
+  - first:
+      213: -1204057499153745318
+    second: Bomberman2014-LadyBombjour_10
+  - first:
+      213: -2064391540299108609
+    second: Bomberman2014-LadyBombjour_11
+  - first:
+      213: -300340803458150881
+    second: Bomberman2014-LadyBombjour_12
+  - first:
+      213: -5722595147613643716
+    second: Bomberman2014-LadyBombjour_13
+  - first:
+      213: 8097327038017428345
+    second: Bomberman2014-LadyBombjour_14
+  - first:
+      213: 2420318329888563035
+    second: Bomberman2014-LadyBombjour_15
+  - first:
+      213: 6698957311567879816
+    second: Bomberman2014-LadyBombjour_16
+  - first:
+      213: 2957871412182683647
+    second: Bomberman2014-LadyBombjour_17
+  - first:
+      213: -104163378472715225
+    second: Bomberman2014-LadyBombjour_18
+  - first:
+      213: 1128605681545691716
+    second: Bomberman2014-LadyBombjour_19
+  - first:
+      213: 1017993146358132664
+    second: Bomberman2014-LadyBombjour_20
+  - first:
+      213: 6097498555432306930
+    second: Bomberman2014-LadyBombjour_21
+  - first:
+      213: -5439621796095987454
+    second: Bomberman2014-LadyBombjour_22
+  - first:
+      213: -8407704002761381070
+    second: Bomberman2014-LadyBombjour_23
+  - first:
+      213: -6849946770567117658
+    second: Bomberman2014-LadyBombjour_24
+  - first:
+      213: 4094066208371478986
+    second: Bomberman2014-LadyBombjour_25
+  - first:
+      213: 4089148047247736599
+    second: Bomberman2014-LadyBombjour_26
+  - first:
+      213: 7000342179133478343
+    second: Bomberman2014-LadyBombjour_27
+  - first:
+      213: 7618167552619547672
+    second: Bomberman2014-LadyBombjour_28
+  - first:
+      213: 5394830019438271388
+    second: Bomberman2014-LadyBombjour_29
+  - first:
+      213: 1724088183784304404
+    second: Bomberman2014-LadyBombjour_30
+  - first:
+      213: -1505786923282288680
+    second: Bomberman2014-LadyBombjour_31
+  - first:
+      213: 9198395873154853288
+    second: Bomberman2014-LadyBombjour_32
+  - first:
+      213: 6515388432700801076
+    second: Bomberman2014-LadyBombjour_33
+  - first:
+      213: -6673181392224223300
+    second: Bomberman2014-LadyBombjour_34
+  - first:
+      213: -6959119452107719524
+    second: Bomberman2014-LadyBombjour_35
+  - first:
+      213: 2886414428899617438
+    second: Bomberman2014-LadyBombjour_36
+  - first:
+      213: -4859856721485369600
+    second: Bomberman2014-LadyBombjour_37
+  - first:
+      213: 892713515814588958
+    second: Bomberman2014-LadyBombjour_38
+  - first:
+      213: 6387253625274460044
+    second: Bomberman2014-LadyBombjour_39
+  - first:
+      213: 4427302349941313478
+    second: Bomberman2014-LadyBombjour_40
+  - first:
+      213: 3577054240359343429
+    second: Bomberman2014-LadyBombjour_41
+  - first:
+      213: 4435349455994831900
+    second: Bomberman2014-LadyBombjour_42
+  - first:
+      213: 5381924317462897454
+    second: Bomberman2014-LadyBombjour_43
+  - first:
+      213: 509397176771770956
+    second: Bomberman2014-LadyBombjour_44
+  - first:
+      213: -3576413559745665263
+    second: Bomberman2014-LadyBombjour_45
+  - first:
+      213: -5813432607033433622
+    second: Bomberman2014-LadyBombjour_46
+  - first:
+      213: -6765872848303814407
+    second: Bomberman2014-LadyBombjour_47
+  - first:
+      213: -2190593991766919085
+    second: Bomberman2014-LadyBombjour_48
+  - first:
+      213: -2776285739203322030
+    second: Bomberman2014-LadyBombjour_49
+  - first:
+      213: -4443965583113349842
+    second: Bomberman2014-LadyBombjour_50
+  - first:
+      213: 572137577854422985
+    second: Bomberman2014-LadyBombjour_51
+  - first:
+      213: 3130337943527820400
+    second: Bomberman2014-LadyBombjour_52
+  - first:
+      213: 5720906495492917706
+    second: Bomberman2014-LadyBombjour_53
+  - first:
+      213: -2974623654671084002
+    second: Bomberman2014-LadyBombjour_54
+  - first:
+      213: 7497933929438999547
+    second: Bomberman2014-LadyBombjour_55
+  - first:
+      213: -7804233419515025486
+    second: Bomberman2014-LadyBombjour_56
+  - first:
+      213: 8603789709979880047
+    second: Bomberman2014-LadyBombjour_57
+  - first:
+      213: 8953175773968984349
+    second: Bomberman2014-LadyBombjour_58
+  - first:
+      213: 3972679355435026507
+    second: Bomberman2014-LadyBombjour_59
+  - first:
+      213: -8980115586555602105
+    second: Bomberman2014-LadyBombjour_60
+  - first:
+      213: -7128594950154377318
+    second: Bomberman2014-LadyBombjour_61
+  - first:
+      213: 5491577801627012543
+    second: Bomberman2014-LadyBombjour_62
+  - first:
+      213: 2690156265004420421
+    second: Bomberman2014-LadyBombjour_63
+  - first:
+      213: 3215422798205935107
+    second: Bomberman2014-LadyBombjour_64
+  - first:
+      213: -6323921999714364872
+    second: Bomberman2014-LadyBombjour_65
+  - first:
+      213: 5845978104717776423
+    second: Bomberman2014-LadyBombjour_66
+  - first:
+      213: -7616490083193877208
+    second: Bomberman2014-LadyBombjour_67
+  - first:
+      213: 8581159323185017679
+    second: Bomberman2014-LadyBombjour_68
+  - first:
+      213: 7622420688021917683
+    second: Bomberman2014-LadyBombjour_69
+  - first:
+      213: 6114928972040423407
+    second: Bomberman2014-LadyBombjour_70
+  - first:
+      213: -5175551152750438511
+    second: Bomberman2014-LadyBombjour_71
+  - first:
+      213: 5901370744091949731
+    second: Bomberman2014-LadyBombjour_72
+  - first:
+      213: 62801983646491892
+    second: Bomberman2014-LadyBombjour_73
+  - first:
+      213: 2734364636457407695
+    second: Bomberman2014-LadyBombjour_74
+  - first:
+      213: 7553878192948638122
+    second: Bomberman2014-LadyBombjour_75
+  - first:
+      213: 6200017048378028136
+    second: Bomberman2014-LadyBombjour_76
+  - first:
+      213: 8631719286772881830
+    second: Bomberman2014-LadyBombjour_77
+  - first:
+      213: 3047607344622837356
+    second: Bomberman2014-LadyBombjour_78
+  - first:
+      213: 5288859658439734277
+    second: Bomberman2014-LadyBombjour_79
+  - first:
+      213: 1736119610852883018
+    second: Bomberman2014-LadyBombjour_80
+  - first:
+      213: -6590868127303975267
+    second: Bomberman2014-LadyBombjour_81
+  - first:
+      213: -4724995160822702765
+    second: Bomberman2014-LadyBombjour_82
+  - first:
+      213: 185653832440911957
+    second: Bomberman2014-LadyBombjour_83
+  - first:
+      213: 1320996937603175269
+    second: Bomberman2014-LadyBombjour_84
+  - first:
+      213: 717139885695657646
+    second: Bomberman2014-LadyBombjour_85
+  - first:
+      213: 8561869503122334372
+    second: Bomberman2014-LadyBombjour_86
+  - first:
+      213: 5728487784209671499
+    second: Bomberman2014-LadyBombjour_87
+  - first:
+      213: 8697133054218181856
+    second: Bomberman2014-LadyBombjour_88
+  - first:
+      213: -2367440798067129880
+    second: Bomberman2014-LadyBombjour_89
+  - first:
+      213: 6473473617418168467
+    second: Bomberman2014-LadyBombjour_90
+  - first:
+      213: 2933049227401547955
+    second: Bomberman2014-LadyBombjour_91
+  - first:
+      213: 4083533235096649497
+    second: Bomberman2014-LadyBombjour_92
+  - first:
+      213: -3136559612211971823
+    second: Bomberman2014-LadyBombjour_93
+  - first:
+      213: -3952409110366440740
+    second: Bomberman2014-LadyBombjour_94
+  - first:
+      213: -1709747104506093310
+    second: Bomberman2014-LadyBombjour_95
+  - first:
+      213: -7615978482709521171
+    second: Bomberman2014-LadyBombjour_96
+  - first:
+      213: 5504369103611891969
+    second: Bomberman2014-LadyBombjour_97
+  - first:
+      213: 641689501574264230
+    second: Bomberman2014-LadyBombjour_98
+  - first:
+      213: 3420047568243524910
+    second: Bomberman2014-LadyBombjour_99
+  - first:
+      213: 4402521416848356342
+    second: Bomberman2014-LadyBombjour_100
+  - first:
+      213: -2191594543293537107
+    second: Bomberman2014-LadyBombjour_101
+  - first:
+      213: 1061427649669194134
+    second: Bomberman2014-LadyBombjour_102
+  - first:
+      213: 96343846132166673
+    second: Bomberman2014-LadyBombjour_103
+  - first:
+      213: 8419235807250836785
+    second: Bomberman2014-LadyBombjour_104
+  - first:
+      213: -2730042498072586133
+    second: Bomberman2014-LadyBombjour_105
+  - first:
+      213: -5527876394828660778
+    second: Bomberman2014-LadyBombjour_106
+  - first:
+      213: -2624236025944130781
+    second: Bomberman2014-LadyBombjour_107
+  - first:
+      213: -8364301339190672776
+    second: Bomberman2014-LadyBombjour_108
+  - first:
+      213: -2951782248071445761
+    second: Bomberman2014-LadyBombjour_109
+  - first:
+      213: 3139844526480855313
+    second: Bomberman2014-LadyBombjour_110
+  - first:
+      213: -384722066498810966
+    second: Bomberman2014-LadyBombjour_111
+  - first:
+      213: 4609564460947748102
+    second: Bomberman2014-LadyBombjour_112
+  - first:
+      213: -3071365443472078138
+    second: Bomberman2014-LadyBombjour_113
+  - first:
+      213: -2928768885029647983
+    second: Bomberman2014-LadyBombjour_114
+  - first:
+      213: 3655520030594369634
+    second: Bomberman2014-LadyBombjour_115
+  - first:
+      213: -5902046088673939672
+    second: Bomberman2014-LadyBombjour_116
+  - first:
+      213: -7484539823933273392
+    second: Bomberman2014-LadyBombjour_117
+  - first:
+      213: -8479411453381873557
+    second: Bomberman2014-LadyBombjour_118
+  - first:
+      213: 4583521102338875441
+    second: Bomberman2014-LadyBombjour_119
+  - first:
+      213: -5046688977337306414
+    second: Bomberman2014-LadyBombjour_120
+  - first:
+      213: -1251255759596296853
+    second: Bomberman2014-LadyBombjour_121
+  - first:
+      213: 449932869570839771
+    second: Bomberman2014-LadyBombjour_122
+  - first:
+      213: -7707074937000418566
+    second: Bomberman2014-LadyBombjour_123
+  - first:
+      213: 5186756947250377485
+    second: Bomberman2014-LadyBombjour_124
+  - first:
+      213: -3673641719529050933
+    second: Bomberman2014-LadyBombjour_125
+  - first:
+      213: 1404508116142448398
+    second: Bomberman2014-LadyBombjour_126
+  - first:
+      213: -2189079596022672817
+    second: Bomberman2014-LadyBombjour_127
+  - first:
+      213: -2443414174091770877
+    second: Bomberman2014-LadyBombjour_128
+  - first:
+      213: 8290219469418249842
+    second: Bomberman2014-LadyBombjour_129
+  - first:
+      213: 3579147099062780427
+    second: Bomberman2014-LadyBombjour_130
+  - first:
+      213: 7885026946908299514
+    second: Bomberman2014-LadyBombjour_131
+  - first:
+      213: -2170830409824469491
+    second: Bomberman2014-LadyBombjour_132
+  - first:
+      213: 8288621551256552071
+    second: Bomberman2014-LadyBombjour_133
+  - first:
+      213: 5095367906309059096
+    second: Bomberman2014-LadyBombjour_134
+  - first:
+      213: -6100418692207599245
+    second: Bomberman2014-LadyBombjour_135
+  - first:
+      213: 3174446092754918229
+    second: Bomberman2014-LadyBombjour_136
+  - first:
+      213: -1409846217297223984
+    second: Bomberman2014-LadyBombjour_137
+  - first:
+      213: -3836052067915868488
+    second: Bomberman2014-LadyBombjour_138
+  - first:
+      213: -3753940572697052883
+    second: Bomberman2014-LadyBombjour_139
+  - first:
+      213: 1005013542903130537
+    second: Bomberman2014-LadyBombjour_140
+  - first:
+      213: 7442783542378966954
+    second: Bomberman2014-LadyBombjour_141
+  - first:
+      213: 7045479115277783346
+    second: Bomberman2014-LadyBombjour_142
+  - first:
+      213: -8578748790588151975
+    second: Bomberman2014-LadyBombjour_143
+  - first:
+      213: 1528734163644930317
+    second: Bomberman2014-LadyBombjour_144
+  - first:
+      213: -9194915978664995414
+    second: Bomberman2014-LadyBombjour_145
+  - first:
+      213: -6703206344205613257
+    second: Bomberman2014-LadyBombjour_146
+  - first:
+      213: -2443526767115995526
+    second: Bomberman2014-LadyBombjour_147
+  - first:
+      213: 5183492849019902928
+    second: Bomberman2014-LadyBombjour_148
+  - first:
+      213: -1709502906281329912
+    second: Bomberman2014-LadyBombjour_149
+  - first:
+      213: 6843156961197162430
+    second: Bomberman2014-LadyBombjour_150
+  - first:
+      213: -4292243084636268826
+    second: Bomberman2014-LadyBombjour_151
+  - first:
+      213: -2622587959244916445
+    second: Bomberman2014-LadyBombjour_152
+  - first:
+      213: 2467826037734845228
+    second: Bomberman2014-LadyBombjour_153
+  - first:
+      213: -5386170071153654108
+    second: Bomberman2014-LadyBombjour_154
+  - first:
+      213: -5440269910263155396
+    second: Bomberman2014-LadyBombjour_155
+  - first:
+      213: 2108838993969608053
+    second: Bomberman2014-LadyBombjour_156
+  - first:
+      213: -4693728172053503721
+    second: Bomberman2014-LadyBombjour_157
+  - first:
+      213: 591123536838335736
+    second: Bomberman2014-LadyBombjour_158
+  - first:
+      213: -3142198792558031052
+    second: Bomberman2014-LadyBombjour_159
+  - first:
+      213: -7186869115817477289
+    second: Bomberman2014-LadyBombjour_160
+  - first:
+      213: 9123279702635415467
+    second: Bomberman2014-LadyBombjour_161
+  - first:
+      213: -7035235564787682349
+    second: Bomberman2014-LadyBombjour_162
+  - first:
+      213: -4691517686161509011
+    second: Bomberman2014-LadyBombjour_163
+  - first:
+      213: -9196917856318099441
+    second: Bomberman2014-LadyBombjour_164
+  - first:
+      213: 4046776261921373602
+    second: Bomberman2014-LadyBombjour_165
+  - first:
+      213: 7061376965060565594
+    second: Bomberman2014-LadyBombjour_166
+  - first:
+      213: -6981944718327900272
+    second: Bomberman2014-LadyBombjour_167
+  - first:
+      213: 5934594252861420634
+    second: Bomberman2014-LadyBombjour_168
+  - first:
+      213: -945654693316373013
+    second: Bomberman2014-LadyBombjour_169
+  - first:
+      213: 3830444105921045764
+    second: Bomberman2014-LadyBombjour_170
+  - first:
+      213: 6751320577576354301
+    second: Bomberman2014-LadyBombjour_171
+  - first:
+      213: 1473694012163026150
+    second: Bomberman2014-LadyBombjour_172
+  - first:
+      213: 4740451479847355351
+    second: Bomberman2014-LadyBombjour_173
+  - first:
+      213: 2553423266592679137
+    second: Bomberman2014-LadyBombjour_174
+  - first:
+      213: 3511494777748652702
+    second: Bomberman2014-LadyBombjour_175
+  - first:
+      213: 8743187269195728642
+    second: Bomberman2014-LadyBombjour_176
+  - first:
+      213: -7514898070502462356
+    second: Bomberman2014-LadyBombjour_177
+  - first:
+      213: 6193629485365317542
+    second: Bomberman2014-LadyBombjour_178
+  - first:
+      213: -77468380117947731
+    second: Bomberman2014-LadyBombjour_179
+  - first:
+      213: -9189222291695649941
+    second: Bomberman2014-LadyBombjour_180
+  - first:
+      213: 8183446493113692195
+    second: Bomberman2014-LadyBombjour_181
+  - first:
+      213: 5259765025580309527
+    second: Bomberman2014-LadyBombjour_182
+  - first:
+      213: -4905666075273668466
+    second: Bomberman2014-LadyBombjour_183
+  - first:
+      213: 7690210570910563145
+    second: Bomberman2014-LadyBombjour_184
+  - first:
+      213: -3334441421248069963
+    second: Bomberman2014-LadyBombjour_185
+  - first:
+      213: -2453541803778947628
+    second: Bomberman2014-LadyBombjour_186
+  - first:
+      213: -9035290694947168659
+    second: Bomberman2014-LadyBombjour_187
+  - first:
+      213: 1382352718766158444
+    second: Bomberman2014-LadyBombjour_188
+  - first:
+      213: -4539278332665627130
+    second: Bomberman2014-LadyBombjour_189
+  - first:
+      213: 375810739826823837
+    second: Bomberman2014-LadyBombjour_190
+  - first:
+      213: 8917641936080744986
+    second: Bomberman2014-LadyBombjour_191
+  - first:
+      213: 1192075676350187460
+    second: Bomberman2014-LadyBombjour_192
+  - first:
+      213: -6515774445455349201
+    second: Bomberman2014-LadyBombjour_193
+  - first:
+      213: 4471638480285480185
+    second: Bomberman2014-LadyBombjour_194
+  - first:
+      213: -1756763190639764805
+    second: Bomberman2014-LadyBombjour_195
+  - first:
+      213: -8452685177092624954
+    second: Bomberman2014-LadyBombjour_196
+  - first:
+      213: -3135629803816163323
+    second: Bomberman2014-LadyBombjour_197
+  - first:
+      213: -1815235610868800044
+    second: Bomberman2014-LadyBombjour_198
+  - first:
+      213: -2722984317926893093
+    second: Bomberman2014-LadyBombjour_199
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 969
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4acf4c9f568506f00800000000000000
+      internalID: 1107982703338519716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 968
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8662d059ab6fd3c40800000000000000
+      internalID: 5493818401686890088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 969
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa210f2dd1d23c640800000000000000
+      internalID: 5098968809229783722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_3
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 969
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649ccc33098bd10b0800000000000000
+      internalID: -5756241819225765562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 969
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7cf7b957a00c4ec0800000000000000
+      internalID: -3581486884901618562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_5
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 968
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f674a8c0ee9920e0800000000000000
+      internalID: -2294127846892472583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_6
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 969
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a69d43daac55430800000000000000
+      internalID: 3771143108257475157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_7
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 969
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f95b0919f085f120800000000000000
+      internalID: 2447003779901118965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 913
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebee2c243365d270800000000000000
+      internalID: 8274628966093876194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 913
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2e3c193d5936c10800000000000000
+      internalID: 2045643391672509094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 912
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5abbc975145a4fe0800000000000000
+      internalID: -1204057499153745318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_11
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 912
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe662be4dec953e0800000000000000
+      internalID: -2064391540299108609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_12
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 912
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e425a61a9f4dbf0800000000000000
+      internalID: -300340803458150881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_13
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 912
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3c5d1968024590b0800000000000000
+      internalID: -5722595147613643716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_14
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 912
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97bd1332a0c7f5070800000000000000
+      internalID: 8097327038017428345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_15
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 912
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5fdf5892b2b69120800000000000000
+      internalID: 2420318329888563035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_16
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 913
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e5289ae2a77fc50800000000000000
+      internalID: 6698957311567879816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_17
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 913
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff8e6eb0687c0920800000000000000
+      internalID: 2957871412182683647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_18
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 912
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c778b85ffed8ef0800000000000000
+      internalID: -104163378472715225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_19
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 912
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442c40443ec99af00800000000000000
+      internalID: 1128605681545691716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_20
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 912
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf65708f53a02e00800000000000000
+      internalID: 1017993146358132664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_21
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 912
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f8000751aaae9450800000000000000
+      internalID: 6097498555432306930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_22
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 912
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201f93bfbc49284b0800000000000000
+      internalID: -5439621796095987454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_23
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 912
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b27c261c5d15b80800000000000000
+      internalID: -8407704002761381070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_24
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 854
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4430a64b910f0a0800000000000000
+      internalID: -6849946770567117658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_25
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 853
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac199e4768b01d830800000000000000
+      internalID: 4094066208371478986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_26
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 854
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ffe26db729fb830800000000000000
+      internalID: 4089148047247736599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_27
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 854
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c55f6d5f16362160800000000000000
+      internalID: 7000342179133478343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_28
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 855
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c8b4db60b29b960800000000000000
+      internalID: 7618167552619547672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_29
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 857
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b5b34d1594eda40800000000000000
+      internalID: 5394830019438271388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_30
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 856
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f69eb81113de710800000000000000
+      internalID: 1724088183784304404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_31
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 856
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dfa45275ce5a1be0800000000000000
+      internalID: -1505786923282288680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_32
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 854
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a960dabf4447af70800000000000000
+      internalID: 9198395873154853288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_33
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 853
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43002d0724f4b6a50800000000000000
+      internalID: 6515388432700801076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_34
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 854
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf7aba31e81463a0800000000000000
+      internalID: -6673181392224223300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_35
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 854
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9cbb93babd3c6f90800000000000000
+      internalID: -6959119452107719524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_36
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 855
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9aaf1551aa9e0820800000000000000
+      internalID: 2886414428899617438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_37
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 857
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00fe1987f025e8cb0800000000000000
+      internalID: -4859856721485369600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_38
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 856
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12915c763e836c00800000000000000
+      internalID: 892713515814588958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_39
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 856
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c876fc0c45514a850800000000000000
+      internalID: 6387253625274460044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_40
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 788
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf0189c700f07d30800000000000000
+      internalID: 4427302349941313478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_41
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 789
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5456cea21ef34a130800000000000000
+      internalID: 3577054240359343429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_42
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 789
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c144b4ba4d68d8d30800000000000000
+      internalID: 4435349455994831900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_43
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 789
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e23a96ee6af60ba40800000000000000
+      internalID: 5381924317462897454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_44
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 789
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a711b880eb11700800000000000000
+      internalID: 509397176771770956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_45
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 789
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1172879e0d60e5ec0800000000000000
+      internalID: -3576413559745665263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_46
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 790
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1691448d9825fa0800000000000000
+      internalID: -5813432607033433622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_47
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 789
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f80469dd7aca12a0800000000000000
+      internalID: -6765872848303814407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_48
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 788
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358b0a9ee527991e0800000000000000
+      internalID: -2190593991766919085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_49
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 789
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f9dcf54d6a879d0800000000000000
+      internalID: -2776285739203322030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_50
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 789
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e259778e8dcd352c0800000000000000
+      internalID: -4443965583113349842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_51
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 789
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf4aa28814a0f700800000000000000
+      internalID: 572137577854422985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_52
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 789
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07c07ee36c1317b20800000000000000
+      internalID: 3130337943527820400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_53
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 789
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac98411a52eb46f40800000000000000
+      internalID: 5720906495492917706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_54
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 790
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e161bdadb8308b6d0800000000000000
+      internalID: -2974623654671084002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_55
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 789
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf37f8dde230e0860800000000000000
+      internalID: 7497933929438999547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_56
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 674
+        width: 67
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b72395bd0bc1b390800000000000000
+      internalID: -7804233419515025486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_57
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 677
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a0389082dc66770800000000000000
+      internalID: 8603789709979880047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_58
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 684
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19ed033ee1104c70800000000000000
+      internalID: 8953175773968984349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_59
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 677
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b488b3b53dac12730800000000000000
+      internalID: 3972679355435026507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_60
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 674
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b9765e378306380800000000000000
+      internalID: -8980115586555602105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_61
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 675
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97a76869a4221d90800000000000000
+      internalID: -7128594950154377318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_62
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 674
+        width: 67
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd066a3ae0063c40800000000000000
+      internalID: 5491577801627012543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_63
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 677
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d41e5beda555520800000000000000
+      internalID: 2690156265004420421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_64
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 684
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ed1c9bff97f9c20800000000000000
+      internalID: 3215422798205935107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_65
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 677
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8325fb3627aec38a0800000000000000
+      internalID: -6323921999714364872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_66
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 674
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7261a68ec16112150800000000000000
+      internalID: 5845978104717776423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_67
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 675
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d81fb8f9acc4690800000000000000
+      internalID: -7616490083193877208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_68
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 567
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43797380f6661770800000000000000
+      internalID: 8581159323185017679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_69
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 564
+        width: 68
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff822efa3748c960800000000000000
+      internalID: 7622420688021917683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_70
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 564
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7c63570879cd450800000000000000
+      internalID: 6114928972040423407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_71
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 614
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1975277d5afbc28b0800000000000000
+      internalID: -5175551152750438511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_72
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 616
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aabb79cc61e5e150800000000000000
+      internalID: 5901370744091949731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_73
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 567
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f46076421e1fd000800000000000000
+      internalID: 62801983646491892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_74
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 564
+        width: 68
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc41f6a462a62f520800000000000000
+      internalID: 2734364636457407695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_75
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 564
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa1f54fb134c4d860800000000000000
+      internalID: 7553878192948638122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_76
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 614
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86030f908a2ea0650800000000000000
+      internalID: 6200017048378028136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_77
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 616
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a95cf065f60ac770800000000000000
+      internalID: 8631719286772881830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_78
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 594
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e9d17abb64b4a20800000000000000
+      internalID: 3047607344622837356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_79
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 591
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504b13876ddc56940800000000000000
+      internalID: 5288859658439734277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_80
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 593
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ab974769fe71810800000000000000
+      internalID: 1736119610852883018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_81
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 589
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e3a9eab588884a0800000000000000
+      internalID: -6590868127303975267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_82
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 589
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35d19b17fe17d6eb0800000000000000
+      internalID: -4724995160822702765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_83
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 594
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55894dd4d23939200800000000000000
+      internalID: 185653832440911957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_84
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 591
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563573f37bf155210800000000000000
+      internalID: 1320996937603175269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_85
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 593
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6672d2deac3f900800000000000000
+      internalID: 717139885695657646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_86
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 589
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a26bda43fed1d670800000000000000
+      internalID: 8561869503122334372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_87
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 589
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b456bf5f94daf7f40800000000000000
+      internalID: 5728487784209671499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_88
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 514
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec9bf4fe6c62b870800000000000000
+      internalID: 8697133054218181856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_89
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 514
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1017c2329252fd0800000000000000
+      internalID: -2367440798067129880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_90
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 517
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398a21505f566d950800000000000000
+      internalID: 6473473617418168467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_91
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 513
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0d00c7bb844b820800000000000000
+      internalID: 2933049227401547955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_92
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 511
+        width: 73
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91fff6287df9ba830800000000000000
+      internalID: 4083533235096649497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_93
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119b441a6a3b874d0800000000000000
+      internalID: -3136559612211971823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_94
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 514
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd23799dad83629c0800000000000000
+      internalID: -3952409110366440740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_95
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 514
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201692c2112c548e0800000000000000
+      internalID: -1709747104506093310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_96
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 517
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec9411dbeb9e4690800000000000000
+      internalID: -7615978482709521171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_97
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 513
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1011c6d4982736c40800000000000000
+      internalID: 5504369103611891969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_98
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 511
+        width: 73
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a57e6da33db7e800800000000000000
+      internalID: 641689501574264230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_99
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e250814a423767f20800000000000000
+      internalID: 3420047568243524910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_100
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 457
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3bb4f27e5e81d30800000000000000
+      internalID: 4402521416848356342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_101
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 456
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4ed4bdf54e591e0800000000000000
+      internalID: -2191594543293537107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_102
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 457
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6916f4dd2d2fabe00800000000000000
+      internalID: 1061427649669194134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_103
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 457
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 110b005b738465100800000000000000
+      internalID: 96343846132166673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_104
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 457
+        width: 55
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d6f631c5227d470800000000000000
+      internalID: 8419235807250836785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_105
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 456
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b68d9a8ffc0fc1ad0800000000000000
+      internalID: -2730042498072586133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_106
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 457
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df78f3f4b90943b0800000000000000
+      internalID: -5527876394828660778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_107
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 457
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32b31dafc37d49bd0800000000000000
+      internalID: -2624236025944130781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_108
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 401
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872473b7f380ceb80800000000000000
+      internalID: -8364301339190672776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_109
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 401
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2c5614fa92907d0800000000000000
+      internalID: -2951782248071445761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_110
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 400
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11198d216f7f29b20800000000000000
+      internalID: 3139844526480855313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_111
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab8511a15139aaf0800000000000000
+      internalID: -384722066498810966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_112
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 400
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6053e08647678ff30800000000000000
+      internalID: 4609564460947748102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_113
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 400
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cacf66e6615065d0800000000000000
+      internalID: -3071365443472078138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_114
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 400
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1994792673cea57d0800000000000000
+      internalID: -2928768885029647983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_115
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 400
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26807ec99140bb230800000000000000
+      internalID: 3655520030594369634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_116
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 401
+        width: 59
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f2b9c4a58b71ea0800000000000000
+      internalID: -5902046088673939672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_117
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 401
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da41375fa2912890800000000000000
+      internalID: -7484539823933273392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_118
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 400
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b607bc08534135a80800000000000000
+      internalID: -8479411453381873557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_119
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 400
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1306a657820fb9f30800000000000000
+      internalID: 4583521102338875441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_120
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 400
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d23ee51d1f86f9b0800000000000000
+      internalID: -5046688977337306414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_121
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 400
+        width: 41
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65e91e1485a2aee0800000000000000
+      internalID: -1251255759596296853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_122
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 400
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4ca8f9f8b7e3600800000000000000
+      internalID: 449932869570839771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_123
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 400
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af226cabd28fa0590800000000000000
+      internalID: -7707074937000418566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_124
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 342
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d03f52186ff0bf740800000000000000
+      internalID: 5186756947250377485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_125
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 341
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc6a63e15a940dc0800000000000000
+      internalID: -3673641719529050933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_126
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 342
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fd2d2b0b0dd7310800000000000000
+      internalID: 1404508116142448398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_127
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 342
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f425306a4b3de91e0800000000000000
+      internalID: -2189079596022672817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_128
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 343
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3040b1221cf371ed0800000000000000
+      internalID: -2443414174091770877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_129
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 345
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27eb3b81fa6cc0370800000000000000
+      internalID: 8290219469418249842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_130
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 344
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02c18ec25faba130800000000000000
+      internalID: 3579147099062780427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_131
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 344
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af02ad64b3e3d6d60800000000000000
+      internalID: 7885026946908299514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_132
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 342
+        width: 56
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0efbca6e39afd1e0800000000000000
+      internalID: -2170830409824469491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_133
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 341
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7824b48c269170370800000000000000
+      internalID: 8288621551256552071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_134
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 342
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8123a774d1266b640800000000000000
+      internalID: 5095367906309059096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_135
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 342
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37120d55585f65ba0800000000000000
+      internalID: -6100418692207599245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_136
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 343
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55b984507e5ed0c20800000000000000
+      internalID: 3174446092754918229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_137
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 345
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de1216c5583f6ce0800000000000000
+      internalID: -1409846217297223984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_138
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 344
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6d8ffe7fa93cac0800000000000000
+      internalID: -3836052067915868488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_139
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 344
+        width: 56
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29377830f257ebc0800000000000000
+      internalID: -3753940572697052883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_140
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 276
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9a2331e7682fd00800000000000000
+      internalID: 1005013542903130537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_141
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 277
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf2f9fb2341a4760800000000000000
+      internalID: 7442783542378966954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_142
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 277
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 231d0924de196c160800000000000000
+      internalID: 7045479115277783346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_143
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 277
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9576ea75d6922f880800000000000000
+      internalID: -8578748790588151975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_144
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 277
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d095f0c4f97273510800000000000000
+      internalID: 1528734163644930317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_145
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 277
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa51c1852a8156080800000000000000
+      internalID: -9194915978664995414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_146
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 278
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 737ca75585d69f2a0800000000000000
+      internalID: -6703206344205613257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_147
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 277
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7674e60a59d61ed0800000000000000
+      internalID: -2443526767115995526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_148
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 276
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbdb9968477fe740800000000000000
+      internalID: 5183492849019902928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_149
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 277
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b7a900a20a648e0800000000000000
+      internalID: -1709502906281329912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_150
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 277
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebff566eff6c7fe50800000000000000
+      internalID: 6843156961197162430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_151
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 277
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6d0a2e7a3ee64c0800000000000000
+      internalID: -4292243084636268826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_152
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 277
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3297df86522ba9bd0800000000000000
+      internalID: -2622587959244916445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_153
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 277
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b25aac4ba7f3220800000000000000
+      internalID: 2467826037734845228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_154
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 278
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6cb018bda7045b0800000000000000
+      internalID: -5386170071153654108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_155
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 277
+        width: 40
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c35b48427574084b0800000000000000
+      internalID: -5440269910263155396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_156
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 162
+        width: 67
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575fc0454e9144d10800000000000000
+      internalID: 2108838993969608053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_157
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 165
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711e18098178cdeb0800000000000000
+      internalID: -4693728172053503721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_158
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 172
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc1f9f89b7143800800000000000000
+      internalID: 591123536838335736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_159
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 165
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43fcae3a8daa464d0800000000000000
+      internalID: -3142198792558031052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_160
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 162
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b3978ed9c134c90800000000000000
+      internalID: -7186869115817477289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_161
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 163
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba78d166d866c9e70800000000000000
+      internalID: 9123279702635415467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_162
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 162
+        width: 67
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3b2a13782dd5e90800000000000000
+      internalID: -7035235564787682349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_163
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 165
+        width: 74
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6571ea658164eeb0800000000000000
+      internalID: -4691517686161509011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_164
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 172
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0076b1efebfd5080800000000000000
+      internalID: -9196917856318099441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_165
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 165
+        width: 85
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad7e49c199092830800000000000000
+      internalID: 4046776261921373602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_166
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 162
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a9f8bdfec0ff160800000000000000
+      internalID: 7061376965060565594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_167
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 163
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09796a645462b1f90800000000000000
+      internalID: -6981944718327900272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_168
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 55
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5431e7b70aeb5250800000000000000
+      internalID: 5934594252861420634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_169
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 52
+        width: 68
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be552b4111c50e2f0800000000000000
+      internalID: -945654693316373013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_170
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 52
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 405a969ae98782530800000000000000
+      internalID: 3830444105921045764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_171
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 102
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df149379b4281bd50800000000000000
+      internalID: 6751320577576354301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_172
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 104
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ece89665ec937410800000000000000
+      internalID: 1473694012163026150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_173
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 55
+        width: 65
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3c643418779c140800000000000000
+      internalID: 4740451479847355351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_174
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 52
+        width: 68
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e4697eaee49f6320800000000000000
+      internalID: 2553423266592679137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_175
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 52
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e92095a45e55bb030800000000000000
+      internalID: 3511494777748652702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_176
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 102
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20701297f7a065970800000000000000
+      internalID: 8743187269195728642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_177
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 104
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cae604508b5b790800000000000000
+      internalID: -7514898070502462356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_178
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 82
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afc591a33134f550800000000000000
+      internalID: 6193629485365317542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_179
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 79
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daaaeb13be6cceef0800000000000000
+      internalID: -77468380117947731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_180
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 81
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6b31652303597080800000000000000
+      internalID: -9189222291695649941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_181
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 77
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320357c4a31719170800000000000000
+      internalID: 8183446493113692195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_182
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 77
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71cdcbf5c607ef840800000000000000
+      internalID: 5259765025580309527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_183
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 82
+        width: 32
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88d0a422b29bebb0800000000000000
+      internalID: -4905666075273668466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_184
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 79
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bf31f05cd19ba60800000000000000
+      internalID: 7690210570910563145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_185
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 81
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bef82aa13fa9b1d0800000000000000
+      internalID: -3334441421248069963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_186
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 77
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d54f289ab443fdd0800000000000000
+      internalID: -2453541803778947628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_187
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 77
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e1845ebf23c9280800000000000000
+      internalID: -9035290694947168659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_188
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c623a54497a1f2310800000000000000
+      internalID: 1382352718766158444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_189
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e76d4186e3101c0800000000000000
+      internalID: -4539278332665627130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_190
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 5
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92972270e5273500800000000000000
+      internalID: 375810739826823837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_191
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12383ad714d1cb70800000000000000
+      internalID: 8917641936080744986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_192
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c78c32038a1b8010800000000000000
+      internalID: 1192075676350187460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_193
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2ae016f9a15395a0800000000000000
+      internalID: -6515774445455349201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_194
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 2
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4326d81837e0e30800000000000000
+      internalID: 4471638480285480185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_195
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 2
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bba5f639f29be97e0800000000000000
+      internalID: -1756763190639764805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_196
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 5
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd2f2d9d9702ba80800000000000000
+      internalID: -8452685177092624954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_197
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1
+        width: 64
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 508e8648e410c74d0800000000000000
+      internalID: -3135629803816163323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_198
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 0
+        width: 73
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d5a68654dcfec6e0800000000000000
+      internalID: -1815235610868800044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bomberman2014-LadyBombjour_199
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd912099034063ad0800000000000000
+      internalID: -2722984317926893093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4abd1772f5157cb909b1f1403851270a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bomberman2014-LadyBombjour_0: 1107982703338519716
+      Bomberman2014-LadyBombjour_1: 5493818401686890088
+      Bomberman2014-LadyBombjour_10: -1204057499153745318
+      Bomberman2014-LadyBombjour_100: 4402521416848356342
+      Bomberman2014-LadyBombjour_101: -2191594543293537107
+      Bomberman2014-LadyBombjour_102: 1061427649669194134
+      Bomberman2014-LadyBombjour_103: 96343846132166673
+      Bomberman2014-LadyBombjour_104: 8419235807250836785
+      Bomberman2014-LadyBombjour_105: -2730042498072586133
+      Bomberman2014-LadyBombjour_106: -5527876394828660778
+      Bomberman2014-LadyBombjour_107: -2624236025944130781
+      Bomberman2014-LadyBombjour_108: -8364301339190672776
+      Bomberman2014-LadyBombjour_109: -2951782248071445761
+      Bomberman2014-LadyBombjour_11: -2064391540299108609
+      Bomberman2014-LadyBombjour_110: 3139844526480855313
+      Bomberman2014-LadyBombjour_111: -384722066498810966
+      Bomberman2014-LadyBombjour_112: 4609564460947748102
+      Bomberman2014-LadyBombjour_113: -3071365443472078138
+      Bomberman2014-LadyBombjour_114: -2928768885029647983
+      Bomberman2014-LadyBombjour_115: 3655520030594369634
+      Bomberman2014-LadyBombjour_116: -5902046088673939672
+      Bomberman2014-LadyBombjour_117: -7484539823933273392
+      Bomberman2014-LadyBombjour_118: -8479411453381873557
+      Bomberman2014-LadyBombjour_119: 4583521102338875441
+      Bomberman2014-LadyBombjour_12: -300340803458150881
+      Bomberman2014-LadyBombjour_120: -5046688977337306414
+      Bomberman2014-LadyBombjour_121: -1251255759596296853
+      Bomberman2014-LadyBombjour_122: 449932869570839771
+      Bomberman2014-LadyBombjour_123: -7707074937000418566
+      Bomberman2014-LadyBombjour_124: 5186756947250377485
+      Bomberman2014-LadyBombjour_125: -3673641719529050933
+      Bomberman2014-LadyBombjour_126: 1404508116142448398
+      Bomberman2014-LadyBombjour_127: -2189079596022672817
+      Bomberman2014-LadyBombjour_128: -2443414174091770877
+      Bomberman2014-LadyBombjour_129: 8290219469418249842
+      Bomberman2014-LadyBombjour_13: -5722595147613643716
+      Bomberman2014-LadyBombjour_130: 3579147099062780427
+      Bomberman2014-LadyBombjour_131: 7885026946908299514
+      Bomberman2014-LadyBombjour_132: -2170830409824469491
+      Bomberman2014-LadyBombjour_133: 8288621551256552071
+      Bomberman2014-LadyBombjour_134: 5095367906309059096
+      Bomberman2014-LadyBombjour_135: -6100418692207599245
+      Bomberman2014-LadyBombjour_136: 3174446092754918229
+      Bomberman2014-LadyBombjour_137: -1409846217297223984
+      Bomberman2014-LadyBombjour_138: -3836052067915868488
+      Bomberman2014-LadyBombjour_139: -3753940572697052883
+      Bomberman2014-LadyBombjour_14: 8097327038017428345
+      Bomberman2014-LadyBombjour_140: 1005013542903130537
+      Bomberman2014-LadyBombjour_141: 7442783542378966954
+      Bomberman2014-LadyBombjour_142: 7045479115277783346
+      Bomberman2014-LadyBombjour_143: -8578748790588151975
+      Bomberman2014-LadyBombjour_144: 1528734163644930317
+      Bomberman2014-LadyBombjour_145: -9194915978664995414
+      Bomberman2014-LadyBombjour_146: -6703206344205613257
+      Bomberman2014-LadyBombjour_147: -2443526767115995526
+      Bomberman2014-LadyBombjour_148: 5183492849019902928
+      Bomberman2014-LadyBombjour_149: -1709502906281329912
+      Bomberman2014-LadyBombjour_15: 2420318329888563035
+      Bomberman2014-LadyBombjour_150: 6843156961197162430
+      Bomberman2014-LadyBombjour_151: -4292243084636268826
+      Bomberman2014-LadyBombjour_152: -2622587959244916445
+      Bomberman2014-LadyBombjour_153: 2467826037734845228
+      Bomberman2014-LadyBombjour_154: -5386170071153654108
+      Bomberman2014-LadyBombjour_155: -5440269910263155396
+      Bomberman2014-LadyBombjour_156: 2108838993969608053
+      Bomberman2014-LadyBombjour_157: -4693728172053503721
+      Bomberman2014-LadyBombjour_158: 591123536838335736
+      Bomberman2014-LadyBombjour_159: -3142198792558031052
+      Bomberman2014-LadyBombjour_16: 6698957311567879816
+      Bomberman2014-LadyBombjour_160: -7186869115817477289
+      Bomberman2014-LadyBombjour_161: 9123279702635415467
+      Bomberman2014-LadyBombjour_162: -7035235564787682349
+      Bomberman2014-LadyBombjour_163: -4691517686161509011
+      Bomberman2014-LadyBombjour_164: -9196917856318099441
+      Bomberman2014-LadyBombjour_165: 4046776261921373602
+      Bomberman2014-LadyBombjour_166: 7061376965060565594
+      Bomberman2014-LadyBombjour_167: -6981944718327900272
+      Bomberman2014-LadyBombjour_168: 5934594252861420634
+      Bomberman2014-LadyBombjour_169: -945654693316373013
+      Bomberman2014-LadyBombjour_17: 2957871412182683647
+      Bomberman2014-LadyBombjour_170: 3830444105921045764
+      Bomberman2014-LadyBombjour_171: 6751320577576354301
+      Bomberman2014-LadyBombjour_172: 1473694012163026150
+      Bomberman2014-LadyBombjour_173: 4740451479847355351
+      Bomberman2014-LadyBombjour_174: 2553423266592679137
+      Bomberman2014-LadyBombjour_175: 3511494777748652702
+      Bomberman2014-LadyBombjour_176: 8743187269195728642
+      Bomberman2014-LadyBombjour_177: -7514898070502462356
+      Bomberman2014-LadyBombjour_178: 6193629485365317542
+      Bomberman2014-LadyBombjour_179: -77468380117947731
+      Bomberman2014-LadyBombjour_18: -104163378472715225
+      Bomberman2014-LadyBombjour_180: -9189222291695649941
+      Bomberman2014-LadyBombjour_181: 8183446493113692195
+      Bomberman2014-LadyBombjour_182: 5259765025580309527
+      Bomberman2014-LadyBombjour_183: -4905666075273668466
+      Bomberman2014-LadyBombjour_184: 7690210570910563145
+      Bomberman2014-LadyBombjour_185: -3334441421248069963
+      Bomberman2014-LadyBombjour_186: -2453541803778947628
+      Bomberman2014-LadyBombjour_187: -9035290694947168659
+      Bomberman2014-LadyBombjour_188: 1382352718766158444
+      Bomberman2014-LadyBombjour_189: -4539278332665627130
+      Bomberman2014-LadyBombjour_19: 1128605681545691716
+      Bomberman2014-LadyBombjour_190: 375810739826823837
+      Bomberman2014-LadyBombjour_191: 8917641936080744986
+      Bomberman2014-LadyBombjour_192: 1192075676350187460
+      Bomberman2014-LadyBombjour_193: -6515774445455349201
+      Bomberman2014-LadyBombjour_194: 4471638480285480185
+      Bomberman2014-LadyBombjour_195: -1756763190639764805
+      Bomberman2014-LadyBombjour_196: -8452685177092624954
+      Bomberman2014-LadyBombjour_197: -3135629803816163323
+      Bomberman2014-LadyBombjour_198: -1815235610868800044
+      Bomberman2014-LadyBombjour_199: -2722984317926893093
+      Bomberman2014-LadyBombjour_2: 5098968809229783722
+      Bomberman2014-LadyBombjour_20: 1017993146358132664
+      Bomberman2014-LadyBombjour_21: 6097498555432306930
+      Bomberman2014-LadyBombjour_22: -5439621796095987454
+      Bomberman2014-LadyBombjour_23: -8407704002761381070
+      Bomberman2014-LadyBombjour_24: -6849946770567117658
+      Bomberman2014-LadyBombjour_25: 4094066208371478986
+      Bomberman2014-LadyBombjour_26: 4089148047247736599
+      Bomberman2014-LadyBombjour_27: 7000342179133478343
+      Bomberman2014-LadyBombjour_28: 7618167552619547672
+      Bomberman2014-LadyBombjour_29: 5394830019438271388
+      Bomberman2014-LadyBombjour_3: -5756241819225765562
+      Bomberman2014-LadyBombjour_30: 1724088183784304404
+      Bomberman2014-LadyBombjour_31: -1505786923282288680
+      Bomberman2014-LadyBombjour_32: 9198395873154853288
+      Bomberman2014-LadyBombjour_33: 6515388432700801076
+      Bomberman2014-LadyBombjour_34: -6673181392224223300
+      Bomberman2014-LadyBombjour_35: -6959119452107719524
+      Bomberman2014-LadyBombjour_36: 2886414428899617438
+      Bomberman2014-LadyBombjour_37: -4859856721485369600
+      Bomberman2014-LadyBombjour_38: 892713515814588958
+      Bomberman2014-LadyBombjour_39: 6387253625274460044
+      Bomberman2014-LadyBombjour_4: -3581486884901618562
+      Bomberman2014-LadyBombjour_40: 4427302349941313478
+      Bomberman2014-LadyBombjour_41: 3577054240359343429
+      Bomberman2014-LadyBombjour_42: 4435349455994831900
+      Bomberman2014-LadyBombjour_43: 5381924317462897454
+      Bomberman2014-LadyBombjour_44: 509397176771770956
+      Bomberman2014-LadyBombjour_45: -3576413559745665263
+      Bomberman2014-LadyBombjour_46: -5813432607033433622
+      Bomberman2014-LadyBombjour_47: -6765872848303814407
+      Bomberman2014-LadyBombjour_48: -2190593991766919085
+      Bomberman2014-LadyBombjour_49: -2776285739203322030
+      Bomberman2014-LadyBombjour_5: -2294127846892472583
+      Bomberman2014-LadyBombjour_50: -4443965583113349842
+      Bomberman2014-LadyBombjour_51: 572137577854422985
+      Bomberman2014-LadyBombjour_52: 3130337943527820400
+      Bomberman2014-LadyBombjour_53: 5720906495492917706
+      Bomberman2014-LadyBombjour_54: -2974623654671084002
+      Bomberman2014-LadyBombjour_55: 7497933929438999547
+      Bomberman2014-LadyBombjour_56: -7804233419515025486
+      Bomberman2014-LadyBombjour_57: 8603789709979880047
+      Bomberman2014-LadyBombjour_58: 8953175773968984349
+      Bomberman2014-LadyBombjour_59: 3972679355435026507
+      Bomberman2014-LadyBombjour_6: 3771143108257475157
+      Bomberman2014-LadyBombjour_60: -8980115586555602105
+      Bomberman2014-LadyBombjour_61: -7128594950154377318
+      Bomberman2014-LadyBombjour_62: 5491577801627012543
+      Bomberman2014-LadyBombjour_63: 2690156265004420421
+      Bomberman2014-LadyBombjour_64: 3215422798205935107
+      Bomberman2014-LadyBombjour_65: -6323921999714364872
+      Bomberman2014-LadyBombjour_66: 5845978104717776423
+      Bomberman2014-LadyBombjour_67: -7616490083193877208
+      Bomberman2014-LadyBombjour_68: 8581159323185017679
+      Bomberman2014-LadyBombjour_69: 7622420688021917683
+      Bomberman2014-LadyBombjour_7: 2447003779901118965
+      Bomberman2014-LadyBombjour_70: 6114928972040423407
+      Bomberman2014-LadyBombjour_71: -5175551152750438511
+      Bomberman2014-LadyBombjour_72: 5901370744091949731
+      Bomberman2014-LadyBombjour_73: 62801983646491892
+      Bomberman2014-LadyBombjour_74: 2734364636457407695
+      Bomberman2014-LadyBombjour_75: 7553878192948638122
+      Bomberman2014-LadyBombjour_76: 6200017048378028136
+      Bomberman2014-LadyBombjour_77: 8631719286772881830
+      Bomberman2014-LadyBombjour_78: 3047607344622837356
+      Bomberman2014-LadyBombjour_79: 5288859658439734277
+      Bomberman2014-LadyBombjour_8: 8274628966093876194
+      Bomberman2014-LadyBombjour_80: 1736119610852883018
+      Bomberman2014-LadyBombjour_81: -6590868127303975267
+      Bomberman2014-LadyBombjour_82: -4724995160822702765
+      Bomberman2014-LadyBombjour_83: 185653832440911957
+      Bomberman2014-LadyBombjour_84: 1320996937603175269
+      Bomberman2014-LadyBombjour_85: 717139885695657646
+      Bomberman2014-LadyBombjour_86: 8561869503122334372
+      Bomberman2014-LadyBombjour_87: 5728487784209671499
+      Bomberman2014-LadyBombjour_88: 8697133054218181856
+      Bomberman2014-LadyBombjour_89: -2367440798067129880
+      Bomberman2014-LadyBombjour_9: 2045643391672509094
+      Bomberman2014-LadyBombjour_90: 6473473617418168467
+      Bomberman2014-LadyBombjour_91: 2933049227401547955
+      Bomberman2014-LadyBombjour_92: 4083533235096649497
+      Bomberman2014-LadyBombjour_93: -3136559612211971823
+      Bomberman2014-LadyBombjour_94: -3952409110366440740
+      Bomberman2014-LadyBombjour_95: -1709747104506093310
+      Bomberman2014-LadyBombjour_96: -7615978482709521171
+      Bomberman2014-LadyBombjour_97: 5504369103611891969
+      Bomberman2014-LadyBombjour_98: 641689501574264230
+      Bomberman2014-LadyBombjour_99: 3420047568243524910
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -14,47 +14,51 @@ services:
 
   # Servei d'Autenticació
   servei-auth:
-    build: 
-      context: ./servei-auth
-      dockerfile: Dockerfile
-    container_name: servei-auth
-    environment:
-      - PORT=${AUTH_PORT}
-      - MONGODB_URI=${MONGODB_URI}
-      - JWT_SECRET=${JWT_SECRET}
-      - BCRYPT_SALT_ROUNDS=${BCRYPT_SALT_ROUNDS}
-    depends_on:
-      - mongodb
-    networks:
-      - bomberman_network
+  build: 
+    context: ./servei-auth
+    dockerfile: Dockerfile
+  container_name: servei-auth
+  ports:
+    - "3001:3001"
+  environment:
+    - PORT=3001
+    - MONGODB_URI=${MONGODB_URI}
+    - JWT_SECRET=${JWT_SECRET}
+    - BCRYPT_SALT_ROUNDS=${BCRYPT_SALT_ROUNDS}
+  depends_on:
+    - mongodb
+  networks:
+    - bomberman_network
 
-  # Servei de Joc
-  servei-joc:
-    build:
-      context: ./servei-joc
-      dockerfile: Dockerfile
-    container_name: servei-joc
-    environment:
-      - PORT=${JOC_PORT}
-      - MONGODB_URI=${MONGODB_URI}
-    depends_on:
-      - mongodb
-    networks:
-      - bomberman_network
+servei-joc:
+  build:
+    context: ./servei-joc
+    dockerfile: Dockerfile
+  container_name: servei-joc
+  ports:
+    - "3002:3002"
+  environment:
+    - PORT=3002
+    - MONGODB_URI=${MONGODB_URI}
+  depends_on:
+    - mongodb
+  networks:
+    - bomberman_network
 
-  # Servei d'Estadístiques
-  servei-estadistiques:
-    build:
-      context: ./servei-estadistiques
-      dockerfile: Dockerfile
-    container_name: servei-estadistiques
-    environment:
-      - PORT=${STATS_PORT}
-      - MONGODB_URI=${MONGODB_URI}
-    depends_on:
-      - mongodb
-    networks:
-      - bomberman_network
+servei-estadistiques:
+  build:
+    context: ./servei-estadistiques
+    dockerfile: Dockerfile
+  container_name: servei-estadistiques
+  ports:
+    - "3003:3003"
+  environment:
+    - PORT=3003
+    - MONGODB_URI=${MONGODB_URI}
+  depends_on:
+    - mongodb
+  networks:
+    - bomberman_network
 
   # Gateway (Nginx)
   gateway:

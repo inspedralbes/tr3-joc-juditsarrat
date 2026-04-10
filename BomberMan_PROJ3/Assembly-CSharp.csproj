@@ -58,6 +58,7 @@
     <Compile Include="Assets/Scripts/ui/GameLobbyUI.cs" />
     <Compile Include="Assets/Scripts/auth/AuthManager.cs" />
     <Compile Include="Assets/Scripts/models/GameData.cs" />
+    <Compile Include="Assets/Scripts/Game/MovementController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/UI/Documents/MainMenu.uxml" />

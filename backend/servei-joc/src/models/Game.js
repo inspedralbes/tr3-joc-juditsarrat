@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-/**
- * Esquema per a una partida de joc.
- */
 const gameSchema = new mongoose.Schema({
     hostId: {
         type: String,
@@ -18,10 +15,13 @@ const gameSchema = new mongoose.Schema({
         default: []
     },
     config: {
-        type: Object,
-        default: {
-            maxPlayers: 2,
-            mapType: 'default'
+        maxPlayers: {
+            type: Number,
+            default: 2
+        },
+        mapType: {
+            type: String,
+            default: 'default'
         }
     }
 }, {
@@ -29,4 +29,5 @@ const gameSchema = new mongoose.Schema({
 });
 
 const Game = mongoose.model('Game', gameSchema);
+
 module.exports = Game;
