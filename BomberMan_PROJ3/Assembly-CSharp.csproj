@@ -51,6 +51,7 @@
     <Compile Include="Assets\Scripts\auth\MenuPrincipalController.cs" />
     <Compile Include="Assets\Scripts\Game\Explosion.cs" />
     <Compile Include="Assets\Scripts\auth\LoginController.cs" />
+    <Compile Include="Assets\Scripts\auth\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\AnimatedSpriteRenderer.cs" />
     <Compile Include="Assets\Scripts\auth\GameService.cs" />
     <Compile Include="Assets\Scripts\auth\GameLobbyManager.cs" />

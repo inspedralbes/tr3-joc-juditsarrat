@@ -94,5 +94,6 @@ private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRen
     private void OnDeathSequenceEnded()
     {
       gameObject.SetActive(false);
+      FindObjectOfType<GameManager>().CheckWinState();
     }
 } 
