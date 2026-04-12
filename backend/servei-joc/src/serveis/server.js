@@ -113,8 +113,19 @@ function broadcastToGame(gameId, message) {
             sentCount++;
         }
     });
-    
-    console.log(`[WebSocket] 📤 Broadcast a ${gameId}: ${sentCount} clientes`);
+
+ console.log(`[WebSocket]  Broadcast a ${gameId}: ${sentCount} clientes`);
+
+  if (connections.length === 2) {
+        console.log(`[WebSocket] 🎮 ¡Juego ${gameId} iniciado con 2 jugadores!`);
+        setTimeout(() => {
+            broadcastToGame(gameId, {
+                type: 'game-started',
+                gameId: gameId,
+                totalPlayers: 2
+            });
+        }, 500);
+    }
 }
 
 function handleGameMessage(gameId, playerId, data) {

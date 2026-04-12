@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameLobbyUI : MonoBehaviour
 {
@@ -38,6 +39,13 @@ public class GameLobbyUI : MonoBehaviour
     {
         _playerCount = count;
         ActualizarJugadores();
+        
+        // Si hay 2 jugadores, iniciar automáticamente
+        if (count == 2)
+        {
+            Debug.Log("[GameLobbyUI] ¡2 jugadores conectados! Iniciando juego...");
+            StartCoroutine(CargarGameScene());
+        }
     }
 
     private void ActualizarJugadores()
@@ -64,6 +72,13 @@ public class GameLobbyUI : MonoBehaviour
         }
 
         Debug.Log("▶️ Iniciando partida: " + _currentGameId);
+        StartCoroutine(CargarGameScene());
+    }
+
+    private IEnumerator CargarGameScene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("GameScene");
     }
 
     private void OnDisable()
