@@ -14,6 +14,8 @@ public class WebSocketManager : MonoBehaviour
     public event Action OnConnected;
     public event Action OnDisconnected;
     public event Action<string> OnError;
+
+    public event Action<string> OnMessageReceived;
     
     private void Awake()
     {
@@ -38,6 +40,8 @@ public class WebSocketManager : MonoBehaviour
         return Instance;
     }
     
+
+
     public void ConnectToGame(string gameId)
     {
         if (_webSocket != null && (_webSocket.State == WebSocketState.Open || _webSocket.State == WebSocketState.Connecting))
@@ -77,29 +81,32 @@ public class WebSocketManager : MonoBehaviour
             Debug.LogError("[WebSocket] Estado: " + _webSocket.State);
         }
     }
+
+        private void HandleWebSocketOpen()
+{
+    Debug.Log("[WebSocket] ✅ Conectado");
     
-    private void HandleWebSocketOpen()
-    {
-        Debug.Log("[WebSocket] ✅ Conectado");
-        
-        string joinMessage = "{\"type\":\"join-game\",\"gameId\":\"" + _gameId + "\",\"playerId\":\"" + _playerId + "\"}";
-        _webSocket.SendText(joinMessage);
-    }
+    string joinMessage = "{\"type\":\"join-game\",\"gameId\":\"" + _gameId + "\",\"playerId\":\"" + _playerId + "\"}";
+    _webSocket.SendText(joinMessage);
+} 
     
     private void HandleWebSocketMessage(byte[] bytes)
+{
+    string message = System.Text.Encoding.UTF8.GetString(bytes);
+    Debug.Log("[WebSocket] 📨 Mensaje: " + message);
+    
+    OnMessageReceived?.Invoke(message);  // ← AGREGA ESTA LÍNEA
+    
+    try
     {
-        string message = System.Text.Encoding.UTF8.GetString(bytes);
-        Debug.Log("[WebSocket] 📨 Mensaje: " + message);
-        
-        try
-        {
-            ProcessMessage(message);
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogWarning("[WebSocket] Error procesando: " + e.Message);
-        }
+        ProcessMessage(message);
     }
+    catch (System.Exception e)
+    {
+        Debug.LogWarning("[WebSocket] Error procesando: " + e.Message);
+    }
+}
+       
     
     private void ProcessMessage(string jsonMessage)
     {

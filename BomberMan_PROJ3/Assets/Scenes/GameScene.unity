@@ -228,6 +228,55 @@ MonoBehaviour:
   animationTime: 0.16
   loop: 1
   idle: 1
+--- !u!1 &185326662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185326664}
+  - component: {fileID: 185326663}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &185326663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185326662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeacd15919d54764da242194dc4139c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 1985346537}
+  - {fileID: 2071095892}
+  bombPrefab: {fileID: 1107493646144990734, guid: d77b2ca5e14bbe8459f8ac0ff725cc72, type: 3}
+  remotePlayerPrefab: {fileID: 6512764182836688455, guid: 711383f9ef2bb701ebb40ee84dceb171, type: 3}
+--- !u!4 &185326664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185326662}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6528553, y: 1.4901046, z: -0.022515101}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535625281
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,3 +5158,4 @@ SceneRoots:
   - {fileID: 1804079558}
   - {fileID: 1985346540}
   - {fileID: 2071095898}
+  - {fileID: 185326664}

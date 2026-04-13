@@ -11,6 +11,8 @@ public class MovementController : MonoBehaviour
     public KeyCode inputLeft = KeyCode.A;
     public KeyCode inputRight = KeyCode.D;
 
+    private float lastSentTime = 0f; 
+
     public AnimatedSpriteRenderer spriteRendererUp;
     public AnimatedSpriteRenderer spriteRendererDown;
     public AnimatedSpriteRenderer spriteRendererLeft;
@@ -40,7 +42,10 @@ public class MovementController : MonoBehaviour
         } else if (Input.GetKey(inputRight))
         {
             SetDirection(Vector2.right , spriteRendererRight);
-        } else
+        } else if (Input.GetKeyDown(KeyCode.Space)) 
+        { 
+          PlaceBomb();}
+        else
         {
           SetDirection(Vector2.zero, activeSpriteRenderer);   
         }
@@ -48,13 +53,30 @@ public class MovementController : MonoBehaviour
 
 
 private void FixedUpdate()
+{
+    Vector2 position = rigidbody.position;
+    Vector2 translation = direction * speed * Time.fixedDeltaTime;
+    rigidbody.MovePosition(position + translation);
+    
+    // Si es va a moure i te WebSocket, enviar al servidor
+    if (direction != Vector2.zero && WebSocketManager.Instance != null)
     {
-        Vector2 position = rigidbody.position;
-        Vector2 translation = direction * speed * Time.fixedDeltaTime;
- 
-        rigidbody.MovePosition(position + translation);
-
+        SendMovementToServer(position + translation);
     }
+}
+
+private void SendMovementToServer(Vector2 newPosition)
+{
+    // Enviar cada 0.1 segons per no saturar
+    if (Time.time - lastSentTime > 0.1f)
+    {
+        string data = JsonUtility.ToJson(new { x = newPosition.x, y = newPosition.y });
+        WebSocketManager.Instance.SendMessage("player-move", data);
+        lastSentTime = Time.time;
+    }
+}
+
+
 private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
     {
         direction = newDirection;
@@ -91,7 +113,29 @@ private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRen
 
     }
 
-    private void OnDeathSequenceEnded()
+  [SerializeField] private GameObject bombPrefab;
+
+private void PlaceBomb()
+{
+    if (bombPrefab == null)
+    {
+        Debug.LogError("[Movement] bombPrefab no asignado en Inspector");
+        return;
+    }
+    
+    Vector3 bombPos = transform.position;
+    
+    // Crear bomba localmente
+    Instantiate(bombPrefab, bombPos, Quaternion.identity);
+    Debug.Log("[Movement] Bomba creada en: " + bombPos);
+    
+    // Enviar al servidor
+    string data = JsonUtility.ToJson(new { x = bombPos.x, y = bombPos.y });
+    if (WebSocketManager.Instance != null)
+    {
+        WebSocketManager.Instance.SendMessage("place-bomb", data);
+    }
+}    private void OnDeathSequenceEnded()
     {
       gameObject.SetActive(false);
       FindObjectOfType<GameManager>().CheckWinState();

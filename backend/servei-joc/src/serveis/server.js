@@ -27,20 +27,20 @@ const gameConnections = new Map();
 
 wss.on('connection', (ws, req) => {
     console.log('[WebSocket] ✅ Cliente conectado');
-    
+
     // Obtener gameId y playerId de la URL
     const url = new URL(req.url, `http://${req.headers.host}`);
     const gameId = url.searchParams.get('gameId');
     const playerId = url.searchParams.get('playerId');
-    
+
     if (!gameId || !playerId) {
         console.log('[WebSocket] ❌ gameId o playerId faltante');
         ws.close(1008, 'gameId y playerId requeridos');
         return;
     }
-    
+
     console.log(`[WebSocket] 🎮 Game: ${gameId}, Player: ${playerId}`);
-    
+
     // Registrar conexión
     if (!gameConnections.has(gameId)) {
         gameConnections.set(gameId, []);
@@ -49,21 +49,33 @@ wss.on('connection', (ws, req) => {
         ws: ws,
         playerId: playerId
     });
-    
+
     const playerCount = gameConnections.get(gameId).length;
     console.log(`[WebSocket] 👥 Total jugadores en ${gameId}: ${playerCount}`);
-    
+
     // Notificar a otros que alguien se conectó
     broadcastToGame(gameId, {
         type: 'player-joined',
         playerId: playerId,
         totalPlayers: playerCount
     });
-    
+
+    // Si hay 2 jugadores, iniciar el juego (una sola vez)
+    if (playerCount === 2) {
+        console.log(`[WebSocket] 🎮 ¡Juego ${gameId} listo para empezar!`);
+        setTimeout(() => {
+            broadcastToGame(gameId, {
+                type: 'game-started',
+                gameId: gameId,
+                totalPlayers: 2
+            });
+        }, 500);
+    }
+
     // Manejar mensajes
     ws.on('message', (message) => {
         console.log(`[WebSocket] De ${playerId}: ${message}`);
-        
+
         try {
             const data = JSON.parse(message);
             handleGameMessage(gameId, playerId, data);
@@ -71,29 +83,29 @@ wss.on('connection', (ws, req) => {
             console.error('[WebSocket] Error parseando:', e.message);
         }
     });
-    
+
     // Manejar desconexión
     ws.on('close', () => {
         console.log(`[WebSocket] 👋 ${playerId} desconectado`);
-        
+
         const connections = gameConnections.get(gameId);
         if (connections) {
             const index = connections.findIndex(c => c.playerId === playerId);
             if (index > -1) {
                 connections.splice(index, 1);
             }
-            
+
             const remainingPlayers = connections.length;
             broadcastToGame(gameId, {
                 type: 'player-disconnected',
                 playerId: playerId,
                 totalPlayers: remainingPlayers
             });
-            
+
             console.log(`[WebSocket] 👥 Jugadores restantes en ${gameId}: ${remainingPlayers}`);
         }
     });
-    
+
     ws.on('error', (error) => {
         console.error(`[WebSocket] ❌ Error ${playerId}:`, error.message);
     });
@@ -103,10 +115,10 @@ wss.on('connection', (ws, req) => {
 function broadcastToGame(gameId, message) {
     const connections = gameConnections.get(gameId);
     if (!connections) return;
-    
+
     const json = JSON.stringify(message);
     let sentCount = 0;
-    
+
     connections.forEach(client => {
         if (client.ws.readyState === WebSocket.OPEN) {
             client.ws.send(json);
@@ -114,18 +126,7 @@ function broadcastToGame(gameId, message) {
         }
     });
 
- console.log(`[WebSocket]  Broadcast a ${gameId}: ${sentCount} clientes`);
-
-  if (connections.length === 2) {
-        console.log(`[WebSocket] 🎮 ¡Juego ${gameId} iniciado con 2 jugadores!`);
-        setTimeout(() => {
-            broadcastToGame(gameId, {
-                type: 'game-started',
-                gameId: gameId,
-                totalPlayers: 2
-            });
-        }, 500);
-    }
+    console.log(`[WebSocket]  Broadcast a ${gameId}: ${sentCount} clientes`);
 }
 
 function handleGameMessage(gameId, playerId, data) {
@@ -138,7 +139,7 @@ function handleGameMessage(gameId, playerId, data) {
                 totalPlayers: gameConnections.get(gameId).length
             });
             break;
-            
+
         case 'player-move':
             broadcastToGame(gameId, {
                 type: 'player-moved',
@@ -147,7 +148,7 @@ function handleGameMessage(gameId, playerId, data) {
                 y: data.y
             });
             break;
-            
+
         case 'place-bomb':
             broadcastToGame(gameId, {
                 type: 'bomb-placed',
@@ -156,7 +157,7 @@ function handleGameMessage(gameId, playerId, data) {
                 y: data.y
             });
             break;
-            
+
         default:
             console.log(`[WebSocket] ⚠️ Tipo desconocido: ${data.type}`);
     }
