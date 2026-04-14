@@ -38,27 +38,31 @@ public class BombController : MonoBehaviour
          position.x = Mathf.Round(position.x);
          position.y = Mathf.Round(position.y);
 
-         GameObject bomb = Instantiate(bombPrefab, position, Quaternion.identity);
+         // Instanciar localmente
+         GameObject bombObj = Instantiate(bombPrefab, position, Quaternion.identity);
+         
+         // Configurar script Bomb dinámicamente si no está en el prefab
+         Bomb bombScript = bombObj.GetComponent<Bomb>();
+         if (bombScript == null) bombScript = bombObj.AddComponent<Bomb>();
+         
+         bombScript.fuseTime = bombFuseTime;
+         bombScript.explosionPrefab = explosionPrefab;
+         bombScript.explosionLayerMask = explosionLayerMask;
+         bombScript.explosionDuration = explosionDuration;
+         bombScript.explosionRadius = explosionRadius;
+         bombScript.destructibleTiles = destructibleTiles;
+         bombScript.destructiblePrefab = destructiblePrefab;
+
          bombsRemaining--;
 
+         // Notificar al servidor
+         if (WebSocketManager.Instance != null) {
+             PositionalMessage msg = new PositionalMessage { x = position.x, y = position.y };
+             WebSocketManager.Instance.SendMessage("place-bomb", JsonUtility.ToJson(msg));
+         }
+
+         // Recuperar la bomba después del tiempo de espera
          yield return new WaitForSeconds(bombFuseTime);
-
-         position = bomb.transform.position;
-         position.x =Mathf.Round(position.x);
-         position.y =Mathf.Round(position.y);
-
-         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity );
-         explosion.SetActiveRenderer(explosion.start);
-         explosion.DestroyAfter(explosionDuration);
-         Destroy(explosion.gameObject, explosionDuration);
-
-         Explode(position,Vector2.up, explosionRadius);
-         Explode(position,Vector2.down, explosionRadius);
-         Explode(position,Vector2.left, explosionRadius);
-         Explode(position,Vector2.right, explosionRadius);
-
-
-         Destroy(bomb);
          bombsRemaining++;
     }
 

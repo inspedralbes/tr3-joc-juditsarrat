@@ -108,22 +108,33 @@ private void RegisterWebSocketListener()
         }
     }
 
-private void CreateRemoteBomb(float x, float y)
-{
-    try
+    private void CreateRemoteBomb(float x, float y)
     {
-        Debug.Log("[GameManager] Bomba remota en: (" + x + ", " + y + ")");
-        
-        // Crear el mismo prefab de bomba que usa el local
-        if (bombPrefab != null) {
-            Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
+        try {
+            Debug.Log($"[GameManager] Bomba enemiga en: ({x}, {y})");
+            if (bombPrefab != null) {
+                GameObject bombObj = Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
+                
+                // Configurar con los valores del BombController local para que sea idéntico
+                BombController localBC = localPlayer?.GetComponent<BombController>();
+                if (localBC != null) {
+                    Bomb b = bombObj.GetComponent<Bomb>();
+                    if (b == null) b = bombObj.AddComponent<Bomb>();
+                    
+                    b.fuseTime = localBC.bombFuseTime;
+                    b.explosionPrefab = localBC.explosionPrefab;
+                    b.explosionLayerMask = localBC.explosionLayerMask;
+                    b.explosionDuration = localBC.explosionDuration;
+                    b.explosionRadius = localBC.explosionRadius;
+                    b.destructibleTiles = localBC.destructibleTiles;
+                    b.destructiblePrefab = localBC.destructiblePrefab;
+                }
+            }
+        }
+        catch (System.Exception e) {
+            Debug.LogError("[GameManager] Error: " + e.Message);
         }
     }
-    catch (System.Exception e)
-    {
-        Debug.LogError("[GameManager] Error creando bomba remota: " + e.Message);
-    }
-}
     public GameObject GetBombPrefab()
 {
     return bombPrefab;

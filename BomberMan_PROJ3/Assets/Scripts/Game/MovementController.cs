@@ -48,14 +48,12 @@ public class MovementController : MonoBehaviour
         } else if (Input.GetKey(inputRight))
         {
             SetDirection(Vector2.right , spriteRendererRight);
-        } else if (Input.GetKeyDown(KeyCode.Space)) 
-        { 
-          PlaceBomb();}
+        }
         else
         {
           SetDirection(Vector2.zero, activeSpriteRenderer);   
         }
-}
+    }
 
 
 private void FixedUpdate()
@@ -120,30 +118,7 @@ private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRen
 
     }
 
-  [SerializeField] private GameObject bombPrefab;
-
-private void PlaceBomb()
-{
-    if (bombPrefab == null)
-    {
-        Debug.LogError("[Movement] bombPrefab no asignado en Inspector");
-        return;
-    }
-    
-    Vector3 bombPos = transform.position;
-    
-    // Crear bomba localmente
-    Instantiate(bombPrefab, bombPos, Quaternion.identity);
-    Debug.Log("[Movement] Bomba creada en: " + bombPos);
-    
-    // Enviar al servidor
-    if (WebSocketManager.Instance != null)
-    {
-        PositionalMessage msg = new PositionalMessage { x = bombPos.x, y = bombPos.y };
-        string json = JsonUtility.ToJson(msg);
-        WebSocketManager.Instance.SendMessage("place-bomb", json);
-    }
-}    private void OnDeathSequenceEnded()
+    private void OnDeathSequenceEnded()
     {
       gameObject.SetActive(false);
       FindObjectOfType<GameManager>().CheckWinState();
