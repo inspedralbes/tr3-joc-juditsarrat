@@ -42,13 +42,14 @@ public class RegisterRequest
 
 public class AuthManager : MonoBehaviour
 {
-    private const string URL_BASE = "http://localhost:8080/auth";
+    private const string URL_BASE = "http://127.0.0.1:8080/auth";
 
     // ─── SINGLETON ────────────────────────────────────────────────
     public static AuthManager Instance { get; private set; }
 
     public string TokenJWT { get; private set; }
     public UserData JugadorActual { get; private set; }
+    public int PlayerIndex { get; set; } // 0 = Player 1 (Host), 1 = Player 2
     public bool EstaAutenticat => !string.IsNullOrEmpty(TokenJWT);
 
     private void Awake()
@@ -81,45 +82,52 @@ public class AuthManager : MonoBehaviour
 
     yield return www.SendWebRequest();
 
-   if (www.result == UnityWebRequest.Result.Success)
-{
-    string respuestaCompleta = www.downloadHandler.text;
-    Debug.Log("[AuthManager] ✅ Respuesta completa del servidor:");
-    Debug.Log(respuestaCompleta);
-    
-    var resposta = JsonUtility.FromJson<LoginResponse>(respuestaCompleta);
-    Debug.Log("[AuthManager] Token: " + resposta.token);
-    Debug.Log("[AuthManager] User object: " + (resposta.user != null ? "EXISTS" : "NULL"));
-    
-    if (resposta.user != null) {
-        Debug.Log("[AuthManager] User.id: " + resposta.user.id);
-        Debug.Log("[AuthManager] User.username: " + resposta.user.username);
-        Debug.Log("[AuthManager] User.email: " + resposta.user.email);
-    }
-    
-    TokenJWT = resposta.token;
-    JugadorActual = resposta.user;
-    // ✅ MILLOR VALIDACIÓ
-    Debug.Log("[AuthManager] Buscant GameService...");
-    GameService gameService = FindObjectOfType<GameService>();
-    
-    if (gameService != null)
-    {
-        gameService.SetToken(TokenJWT);
-        Debug.Log("[AuthManager] Token passat a GameService ✅");
-    }
-    else
-    {
-        Debug.LogWarning("[AuthManager] GameService no trobat a la scena. Creant-lo...");
-        // Crea GameService si no existeix
-        GameObject gsObj = new GameObject("GameService");
-        gameService = gsObj.AddComponent<GameService>();
-        gameService.SetToken(TokenJWT);
-        Debug.Log("[AuthManager] GameService creat i token assignat ✅");
-    }
-    
-    callback(true, "Login correcte");
-}
+        if (www.result == UnityWebRequest.Result.Success)
+        {
+            string respuestaCompleta = www.downloadHandler.text;
+            Debug.Log("[AuthManager] ✅ Respuesta completa del servidor:");
+            Debug.Log(respuestaCompleta);
+            
+            var resposta = JsonUtility.FromJson<LoginResponse>(respuestaCompleta);
+            Debug.Log("[AuthManager] Token: " + resposta.token);
+            Debug.Log("[AuthManager] User object: " + (resposta.user != null ? "EXISTS" : "NULL"));
+            
+            if (resposta.user != null) {
+                Debug.Log("[AuthManager] User.id: " + resposta.user.id);
+                Debug.Log("[AuthManager] User.username: " + resposta.user.username);
+                Debug.Log("[AuthManager] User.email: " + resposta.user.email);
+            }
+            
+            TokenJWT = resposta.token;
+            JugadorActual = resposta.user;
+            // ✅ MILLOR VALIDACIÓ
+            Debug.Log("[AuthManager] Buscant GameService...");
+            GameService gameService = FindObjectOfType<GameService>();
+            
+            if (gameService != null)
+            {
+                gameService.SetToken(TokenJWT);
+                Debug.Log("[AuthManager] Token passat a GameService ✅");
+            }
+            else
+            {
+                Debug.LogWarning("[AuthManager] GameService no trobat a la scena. Creant-lo...");
+                // Crea GameService si no existeix
+                GameObject gsObj = new GameObject("GameService");
+                gameService = gsObj.AddComponent<GameService>();
+                gameService.SetToken(TokenJWT);
+                Debug.Log("[AuthManager] GameService creat i token assignat ✅");
+            }
+            
+            callback(true, "Login correcte");
+        }
+        else
+        {
+            // ❌ GESTIÓ D'ERROR AFEGIDA PER EVITAR QUE EL BUILD ES QUEDI PITJAT
+            string error = ExtreureErrorServidor(www.downloadHandler.text);
+            Debug.LogError("[AuthManager] ❌ Error en el login: " + error);
+            callback(false, error);
+        }
     }
 
     // ─── REGISTRE ─────────────────────────────────────────────────
@@ -164,11 +172,15 @@ public class AuthManager : MonoBehaviour
     {
         try
         {
+            if (string.IsNullOrEmpty(jsonResposta)) 
+                return "No s'ha rebut resposta del servidor";
+
             var err = JsonUtility.FromJson<ErrorResponse>(jsonResposta);
             return string.IsNullOrEmpty(err?.error) ? "Error desconegut del servidor" : err.error;
         }
         catch
         {
+            // Pot ser que la resposta no sigui JSON (ex: un error 504 de Nginx)
             return "Error de connexió amb el servidor";
         }
     }

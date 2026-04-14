@@ -8,6 +8,14 @@ class GameRepository extends IGameRepository {
         return await Game.findById(id);
     }
 
+    async findByCode(code) {
+        // Si el codi proporcionat és un ID complet (24 caràcters), busquem per ID
+        if (code && code.length === 24) {
+            return await this.findById(code);
+        }
+        // Altrament, busquem per gameCode
+        return await Game.findOne({ gameCode: code });
+    }
     async findAll() {
         return await Game.find();
     }
@@ -17,6 +25,10 @@ class GameRepository extends IGameRepository {
     }
 
     async create(gameData) {
+        // Si ja és una instància de Mongoose, la guardem directament
+        if (gameData.save) {
+            return await gameData.save();
+        }
         const newGame = new Game(gameData);
         return await newGame.save();
     }

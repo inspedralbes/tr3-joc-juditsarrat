@@ -63,10 +63,14 @@ wss.on('connection', (ws, req) => {
     // Si hay 2 jugadores, iniciar el juego (una sola vez)
     if (playerCount === 2) {
         console.log(`[WebSocket] 🎮 ¡Juego ${gameId} listo para empezar!`);
+
+        const players = gameConnections.get(gameId).map(c => c.playerId);
+
         setTimeout(() => {
             broadcastToGame(gameId, {
                 type: 'game-started',
                 gameId: gameId,
+                players: players,
                 totalPlayers: 2
             });
         }, 500);

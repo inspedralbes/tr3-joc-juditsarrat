@@ -11,16 +11,32 @@ class JocService {
             status: 'waiting',
             config: config || { maxPlayers: 2 }
         };
-        return await this.gameRepository.create(gameData);
+
+        // Crear instancia del modelo
+        const Game = require('../models/Game');
+        const game = new Game(gameData);
+
+        // Generar gameCode con los últimos 6 caracteres de su propio _id
+        game.gameCode = game._id.toString().slice(-6).toUpperCase();
+
+        return await this.gameRepository.create(game);
     }
 
     async llistarPartidesDisponibles() {
         return await this.gameRepository.findByStatus('waiting');
     }
 
+    async obtenirPerCodi(code) {
+        const game = await this.gameRepository.findByCode(code);
+        if (!game) {
+            throw new Error("No s'ha trobat cap partida amb aquest codi.");
+        }
+        return game;
+    }
+
     async unirsePartida(gameId, playerId) {
         const game = await this.gameRepository.findById(gameId);
-        
+
         if (game === null) {
             throw new Error("La partida no existeix.");
         }
@@ -32,7 +48,7 @@ class JocService {
         for (let i = 0; i < game.players.length; i++) {
             if (game.players[i] === playerId) jaHiEs = true;
         }
-        
+
         if (jaHiEs) {
             return game;
         }
@@ -43,7 +59,7 @@ class JocService {
         }
 
         const updatedGame = await this.gameRepository.addPlayer(gameId, playerId);
-        
+
         // ✅ NOTIFICAR POR WEBSOCKET
         if (this.webSocketService) {
             this.webSocketService.broadcast(gameId, {
@@ -55,7 +71,7 @@ class JocService {
             });
             console.log("✅ Notificación WebSocket enviada");
         }
-        
+
         return updatedGame;
     }
 
@@ -72,7 +88,7 @@ class JocService {
         }
 
         const updatedGame = await this.gameRepository.updateStatus(gameId, 'playing');
-        
+
         // ✅ NOTIFICAR QUE LA PARTIDA HA COMENZADO
         if (this.webSocketService) {
             this.webSocketService.broadcast(gameId, {
@@ -80,7 +96,7 @@ class JocService {
                 payload: { gameId: gameId }
             });
         }
-        
+
         return updatedGame;
     }
 

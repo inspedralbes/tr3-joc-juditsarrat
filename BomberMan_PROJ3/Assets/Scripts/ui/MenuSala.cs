@@ -50,9 +50,9 @@ public class MenuSala : MonoBehaviour
                     }
 
                     _currentGameId = _id;
-                    _currentGameCode = GameCodeGenerator.GenerateCode(_id);
+                    _currentGameCode = game.gameCode; // Usa el código del servidor
 
-                    MostrarLobby();
+                    MostrarLobby(game.players != null ? game.players.Length : 1);
                 }
                 catch (System.Exception e)
                 {
@@ -66,7 +66,7 @@ public class MenuSala : MonoBehaviour
         ));
     }
 
-    private void MostrarLobby()
+    private void MostrarLobby(int initialPlayerCount = 1)
     {
         _seccionMenu.style.display = DisplayStyle.None;
         _seccionLobby.style.display = DisplayStyle.Flex;
@@ -74,10 +74,28 @@ public class MenuSala : MonoBehaviour
 
         if (_lobbyUI != null)
         {
-            _lobbyUI.SetGameInfo(_currentGameId);
+            _lobbyUI.SetGameInfo(_currentGameId, initialPlayerCount);
         }
 
         Debug.Log("✅ Lobby mostrat!");
+    }
+
+    public void JoinExistingGame(string gameId, string gameCode)
+    {
+        _currentGameId = gameId;
+        _currentGameCode = gameCode;
+        
+        // Obtenemos el estado actual para saber cuántos jugadores hay
+        StartCoroutine(GameService.Instance.GetGameStatus(gameId, (responseJson) => {
+            GameResponse game = JsonUtility.FromJson<GameResponse>(responseJson);
+            _labelCodiSala.text = _currentGameCode;
+            _seccionMenu.style.display = DisplayStyle.None;
+            _seccionLobby.style.display = DisplayStyle.Flex;
+            
+            if (_lobbyUI != null) {
+                _lobbyUI.SetGameInfo(_currentGameId, game.players.Length);
+            }
+        }));
     }
 
     private void OnDisable()

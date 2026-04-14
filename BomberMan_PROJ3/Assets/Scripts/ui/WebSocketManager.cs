@@ -53,7 +53,7 @@ public class WebSocketManager : MonoBehaviour
         _gameId = gameId;
         _playerId = AuthManager.Instance.JugadorActual.id;
         
-        string wsUrl = "ws://localhost:8080/joc/?gameId=" + _gameId + "&playerId=" + _playerId;
+        string wsUrl = "ws://127.0.0.1:8080/joc/?gameId=" + _gameId + "&playerId=" + _playerId;
         Debug.Log("[WebSocket] Conectando a (Gateway): " + wsUrl);
         
         StartCoroutine(Connect(wsUrl));

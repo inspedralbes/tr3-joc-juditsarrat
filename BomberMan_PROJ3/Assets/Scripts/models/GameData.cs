@@ -1,14 +1,21 @@
 using System;
 
 [System.Serializable]
-public class GameResponse {
+public class GameResponse
+{
     public string _id;
+    public string gameCode;
     public string hostId;
     public string status;
     public string[] players;
-    public ConfigData config;
-    public string createdAt;
-    public string updatedAt;
+    public GameConfig config;
+}
+
+[System.Serializable]
+public class GameConfig
+{
+    public int maxPlayers;
+    public string mapType;
 }
 
 [System.Serializable]

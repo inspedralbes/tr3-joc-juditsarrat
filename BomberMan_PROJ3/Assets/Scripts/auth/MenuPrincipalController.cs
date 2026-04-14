@@ -29,38 +29,63 @@ public class MenuPrincipalController : MonoBehaviour
         _btnUnirse.clicked -= OnClickUnirse;
     }
 
-  private void OnClickCrear()
+    private void OnClickCrear()
 {
-    Debug.Log("Iniciant petició de creació...");
-    
-    // CAMBIO AQUÍ: De GameClient a GameService
+    Debug.Log("Creando sala...");
     if (GameService.Instance != null) 
     {
-        StartCoroutine(GameService.Instance.CreateGameRoom((gameId) => {
-            Debug.Log("Sala creada amb èxit! ID: " + gameId);
+        StartCoroutine(GameService.Instance.CreateGameRoom((responseJson) => {
+            GameResponse game = JsonUtility.FromJson<GameResponse>(responseJson);
+            string gameId = game._id;
+            
+            Debug.Log("✅ SALA CREADA - COPIA ESTE ID: " + gameId);
+            AuthManager.Instance.PlayerIndex = 0; // Host es siempre Player 0
+            PlayerPrefs.SetString("current_game_id", gameId);
         }));
     }
-    else 
-    {
-        Debug.LogError("Error: No s'ha trobat la instancia de GameService en l'escena.");
-    }
-}    private void OnClickLLM()
+}
+
+    private void OnClickLLM()
     {
         Debug.Log("Jugant contra LLM...");
-        // Aquí navegarem a l'escena del joc contra IA
     }
 
-    private void OnClickUnirse()
+   private void OnClickUnirse()
+{
+    string code = _inputCodigo.value.Trim();
+    if (string.IsNullOrEmpty(code))
     {
-        string codigo = _inputCodigo.value.Trim();
-
-        if (string.IsNullOrEmpty(codigo))
-        {
-            Debug.LogWarning("Cal introduir un codi de sala.");
-            return;
-        }
-
-        Debug.Log("Unint-se a la sala: " + codigo);
-        // Aquí cridarem el WebSocket per unir-se a la sala
+        Debug.LogWarning("Introduce el código de 6 dígitos");
+        return;
     }
+    
+    Debug.Log("Buscando sala con código: " + code);
+    _btnUnirse.SetEnabled(false);
+    
+    StartCoroutine(GameService.Instance.GetGameByCode(code, 
+        onSuccess: (gameJson) => {
+            GameResponse game = JsonUtility.FromJson<GameResponse>(gameJson);
+            string gameId = game._id;
+            
+            StartCoroutine(GameService.Instance.JoinGameRoom(gameId, 
+                onSuccess: (joinJson) => {
+                    Debug.Log("✅ Unido a la sala");
+                    AuthManager.Instance.PlayerIndex = 1; // Joiner es Player 1 (índice real)
+                    MenuSala menuSala = FindObjectOfType<MenuSala>();
+                    if (menuSala != null) {
+                        menuSala.JoinExistingGame(gameId, code);
+                    }
+                },
+                onError: (err) => {
+                    Debug.LogError("❌ Error: " + err);
+                    _btnUnirse.SetEnabled(true);
+                }
+            ));
+        },
+        onError: (err) => {
+            Debug.LogError("❌ Código no encontrado: " + err);
+            _btnUnirse.SetEnabled(true);
+        }
+    ));
+}
 }

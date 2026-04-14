@@ -23,18 +23,19 @@ public class GameLobbyUI : MonoBehaviour
         }
     }
 
-    public void SetGameInfo(string gameId)
-    {
-        _currentGameId = gameId;
-        _playerCount = 1;
-        ActualizarJugadores();
-        
-        // ✅ Conectar WebSocket
-        var wsManager = WebSocketManager.GetOrCreate();
-        wsManager.OnPlayerCountChanged += OnPlayerCountChanged;
-        wsManager.ConnectToGame(gameId);
-    }
+   public void SetGameInfo(string gameId, int initialPlayerCount = 1)
+{
+    _currentGameId = gameId;
+    _playerCount = initialPlayerCount;
+    ActualizarJugadores();
+    
+    Debug.Log($"[Lobby] Conectando a sala {gameId} con {initialPlayerCount} jugadores");
 
+    // ✅ Conectar WebSocket
+    var wsManager = WebSocketManager.GetOrCreate();
+    wsManager.OnPlayerCountChanged += OnPlayerCountChanged;
+    wsManager.ConnectToGame(gameId);
+}
     private void OnPlayerCountChanged(int count)
     {
         _playerCount = count;
@@ -77,6 +78,7 @@ public class GameLobbyUI : MonoBehaviour
 
     private IEnumerator CargarGameScene()
     {
+        Debug.Log("[Lobby] Cargando escena de juego...");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("GameScene");
     }
@@ -88,4 +90,4 @@ public class GameLobbyUI : MonoBehaviour
             _botoIniciar.clicked -= OnClickIniciar;
         }
     }
-}
+}   

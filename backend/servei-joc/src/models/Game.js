@@ -5,6 +5,10 @@ const gameSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    gameCode: {
+        type: String,
+        unique: true
+    },
     status: {
         type: String,
         enum: ['waiting', 'playing', 'finished'],

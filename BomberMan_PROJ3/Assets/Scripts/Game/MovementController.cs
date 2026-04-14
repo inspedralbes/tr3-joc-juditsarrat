@@ -70,8 +70,9 @@ private void SendMovementToServer(Vector2 newPosition)
     // Enviar cada 0.1 segons per no saturar
     if (Time.time - lastSentTime > 0.1f)
     {
-        string data = JsonUtility.ToJson(new { x = newPosition.x, y = newPosition.y });
-        WebSocketManager.Instance.SendMessage("player-move", data);
+        PositionalMessage msg = new PositionalMessage { x = newPosition.x, y = newPosition.y };
+        string json = JsonUtility.ToJson(msg);
+        WebSocketManager.Instance.SendMessage("player-move", json);
         lastSentTime = Time.time;
     }
 }
