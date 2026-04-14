@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public new Rigidbody2D rigidbody { get; private set; }
-    private Vector2 direction = Vector2.down;
+    private Vector2 direction = Vector2.zero;
     public float speed = 5f;
 
     public KeyCode inputUp = KeyCode.W;
@@ -24,6 +24,12 @@ public class MovementController : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        if (rigidbody != null) {
+            rigidbody.interpolation = RigidbodyInterpolation2D.None;
+            rigidbody.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+            rigidbody.gravityScale = 0;
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
         activeSpriteRenderer = spriteRendererDown;
     }
     
@@ -54,24 +60,24 @@ public class MovementController : MonoBehaviour
 
 private void FixedUpdate()
 {
-    Vector2 position = rigidbody.position;
     Vector2 translation = direction * speed * Time.fixedDeltaTime;
-    rigidbody.MovePosition(position + translation);
+    rigidbody.MovePosition(rigidbody.position + translation);
     
     // Si es va a moure i te WebSocket, enviar al servidor
     if (direction != Vector2.zero && WebSocketManager.Instance != null)
     {
-        SendMovementToServer(position + translation);
+        SendMovementToServer(transform.position);
     }
 }
 
 private void SendMovementToServer(Vector2 newPosition)
 {
-    // Enviar cada 0.1 segons per no saturar
-    if (Time.time - lastSentTime > 0.1f)
+    // Limitar frecuencia de envío
+    if (Time.time - lastSentTime > 0.05f)
     {
         PositionalMessage msg = new PositionalMessage { x = newPosition.x, y = newPosition.y };
         string json = JsonUtility.ToJson(msg);
+        Debug.Log($"[WS-Out] {json}");
         WebSocketManager.Instance.SendMessage("player-move", json);
         lastSentTime = Time.time;
     }
@@ -131,10 +137,11 @@ private void PlaceBomb()
     Debug.Log("[Movement] Bomba creada en: " + bombPos);
     
     // Enviar al servidor
-    string data = JsonUtility.ToJson(new { x = bombPos.x, y = bombPos.y });
     if (WebSocketManager.Instance != null)
     {
-        WebSocketManager.Instance.SendMessage("place-bomb", data);
+        PositionalMessage msg = new PositionalMessage { x = bombPos.x, y = bombPos.y };
+        string json = JsonUtility.ToJson(msg);
+        WebSocketManager.Instance.SendMessage("place-bomb", json);
     }
 }    private void OnDeathSequenceEnded()
     {

@@ -121,16 +121,13 @@ function broadcastToGame(gameId, message) {
     if (!connections) return;
 
     const json = JSON.stringify(message);
-    let sentCount = 0;
+    console.log(`[WS-Broadcast] ${json}`);
 
     connections.forEach(client => {
         if (client.ws.readyState === WebSocket.OPEN) {
             client.ws.send(json);
-            sentCount++;
         }
     });
-
-    console.log(`[WebSocket]  Broadcast a ${gameId}: ${sentCount} clientes`);
 }
 
 function handleGameMessage(gameId, playerId, data) {
@@ -145,11 +142,14 @@ function handleGameMessage(gameId, playerId, data) {
             break;
 
         case 'player-move':
+            const moveX = data.data ? data.data.x : data.x;
+            const moveY = data.data ? data.data.y : data.y;
+            console.log(`[GameData] Move: ${playerId} -> (${moveX}, ${moveY})`);
             broadcastToGame(gameId, {
                 type: 'player-moved',
                 playerId: playerId,
-                x: data.x,
-                y: data.y
+                x: moveX,
+                y: moveY
             });
             break;
 
@@ -157,8 +157,8 @@ function handleGameMessage(gameId, playerId, data) {
             broadcastToGame(gameId, {
                 type: 'bomb-placed',
                 playerId: playerId,
-                x: data.x,
-                y: data.y
+                x: data.data ? data.data.x : data.x,
+                y: data.data ? data.data.y : data.y
             });
             break;
 

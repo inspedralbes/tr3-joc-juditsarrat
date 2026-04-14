@@ -30,69 +30,48 @@ public class GameManager : MonoBehaviour
         public string playerId;
         public float x;
         public float y;
+        public float dataX; // Fallback
+        public float dataY; // Fallback
     }
     
 private void Start()
 {
-    Debug.Log("[GameManager] Iniciando asignacción de roles...");
-    
     localPlayerId = AuthManager.Instance?.JugadorActual?.id;
     int index = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
-    
-    // 1. Encontrar todos los jugadores pre-colocados en la escena que tengan MovementController
+    Debug.Log($"[GameManager] Role: {(index == 0 ? "HOST" : "JOINER")} | Index: {index}");
+
+    // 1. Encontrar todos los jugadores
     MovementController[] allPlayers = FindObjectsByType<MovementController>(FindObjectsSortMode.None);
-    
-    // Ordenar por nombre para consistencia (Player 1, Player 2) si están nombrados así
     System.Array.Sort(allPlayers, (a, b) => string.Compare(a.name, b.name));
 
-    if (allPlayers.Length < 2) {
-        Debug.LogWarning($"[GameManager] Se han encontrado {allPlayers.Length} jugadores en la escena. Se esperaban 2.");
-    }
-
-    // 2. Asignar roles local/remoto basándose en el PlayerIndex (0 o 1)
+    // 2. Asignar roles
     for (int i = 0; i < allPlayers.Length; i++) {
         if (i == index) {
-            // Este es nuestro jugador local (el que controlamos con el teclado)
             localPlayer = allPlayers[i].gameObject;
             allPlayers[i].enabled = true;
-            
-            // Aseguramos que el BombController local responda
-            var bc = localPlayer.GetComponent<BombController>();
-            if (bc != null) bc.enabled = true;
-
-            // Deshabilitar control remoto en nuestro propio muñeco
-            var rpc = localPlayer.GetComponent<RemotePlayerController>();
-            if (rpc != null) rpc.enabled = false;
-
-            Debug.Log($"[GameManager] ✅ Eres el Jugador {i + 1} ({localPlayer.name})");
+            Debug.Log($"[GameManager] ✅ ERES LOCAL: {localPlayer.name} (Index={i})");
         } else {
-            // Este es el otro jugador (que se moverá por red)
-            GameObject targetRemote = allPlayers[i].gameObject;
-            
-            // Deshabilitar el control por teclado local para este muñeco
+            remotePlayer = allPlayers[i].gameObject;
             allPlayers[i].enabled = false;
-            var bc = targetRemote.GetComponent<BombController>();
-            if (bc != null) bc.enabled = false;
-
-            // Habilitar o añadir el controlador remoto para que reciba los mensajes WS
-            remotePlayer = targetRemote;
+            
             RemotePlayerController rpc = remotePlayer.GetComponent<RemotePlayerController>();
             if (rpc == null) rpc = remotePlayer.AddComponent<RemotePlayerController>();
             
-            rpc.enabled = true;
-            rpc.Initialize(""); 
-            
-            Debug.Log($"[GameManager] 👤 El otro es el Jugador {i + 1} ({remotePlayer.name})");
+            // Vincular sprites para que el remoto también se anime
+            MovementController mc = allPlayers[i];
+            rpc.spriteRendererUp = mc.spriteRendererUp;
+            rpc.spriteRendererDown = mc.spriteRendererDown;
+            rpc.spriteRendererLeft = mc.spriteRendererLeft;
+            rpc.spriteRendererRight = mc.spriteRendererRight;
+
+            rpc.Initialize("");
+            Debug.Log($"[GameManager] 👤 EL OTRO ES REMOTE: {remotePlayer.name} (Index={i})");
         }
     }
 
-    // 3. Registrar el listener de WebSocket para recibir los movimientos del rival
+    // 3. Registrar WebSocket
     var wsManager = WebSocketManager.GetOrCreate();
-    if (wsManager != null)
-    {
-        wsManager.OnMessageReceived += HandleWebSocketMessage;
-        Debug.Log("[GameManager] ✅ WebSocket listener registrado");
-    }
+    if (wsManager != null) wsManager.OnMessageReceived += HandleWebSocketMessage;
 }
 
 private void RegisterWebSocketListener()
@@ -109,13 +88,14 @@ private void RegisterWebSocketListener()
 }
     private void HandleWebSocketMessage(string json)
     {
-        Debug.Log("[GameManager] Mensaje: " + json);
+        // Log crudo para inspección manual
+        Debug.Log("[WS-Raw] " + json);
+        
         WsMessage msg = JsonUtility.FromJson<WsMessage>(json);
+        if (msg == null || string.IsNullOrEmpty(msg.type)) return;
 
-        if (msg == null) return;
-
-        // Si el mensaje es nuestro, lo ignoramos para no duplicar acciones
-        if (msg.playerId == localPlayerId) return;
+        // Si el mensaje es nuestro, lo ignoramos 
+        if (!string.IsNullOrEmpty(localPlayerId) && msg.playerId == localPlayerId) return;
         
         if (msg.type == "player-moved")
         {
