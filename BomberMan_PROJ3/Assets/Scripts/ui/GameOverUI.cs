@@ -40,9 +40,20 @@ public class GameOverUI : MonoBehaviour
         if (_winnerLabel != null)
         {
             string winner = GameOverData.WinnerName;
-            if (string.IsNullOrEmpty(winner)) winner = "Ningú";
-            _winnerLabel.text = winner + " ha guanyat la partida!";
-            Debug.Log($"[GameOverUI] ✅ Text del guanyador establert: {winner}");
+            if (string.IsNullOrEmpty(winner)) winner = "Algú";
+
+            if (GameOverData.IsLocalWinner)
+            {
+                _winnerLabel.text = "HAS GUANYAT!";
+                _winnerLabel.style.color = new StyleColor(new Color(0.2f, 1f, 0.2f)); // Verd
+            }
+            else
+            {
+                _winnerLabel.text = "GAME OVER: " + winner + " ha guanyat, torna-ho a intentar";
+                _winnerLabel.style.color = new StyleColor(new Color(1f, 0.2f, 0.2f)); // Vermell
+            }
+
+            Debug.Log($"[GameOverUI] ✅ Text personalitzat establert. Guanyador local: {GameOverData.IsLocalWinner}");
         }
         else {
             Debug.LogWarning("[GameOverUI] ⚠️ No s'ha trobat el Label 'WinnerMessage' al UXML. Revisa el nom!");

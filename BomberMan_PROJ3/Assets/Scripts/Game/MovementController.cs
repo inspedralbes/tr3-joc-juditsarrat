@@ -20,6 +20,8 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
+    public string playerId; // ← AFEGIR AIXÒ
+
 
     private void Awake()
     {
@@ -123,8 +125,7 @@ private void OnDeathSequenceEnded()
     GameManager gm = GameManager.Instance;
     if (gm != null)
     {
-        // Verificamos que AuthManager no sea null para no romper el código
-        string playerId = AuthManager.Instance?.JugadorActual?.id ?? "unknown";
+        // Utilitzem el playerId d'aquesta instància
         gm.OnPlayerDeath(playerId); 
     }
 }

@@ -57,10 +57,18 @@ private void Start()
         if (i == index) {
             localPlayer = allPlayers[i].gameObject;
             allPlayers[i].enabled = true;
-            Debug.Log($"[GameManager] ✅ ERES LOCAL: {localPlayer.name} (Index={i})");
+            
+            // Assignar ID local
+            allPlayers[i].playerId = localPlayerId;
+            
+            Debug.Log($"[GameManager] ✅ ERES LOCAL: {localPlayer.name} (ID={localPlayerId})");
         } else {
             remotePlayer = allPlayers[i].gameObject;
             allPlayers[i].enabled = false;
+            
+            // Assignar ID remot (el que sigui que no sigui el local)
+            // En un futur això podria venir d'una llista de jugadors
+            allPlayers[i].playerId = "rival_id"; 
             
             RemotePlayerController rpc = remotePlayer.GetComponent<RemotePlayerController>();
             if (rpc == null) rpc = remotePlayer.AddComponent<RemotePlayerController>();
@@ -73,7 +81,7 @@ private void Start()
             rpc.spriteRendererRight = mc.spriteRendererRight;
 
             rpc.Initialize("");
-            Debug.Log($"[GameManager] 👤 EL OTRO ES REMOTE: {remotePlayer.name} (Index={i})");
+            Debug.Log($"[GameManager] 👤 EL OTRO ES REMOTE: {remotePlayer.name} (ID=rival_id)");
         }
     }
 
@@ -204,13 +212,16 @@ public void OnPlayerDeath(string playerId)
     Debug.Log("[GameManager] El jugador " + playerId + " ha muerto.");
     
     // Determinar quién ganó
-    // Si el que murió es localPlayer, entonces remotePlayer gana
-    string winnerName = (localPlayerId == playerId) ? remotePlayerName : localPlayerName;
+    bool localPlayerDied = (localPlayerId == playerId);
+    bool localWinner = !localPlayerDied;
     
-    Debug.Log($"[GameManager] 🎉 GANADOR: {winnerName}");
+    string winnerName = localWinner ? localPlayerName : remotePlayerName;
     
-    // Guardar el nombre en GameOverData
+    Debug.Log($"[GameManager] 🎉 GANADOR: {winnerName} (Local Winner: {localWinner})");
+    
+    // Guardar los datos en GameOverData
     GameOverData.WinnerName = winnerName;
+    GameOverData.IsLocalWinner = localWinner;
     
     // Cargar la escena de Game Over
     SceneManager.LoadScene("GameOverScene");
