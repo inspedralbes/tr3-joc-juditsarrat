@@ -1,13 +1,15 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="RootContainer" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.75);">
-        
-        <ui:Label name="GameOverTitle" text="GAME OVER" style="font-size: 60px; color: rgb(63, 63, 63); -unity-font-style: bold; margin-bottom: 10px;" />
-        
-        <ui:Label name="WinnerNameText" text="Esperant resultat..." style="font-size: 30px; color: rgb(255, 255, 255); margin-bottom: 40px;" />
-        <ui:VisualElement name="ButtonContainer" style="flex-direction: row;">
-            <ui:Button name="NewGameButton" text="Nova Partida" style="width: 200px; height: 50px; font-size: 20px; margin-right: 20px;" />
-            <ui:Button name="LobbyButton" text="Tornar al Lobby" style="width: 200px; height: 50px; font-size: 20px;" />
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="background" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.9);">
+        <ui:VisualElement name="panel" style="width: 400px; padding: 40px; background-color: rgb(45, 45, 45); border-radius: 20px; border-width: 4px; border-color: rgb(76, 175, 80);">
+            
+            <ui:Label name="label-resultado" text="FINAL DE PARTIDA" style="font-size: 32px; color: white; -unity-font-style: bold; -unity-text-align: middle-center; margin-bottom: 20px;" />
+            
+            <ui:Label name="WinnerMessage" text="Calculant guanyador..." style="font-size: 20px; color: rgb(200, 200, 200); -unity-text-align: middle-center; margin-bottom: 40px;" />
+            
+            <ui:Button name="btn-reiniciar" text="Nova Partida" style="height: 50px; font-size: 18px; background-color: rgb(76, 175, 80); color: white; border-radius: 10px; margin-bottom: 10px;" />
+            <ui:Button name="btn-lobby" text="Tornar al Lobby" style="height: 50px; font-size: 18px; background-color: rgb(33, 150, 243); color: white; border-radius: 10px;" />
+            
         </ui:VisualElement>
-
     </ui:VisualElement>
 </ui:UXML>

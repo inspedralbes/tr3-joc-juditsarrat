@@ -42,6 +42,9 @@ public class GameManager : MonoBehaviour
 private void Start()
 {
     localPlayerId = AuthManager.Instance?.JugadorActual?.id;
+    localPlayerName = AuthManager.Instance?.JugadorActual?.username ?? "Jugador Local";
+    remotePlayerName = "Rival"; // En una versió millorada, això vindria del servidor o lobby
+
     int index = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
     Debug.Log($"[GameManager] Local: {localPlayerName} | Remote: {remotePlayerName}");
 

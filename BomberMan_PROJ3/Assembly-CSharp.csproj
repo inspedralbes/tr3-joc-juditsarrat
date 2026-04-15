@@ -49,18 +49,17 @@
     <Analyzer Include="/home/a24judsarand/Unity/Hub/Editor/6000.0.69f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Game/GameOverData.cs" />
-    <Compile Include="Assets/Scripts/auth/GameOverManager.cs" />
     <Compile Include="Assets/Scripts/auth/MenuPrincipalController.cs" />
     <Compile Include="Assets/Scripts/Game/Explosion.cs" />
+    <Compile Include="Assets/Scripts/ui/GameOverUI.cs" />
     <Compile Include="Assets/Scripts/auth/LoginController.cs" />
     <Compile Include="Assets/Scripts/auth/GameManager.cs" />
     <Compile Include="Assets/Scripts/Game/AnimatedSpriteRenderer.cs" />
     <Compile Include="Assets/Scripts/auth/GameService.cs" />
     <Compile Include="Assets/Scripts/auth/GameLobbyManager.cs" />
     <Compile Include="Assets/Scripts/Game/Destructible.cs" />
+    <Compile Include="Assets/Scripts/models/GameOverData.cs" />
     <Compile Include="Assets/Scripts/ui/WebSocketManager.cs" />
-    <Compile Include="Assets/Scripts/Game/GameOverUI.cs" />
     <Compile Include="Assets/Scripts/Game/RemotePlayerController.cs" />
     <Compile Include="Assets/Scripts/Game/BombController.cs" />
     <Compile Include="Assets/Scripts/ui/MenuSala.cs" />
