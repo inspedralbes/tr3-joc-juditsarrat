@@ -103,24 +103,29 @@ private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRen
     }
 
     private void DeathSequence()
+{
+    enabled = false;
+    GetComponent<BombController>().enabled = false;
+    
+    spriteRendererUp.enabled = false;
+    spriteRendererDown.enabled = false;
+    spriteRendererLeft.enabled = false;
+    spriteRendererRight.enabled = false;
+    spriteRendererDeath.enabled = true;
+    
+    Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+}
+
+private void OnDeathSequenceEnded()
+{
+    gameObject.SetActive(false);
+    
+    GameManager gm = GameManager.Instance;
+    if (gm != null)
     {
-        enabled = false;
-        GetComponent<BombController>().enabled = false ;
-
-        spriteRendererUp.enabled = false;
-        spriteRendererDown.enabled = false;
-        spriteRendererLeft.enabled = false;
-        spriteRendererRight.enabled = false;
-        spriteRendererDeath.enabled = true;
-
-        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
-
-
+        // Verificamos que AuthManager no sea null para no romper el código
+        string playerId = AuthManager.Instance?.JugadorActual?.id ?? "unknown";
+        gm.OnPlayerDeath(playerId); 
     }
-
-    private void OnDeathSequenceEnded()
-    {
-      gameObject.SetActive(false);
-      FindObjectOfType<GameManager>().CheckWinState();
-    }
+}
 } 

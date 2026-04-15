@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElementsSchema.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="RootContainer" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.75);">
+        
+        <ui:Label name="GameOverTitle" text="GAME OVER" style="font-size: 60px; color: rgb(63, 63, 63); -unity-font-style: bold; margin-bottom: 10px;" />
+        
+        <ui:Label name="WinnerNameText" text="Esperant resultat..." style="font-size: 30px; color: rgb(255, 255, 255); margin-bottom: 40px;" />
+        <ui:VisualElement name="ButtonContainer" style="flex-direction: row;">
+            <ui:Button name="NewGameButton" text="Nova Partida" style="width: 200px; height: 50px; font-size: 20px; margin-right: 20px;" />
+            <ui:Button name="LobbyButton" text="Tornar al Lobby" style="width: 200px; height: 50px; font-size: 20px;" />
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

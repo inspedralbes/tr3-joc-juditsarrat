@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
     private GameObject localPlayer;
     private GameObject remotePlayer;
     private string localPlayerId;
+
+    private string localPlayerName;      // ← NUEVO
+
+    private string remotePlayerName;     // ← NUEVO
+    private bool gameEnded = false; 
     
     private void Awake()
     {
@@ -38,7 +43,7 @@ private void Start()
 {
     localPlayerId = AuthManager.Instance?.JugadorActual?.id;
     int index = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
-    Debug.Log($"[GameManager] Role: {(index == 0 ? "HOST" : "JOINER")} | Index: {index}");
+    Debug.Log($"[GameManager] Local: {localPlayerName} | Remote: {remotePlayerName}");
 
     // 1. Encontrar todos los jugadores
     MovementController[] allPlayers = FindObjectsByType<MovementController>(FindObjectsSortMode.None);
@@ -186,4 +191,31 @@ private void RegisterWebSocketListener()
             WebSocketManager.Instance.OnMessageReceived -= HandleWebSocketMessage;
         }
     }
+
+   // Busca esto en tu GameManager y déjalo exactamente así:
+public void OnPlayerDeath(string playerId) 
+{
+    if (gameEnded) return; // Evitar llamadas múltiples
+    
+    gameEnded = true;
+    Debug.Log("[GameManager] El jugador " + playerId + " ha muerto.");
+    
+    // Determinar quién ganó
+    // Si el que murió es localPlayer, entonces remotePlayer gana
+    string winnerName = (localPlayerId == playerId) ? remotePlayerName : localPlayerName;
+    
+    Debug.Log($"[GameManager] 🎉 GANADOR: {winnerName}");
+    
+    // Guardar el nombre en GameOverData
+    GameOverData.WinnerName = winnerName;
+    
+    // Cargar la escena de Game Over
+    SceneManager.LoadScene("GameOverScene");
+}
+
+private System.Collections.IEnumerator WaitAndLoad()
+{
+    yield return new WaitForSeconds(2f);
+    UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+}
 }
