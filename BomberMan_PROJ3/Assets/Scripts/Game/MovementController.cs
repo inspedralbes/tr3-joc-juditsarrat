@@ -20,8 +20,7 @@ public class MovementController : MonoBehaviour
     public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
 
-    public string playerId; // ← AFEGIR AIXÒ
-
+    public string playerId; 
 
     private void Awake()
     {
@@ -34,7 +33,6 @@ public class MovementController : MonoBehaviour
         }
         activeSpriteRenderer = spriteRendererDown;
     }
-    
 
     private void Update()
     {
@@ -57,41 +55,41 @@ public class MovementController : MonoBehaviour
         }
     }
 
-
-private void FixedUpdate()
-{
-    Vector2 translation = direction * speed * Time.fixedDeltaTime;
-    rigidbody.MovePosition(rigidbody.position + translation);
-    
-    // Si es va a moure i te WebSocket, enviar al servidor
-    if (direction != Vector2.zero && WebSocketManager.Instance != null)
+    private void FixedUpdate()
     {
-        SendMovementToServer(transform.position);
+        Vector2 translation = direction * speed * Time.fixedDeltaTime;
+        rigidbody.MovePosition(rigidbody.position + translation);
+        
+        if (direction != Vector2.zero && WebSocketManager.Instance != null)
+        {
+            SendMovementToServer(transform.position);
+        }
     }
-}
 
-private void SendMovementToServer(Vector2 newPosition)
-{
-    // Limitar frecuencia de envío
-    if (Time.time - lastSentTime > 0.05f)
+    private void SendMovementToServer(Vector2 newPosition)
     {
-        PositionalMessage msg = new PositionalMessage { x = newPosition.x, y = newPosition.y };
-        string json = JsonUtility.ToJson(msg);
-        Debug.Log($"[WS-Out] {json}");
-        WebSocketManager.Instance.SendMessage("player-move", json);
-        lastSentTime = Time.time;
+        if (Time.time - lastSentTime > 0.05f)
+        {
+            PositionalMessage msg = new PositionalMessage { x = newPosition.x, y = newPosition.y };
+            string json = JsonUtility.ToJson(msg);
+            WebSocketManager.Instance.SendMessage("player-move", json);
+            lastSentTime = Time.time;
+        }
     }
-}
 
+    public void SetMovementDirection(Vector2 newDirection)
+    {
+        SetDirection(newDirection, activeSpriteRenderer);
+    }
 
-private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
+    private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRenderer)
     {
         direction = newDirection;
 
-       spriteRendererUp.enabled = spriteRenderer == spriteRendererUp;
-       spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
-       spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
-       spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
+        spriteRendererUp.enabled = spriteRenderer == spriteRendererUp;
+        spriteRendererDown.enabled = spriteRenderer == spriteRendererDown;
+        spriteRendererLeft.enabled = spriteRenderer == spriteRendererLeft;
+        spriteRendererRight.enabled = spriteRenderer == spriteRendererRight;
 
         activeSpriteRenderer = spriteRenderer;
         activeSpriteRenderer.idle = direction == Vector2.zero;
@@ -105,28 +103,27 @@ private void SetDirection(Vector2 newDirection, AnimatedSpriteRenderer spriteRen
     }
 
     private void DeathSequence()
-{
-    enabled = false;
-    GetComponent<BombController>().enabled = false;
-    
-    spriteRendererUp.enabled = false;
-    spriteRendererDown.enabled = false;
-    spriteRendererLeft.enabled = false;
-    spriteRendererRight.enabled = false;
-    spriteRendererDeath.enabled = true;
-    
-    Invoke(nameof(OnDeathSequenceEnded), 1.25f);
-}
-
-private void OnDeathSequenceEnded()
-{
-    gameObject.SetActive(false);
-    
-    GameManager gm = GameManager.Instance;
-    if (gm != null)
     {
-        // Utilitzem el playerId d'aquesta instància
-        gm.OnPlayerDeath(playerId); 
+        enabled = false;
+        GetComponent<BombController>().enabled = false;
+        
+        spriteRendererUp.enabled = false;
+        spriteRendererDown.enabled = false;
+        spriteRendererLeft.enabled = false;
+        spriteRendererRight.enabled = false;
+        spriteRendererDeath.enabled = true;
+        
+        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+    }
+
+    private void OnDeathSequenceEnded()
+    {
+        gameObject.SetActive(false);
+        
+        GameManager gm = GameManager.Instance;
+        if (gm != null)
+        {
+            gm.OnPlayerDeath(playerId); 
+        }
     }
 }
-} 

@@ -28,13 +28,27 @@ public class BombController : MonoBehaviour
     private void Update()
     {
         if(bombsRemaining > 0 && Input.GetKeyDown(inputKey)){
-           StartCoroutine(PlaceBomb());
+           PlaceBomb();
         }
     }
 
-    private IEnumerator PlaceBomb()
+    public void PlaceBomb()
     {
-         Vector2 position = transform.position;
+        if (bombsRemaining > 0) {
+            StartCoroutine(PlaceBombRoutine());
+        }
+    }
+
+    public void PlaceBomb(Vector2 position)
+    {
+        if (bombsRemaining > 0) {
+            StartCoroutine(PlaceBombRoutine(position));
+        }
+    }
+
+    private IEnumerator PlaceBombRoutine(Vector2? forcedPosition = null)
+    {
+         Vector2 position = forcedPosition ?? (Vector2)transform.position;
          position.x = Mathf.Round(position.x);
          position.y = Mathf.Round(position.y);
 

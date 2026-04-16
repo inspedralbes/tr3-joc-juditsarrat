@@ -18,6 +18,12 @@ node_modules/
 *.log
 **/logs/
 
+# ML-Agents & Python
+results/
+**/results/
+venv/
+**/venv/
+
 # Build
 dist/
 build/

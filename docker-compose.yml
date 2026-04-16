@@ -41,6 +41,17 @@ services:
       - bomberman-network
     # Els ports no s'exposen a l'exterior
 
+  trainer:
+    build:
+      context: .
+      dockerfile: ./BomberMan_PROJ3/ML-Agents/Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - "5004:5004"
+    networks:
+      - bomberman-network
+
 networks:
   bomberman-network:
     driver: bridge

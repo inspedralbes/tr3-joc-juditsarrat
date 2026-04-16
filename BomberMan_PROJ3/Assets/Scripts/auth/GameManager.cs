@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject remotePlayerPrefab;
     
-    private GameObject localPlayer;
-    private GameObject remotePlayer;
+    public GameObject localPlayer;
+    public GameObject remotePlayer;
     private string localPlayerId;
 
     private string localPlayerName;      // ← NUEVO
