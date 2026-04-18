@@ -12,9 +12,6 @@ const repo = new UserRepository();
 const authService = new AuthService(repo);
 const authController = new AuthController(authService);
 
-
-
-
 router.post('/register', authController.register);
 
 

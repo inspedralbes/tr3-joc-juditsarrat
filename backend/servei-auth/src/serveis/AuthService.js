@@ -1,18 +1,18 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// servei d'autenticacio
+
 class AuthService {
     constructor(userRepository) {
         this.userRepository = userRepository;
         this.jwtSecret = process.env.JWT_SECRET || 'secret_per_defecte';
-        this.saltRounds = 10; 
+        this.saltRounds = 10;
     }
 
     async register(username, email, password) {
 
-        
-    console.log("REGISTER:", username, email, password);
+
+        console.log("REGISTER:", username, email, password);
         if (username === "" || email === "" || password === "") {
             throw new Error("Tots els camps (username, email, password) són obligatoris.");
         }
@@ -21,7 +21,7 @@ class AuthService {
             throw new Error("La contrasenya ha de tenir almenys 6 caràcters.");
         }
 
-        // Comprovació de duplicats
+
         const userByUsername = await this.userRepository.findByUsername(username);
         if (userByUsername !== null) {
             throw new Error("El nom d'usuari ja està en ús.");
@@ -32,10 +32,9 @@ class AuthService {
             throw new Error("El correu electrònic ja està registrat.");
         }
 
-        // Hash de la contrasenya
         const passwordHash = await bcrypt.hash(password, this.saltRounds);
 
-        
+
         const userData = {
             username: username,
             email: email,
@@ -44,7 +43,7 @@ class AuthService {
 
         const newUser = await this.userRepository.create(userData);
 
-        
+
         const publicUser = {
             id: newUser._id || newUser.id,
             username: newUser.username,
@@ -55,36 +54,36 @@ class AuthService {
     }
 
     async login(email, password) {
-    if (email === "" || password === "") {
-        throw new Error("Cal proporcionar email i contrasenya.");
+        if (email === "" || password === "") {
+            throw new Error("Cal proporcionar email i contrasenya.");
+        }
+        const user = await this.userRepository.findByEmail(email);
+        console.log("USUARI TROBAT:", user);
+        console.log("PASSWORD HASH:", user?.passwordHash);
+        if (user === null) {
+            throw new Error("Credencials incorrectes.");
+        }
+        const isMatch = await bcrypt.compare(password, user.passwordHash);
+        if (isMatch === false) {
+            throw new Error("Credencials incorrectes.");
+        }
+
+        const payload = {
+            id: user._id || user.id,
+            username: user.username,
+            email: user.email
+        };
+        const token = jwt.sign(payload, this.jwtSecret, { expiresIn: '1h' });
+
+
+        const publicUser = {
+            id: user._id || user.id,
+            username: user.username,
+            email: user.email
+        };
+
+        return { token, user: publicUser };
     }
-    const user = await this.userRepository.findByEmail(email);
-    console.log("USUARI TROBAT:", user);
-    console.log("PASSWORD HASH:", user?.passwordHash);
-    if (user === null) {
-        throw new Error("Credencials incorrectes.");
-    }
-    const isMatch = await bcrypt.compare(password, user.passwordHash);
-    if (isMatch === false) {
-        throw new Error("Credencials incorrectes.");
-    }
-    // Dades per al token
-    const payload = {
-        id: user._id || user.id,
-        username: user.username,
-        email: user.email
-    };
-    const token = jwt.sign(payload, this.jwtSecret, { expiresIn: '1h' });
-    
-    // ✅ RETORNAR TOKEN Y USUARIO
-    const publicUser = {
-        id: user._id || user.id,
-        username: user.username,
-        email: user.email
-    };
-    
-    return { token, user: publicUser }; // ← CAMBIADO AQUI
-}
 
     async getUserById(id) {
         const user = await this.userRepository.findById(id);

@@ -23,7 +23,7 @@ class AuthController {
         } catch (err) {
             const message = err.message;
 
-            
+
             if (message === "Tots els camps (username, email, password) són obligatoris.") {
                 return res.status(400).json({ error: message });
             }
@@ -36,36 +36,35 @@ class AuthController {
             if (message === "El correu electrònic ja està registrat.") {
                 return res.status(400).json({ error: message });
             }
-console.error("ERROR REGISTER:", err);
+            console.error("ERROR REGISTER:", err);
             return res.status(500).json({ error: "Error intern durant el registre." });
         }
     }
 
     async login(req, res) {
-    try {
-        const email = req.body.email;
-        const password = req.body.password;
-        
-        // ✅ Ahora authService.login retorna { token, user }
-        const { token, user } = await this.authService.login(email, password);
-        
-        return res.status(200).json({
-            message: "Login correcte.",
-            token: token,
-            user: user  // ✅ Añadido
-        });
-    } catch (err) {
-        const message = err.message;
-        if (message === "Credencials incorrectes.") {
-            return res.status(401).json({ error: message });
+        try {
+            const email = req.body.email;
+            const password = req.body.password;
+
+            const { token, user } = await this.authService.login(email, password);
+
+            return res.status(200).json({
+                message: "Login correcte.",
+                token: token,
+                user: user
+            });
+        } catch (err) {
+            const message = err.message;
+            if (message === "Credencials incorrectes.") {
+                return res.status(401).json({ error: message });
+            }
+            if (message === "Cal proporcionar email i contrasenya.") {
+                return res.status(400).json({ error: message });
+            }
+            console.error("ERROR LOGIN:", err);
+            return res.status(500).json({ error: "Error intern durant el login." });
         }
-        if (message === "Cal proporcionar email i contrasenya.") {
-            return res.status(400).json({ error: message });
-        }
-        console.error("ERROR LOGIN:", err);
-        return res.status(500).json({ error: "Error intern durant el login." });
     }
-}
     async me(req, res) {
         try {
             const userId = req.user.id;

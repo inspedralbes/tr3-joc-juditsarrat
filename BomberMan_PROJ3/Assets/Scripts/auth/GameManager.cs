@@ -214,6 +214,36 @@ public class GameManager : MonoBehaviour
 
         bool localPlayerDied = (localPlayerId == playerId);
         string winnerName = localPlayerDied ? remotePlayerName : localPlayerName;
+        
+        // ── REPORTAR ESTADÍSTIQUES (NOMÉS MULTIJUGADOR) ──
+        if (StatsService.Instance != null)
+        {
+            List<PlayerResultData> results = new List<PlayerResultData>();
+            
+            // Guanyador (100 punts)
+            string winnerId = localPlayerDied ? "remote_opponent" : localPlayerId; 
+            // Nota: En un sistema real de matchmaking, el remoteId vendria del servidor.
+            // Si el backend reconeix 'remote_opponent' com l'altre jugador de la sala 
+            // o si podem recuperar el seu ID real des del WS.
+            
+            // Per ara, usem els IDs que tinguem. 
+            // Si localPlayer NO ha mort, enviem el seu ID com a winner.
+            if (!localPlayerDied)
+            {
+                results.Add(new PlayerResultData { playerId = localPlayerId, score = 100 });
+                // El perdedor és el playerId que ens han passat
+                results.Add(new PlayerResultData { playerId = playerId, score = 0 });
+                StatsService.Instance.ReportGameResult(sessionId, localPlayerId, results);
+            }
+            else
+            {
+                // Si el local ha mort, ell és el perdedor (enviem el seu resultat)
+                results.Add(new PlayerResultData { playerId = localPlayerId, score = 0 });
+                // No enviem el de l'altre si no tenim el seu ID real exactament, 
+                // però el backend pot deduir-ho o podem intentar buscar-lo.
+                StatsService.Instance.ReportGameResult(sessionId, "remote_winner", results);
+            }
+        }
 
         GameOverData.WinnerName = winnerName;
         GameOverData.IsLocalWinner = !localPlayerDied;

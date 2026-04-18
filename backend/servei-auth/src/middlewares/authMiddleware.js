@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 
-// Middleware d'autenticació simplificat per a principiants.
-
 function authMiddleware(req, res, next) {
     const authHeader = req.headers['authorization'];
 
@@ -24,13 +22,13 @@ function authMiddleware(req, res, next) {
     const jwtSecret = process.env.JWT_SECRET || 'secret_per_defecte';
 
     try {
-        // Verifiquem el token
+
         const decoded = jwt.verify(token, jwtSecret);
 
-        // Si és vàlid, guardem les dades a req.user
+
         req.user = decoded;
 
-        // Continuem amb la següent funció
+
         next();
     } catch (err) {
         return res.status(401).json({

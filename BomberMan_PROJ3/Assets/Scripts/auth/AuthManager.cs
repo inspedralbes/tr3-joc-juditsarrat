@@ -102,8 +102,6 @@ public class AuthManager : MonoBehaviour
             JugadorActual = resposta.user;
             // ✅ MILLOR VALIDACIÓ
             Debug.Log("[AuthManager] Buscant GameService...");
-            GameService gameService = FindObjectOfType<GameService>();
-            
             if (gameService != null)
             {
                 gameService.SetToken(TokenJWT);
@@ -112,12 +110,20 @@ public class AuthManager : MonoBehaviour
             else
             {
                 Debug.LogWarning("[AuthManager] GameService no trobat a la scena. Creant-lo...");
-                // Crea GameService si no existeix
                 GameObject gsObj = new GameObject("GameService");
                 gameService = gsObj.AddComponent<GameService>();
                 gameService.SetToken(TokenJWT);
-                Debug.Log("[AuthManager] GameService creat i token assignat ✅");
             }
+
+            // ✅ INICIALITZAR TAMBÉ STATS SERVICE
+            StatsService statsService = FindObjectOfType<StatsService>();
+            if (statsService == null)
+            {
+                GameObject ssObj = new GameObject("StatsService");
+                statsService = ssObj.AddComponent<StatsService>();
+            }
+            statsService.SetToken(TokenJWT);
+            Debug.Log("[AuthManager] StatsService a punt ✅");
             
             callback(true, "Login correcte");
         }
