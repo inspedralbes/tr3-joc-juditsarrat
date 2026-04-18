@@ -42,7 +42,7 @@ public class RegisterRequest
 
 public class AuthManager : MonoBehaviour
 {
-    private const string URL_BASE = "http://127.0.0.1:8080/auth";
+    private string URL_BASE => ServerConfig.Instance != null ? ServerConfig.Instance.GetBaseUrl("/auth") : "http://127.0.0.1:8080/auth";
 
     // ─── SINGLETON ────────────────────────────────────────────────
     public static AuthManager Instance { get; private set; }

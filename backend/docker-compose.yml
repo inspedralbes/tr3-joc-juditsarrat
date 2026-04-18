@@ -1,17 +1,6 @@
 version: '3.8'
 
 services:
-  # Base de dades MongoDB
-  mongodb:
-    image: mongo:latest
-    container_name: bomberman_db
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
-    networks:
-      - bomberman_network
-
   # Servei d'Autenticació
   servei-auth:
   build: 
@@ -25,8 +14,6 @@ services:
     - MONGODB_URI=${MONGODB_URI}
     - JWT_SECRET=${JWT_SECRET}
     - BCRYPT_SALT_ROUNDS=${BCRYPT_SALT_ROUNDS}
-  depends_on:
-    - mongodb
   networks:
     - bomberman_network
 
@@ -40,8 +27,6 @@ servei-joc:
   environment:
     - PORT=3002
     - MONGODB_URI=${MONGODB_URI}
-  depends_on:
-    - mongodb
   networks:
     - bomberman_network
 
@@ -55,8 +40,6 @@ servei-estadistiques:
   environment:
     - PORT=3003
     - MONGODB_URI=${MONGODB_URI}
-  depends_on:
-    - mongodb
   networks:
     - bomberman_network
 
@@ -80,4 +63,3 @@ networks:
     driver: bridge
 
 volumes:
-  mongo_data:

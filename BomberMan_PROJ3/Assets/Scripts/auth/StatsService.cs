@@ -30,7 +30,7 @@ public class StatsService : MonoBehaviour
 
     private IEnumerator PostGameResult(string gameId, string winnerId, List<PlayerResultData> players)
     {
-        string url = "http://127.0.0.1:8080/estadistiques/resultat";
+        string url = ServerConfig.Instance.GetBaseUrl("/estadistiques/resultat");
         
         // Manual JSON construction to avoid issues with nested structures in simple JsonUtility
         string playersJson = "[";

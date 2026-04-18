@@ -21,7 +21,7 @@ public class GameService : MonoBehaviour {
     }
 
     public IEnumerator GetGameStatus(string gameId, System.Action<string> onSuccess, System.Action<string> onError = null) {
-        string url = "http://127.0.0.1:8080/joc/games/" + gameId;
+        string url = ServerConfig.Instance.GetBaseUrl("/joc/games/") + gameId;
         Debug.Log("[GameService] Obteniendo sala: " + gameId);
 
         UnityWebRequest request = UnityWebRequest.Get(url);
@@ -39,7 +39,7 @@ public class GameService : MonoBehaviour {
     }
 
     public IEnumerator CreateGameRoom(System.Action<string> onSuccess, System.Action<string> onError = null) {
-        string url = "http://127.0.0.1:8080/joc/games";
+        string url = ServerConfig.Instance.GetBaseUrl("/joc/games");
 
         if (string.IsNullOrEmpty(_token)) {
             onError?.Invoke("Token no establecido");
@@ -67,7 +67,7 @@ public class GameService : MonoBehaviour {
     }
 
     public IEnumerator GetGameByCode(string code, System.Action<string> onSuccess, System.Action<string> onError = null) {
-        string url = "http://127.0.0.1:8080/joc/games/code/" + code;
+        string url = ServerConfig.Instance.GetBaseUrl("/joc/games/code/") + code;
         Debug.Log("[GameService] Buscando: " + code);
 
         UnityWebRequest request = UnityWebRequest.Get(url);
@@ -84,7 +84,7 @@ public class GameService : MonoBehaviour {
     }
 
     public IEnumerator JoinGameRoom(string gameId, System.Action<string> onSuccess, System.Action<string> onError = null) {
-        string url = "http://127.0.0.1:8080/joc/games/" + gameId + "/join";
+        string url = ServerConfig.Instance.GetBaseUrl("/joc/games/") + gameId + "/join";
         string playerId = AuthManager.Instance.JugadorActual.id;
         string jsonBody = "{\"playerId\":\"" + playerId + "\"}";
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonBody);
