@@ -150,6 +150,38 @@
     margin-bottom: 20px;
 }
 
+/* ── THEMES ──────────────────────────────────────────────── */
+.theme-night.root, .theme-night .menu-section {
+    background-color: #000000;
+}
+
+.theme-day.root, .theme-day .menu-section {
+    background-color: #c8b400; /* Amarillo Bomberman */
+}
+
+.theme-day .title, .theme-day .title-sub, .theme-day .lobby-title, .theme-day .lobby-players {
+    color: #000000;
+}
+
+.theme-day .title-divider, .theme-day .lobby-divider {
+    background-color: #000000;
+}
+
+.theme-day .code-input {
+    border-color: #000000;
+    color: #000000;
+}
+
+.theme-day .code-input > #unity-text-input {
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.theme-day .btn-secondary {
+    border-color: #000000;
+    color: #000000;
+}
+
 .lobby-code {
     font-size: 48px;
     color: #c8b400;

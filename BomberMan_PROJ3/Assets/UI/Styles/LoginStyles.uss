@@ -164,3 +164,35 @@
 .panell-ocult {
     display: none;
 }
+
+/* ── THEMES ──────────────────────────────────────────────── */
+.theme-night.root, .theme-night .card, .theme-night .card-body, .theme-night .card-header {
+    background-color: #000000;
+}
+
+.theme-day.root, .theme-day .card, .theme-day .card-body, .theme-day .card-header {
+    background-color: #c8b400; /* Amarillo Bomberman */
+}
+
+.theme-day .titol, .theme-day .label, .theme-day .titol-sub {
+    color: #000000;
+}
+
+.theme-day .pixel-row, .theme-day .title-divider {
+    background-color: #000000;
+}
+
+.theme-day .input {
+    border-color: #000000;
+    color: #000000;
+}
+
+.theme-day .input > #unity-text-input {
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.theme-day .boto-secondary {
+    border-color: #000000;
+    color: #000000;
+}

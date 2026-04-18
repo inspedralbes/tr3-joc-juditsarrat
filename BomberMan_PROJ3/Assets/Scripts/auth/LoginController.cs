@@ -23,6 +23,7 @@ public class LoginController : MonoBehaviour
     private Button _botoConfirmarRegistre;
     private Button _botoCancelarRegistre;
     private Label _textErrorRegistre;
+    private Button _btnTema;
 
     // ─── INICIALITZACIÓ ───────────────────────────────────────────
     private void OnEnable()
@@ -41,6 +42,9 @@ public class LoginController : MonoBehaviour
         _botoMostrarRegistre = root.Q<Button>("boto-mostrar-registre");
         _textError = root.Q<Label>("text-error");
 
+        // Query para el botón de tema
+        _btnTema = root.Q<Button>("btn-tema");
+
         // Querys registre
         _campUsuari = root.Q<TextField>("camp-usuari");
         _campEmailRegistre = root.Q<TextField>("camp-email-registre");
@@ -54,6 +58,14 @@ public class LoginController : MonoBehaviour
         _botoMostrarRegistre.clicked += OnClickMostrarRegistre;
         _botoConfirmarRegistre.clicked += OnClickRegistre;
         _botoCancelarRegistre.clicked += OnClickTornarLogin;
+
+        if (_btnTema != null)
+        {
+            _btnTema.clicked += OnClickTema;
+            UpdateThemeButtonText();
+            if (ThemeManager.Instance != null)
+                ThemeManager.Instance.OnThemeChanged += OnThemeChanged;
+        }
 
         // Permet fer login prement Enter
         _campPassword.RegisterCallback<KeyDownEvent>(evt =>
@@ -70,6 +82,34 @@ public class LoginController : MonoBehaviour
         _botoMostrarRegistre.clicked -= OnClickMostrarRegistre;
         _botoConfirmarRegistre.clicked -= OnClickRegistre;
         _botoCancelarRegistre.clicked -= OnClickTornarLogin;
+
+        if (_btnTema != null)
+        {
+            _btnTema.clicked -= OnClickTema;
+            if (ThemeManager.Instance != null)
+                ThemeManager.Instance.OnThemeChanged -= OnThemeChanged;
+        }
+    }
+
+    private void OnClickTema()
+    {
+        if (ThemeManager.Instance != null)
+        {
+            ThemeManager.Instance.ToggleTheme();
+        }
+    }
+
+    private void OnThemeChanged(ThemeMode mode)
+    {
+        UpdateThemeButtonText();
+    }
+
+    private void UpdateThemeButtonText()
+    {
+        if (_btnTema != null && ThemeManager.Instance != null)
+        {
+            _btnTema.text = "MODE: " + (ThemeManager.Instance.currentTheme == ThemeMode.Day ? "DIA" : "NIT");
+        }
     }
 
     // ─── LOGIN ────────────────────────────────────────────────────

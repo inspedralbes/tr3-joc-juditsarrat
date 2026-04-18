@@ -24,10 +24,14 @@
                     <ui:Label text="PASSWORD" class="label" />
                     <ui:TextField name="camp-password" placeholder-text="••••••••" password="true" class="input" />
 
+                    <!-- Toggle Tema (Situado encima de los botones para máxima visibilidad) -->
+                    <ui:Button name="btn-tema" text="MODE: DIA" class="boto boto-primary" style="margin-top: 14px; margin-bottom: 4px;" />
+
                     <ui:Label name="text-error" class="text-error" />
 
                     <ui:Button name="boto-login" text="► ACCEDER" class="boto boto-primary" />
                     <ui:Button name="boto-mostrar-registre" text="CREAR CUENTA NUEVA" class="boto boto-secondary" />
+
                 </ui:VisualElement>
 
                 <!-- PANEL REGISTRE -->

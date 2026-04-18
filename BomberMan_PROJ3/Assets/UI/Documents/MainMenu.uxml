@@ -10,6 +10,7 @@
             <!-- Título estilo NES -->
             <ui:Label text="BOMBERMAN" class="title" />
             <ui:Label text="► START    CONTINUE" class="title-sub" />
+            
             <ui:VisualElement class="title-divider" />
 
             <!-- Botones principales -->

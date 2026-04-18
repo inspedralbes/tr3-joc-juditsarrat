@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Game\RemotePlayerController.cs" />
     <Compile Include="Assets\Scripts\Game\BombController.cs" />
     <Compile Include="Assets\Scripts\ui\MenuSala.cs" />
+    <Compile Include="Assets\Scripts\Game\ThemeManager.cs" />
     <Compile Include="Assets\Scripts\ui\GameLobbyUI.cs" />
     <Compile Include="Assets\Scripts\auth\AuthManager.cs" />
     <Compile Include="Assets\Scripts\Game\Bomb.cs" />

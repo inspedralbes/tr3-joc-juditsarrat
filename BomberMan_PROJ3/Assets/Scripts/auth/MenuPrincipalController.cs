@@ -12,9 +12,9 @@ public class MenuPrincipalController : MonoBehaviour
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
 
-        _btnCrear   = root.Q<Button>("btn-crear");
-        _btnLLM     = root.Q<Button>("btn-llm");
-        _btnUnirse  = root.Q<Button>("btn-unirse");
+        _btnCrear    = root.Q<Button>("btn-crear");
+        _btnLLM      = root.Q<Button>("btn-llm");
+        _btnUnirse   = root.Q<Button>("btn-unirse");
         _inputCodigo = root.Q<TextField>("input-codigo");
 
         _btnCrear.clicked  += OnClickCrear;
