@@ -49,8 +49,7 @@ public class MenuPrincipalController : MonoBehaviour
     {
         Debug.Log("Jugant contra LLM / Entrenament...");
         // Carreguem la escena de prova/entrenament
-        // El usuari pot canviar "SampleScene" per la escena on tingui l'entrenament
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("TrainingScene");
     }
 
    private void OnClickUnirse()

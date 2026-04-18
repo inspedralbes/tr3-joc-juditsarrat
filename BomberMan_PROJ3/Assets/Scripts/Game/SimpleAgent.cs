@@ -11,19 +11,20 @@ public class SimpleAgent : Agent
     [SerializeField] private float cellSize = 1f;
     [SerializeField] private Transform target;
 
-    [Header("Recompenses")]
-    [SerializeField] private float rewardTarget = 2f; // Pugem la recompensa per guanyar
-    [SerializeField] private float rewardDestroyBlock = 0.2f;
-    [SerializeField] private float penaltyStep = -0.0005f; // Penalització per pas més suau
-    [SerializeField] private float penaltyBombSpam = -0.05f; // Penalització per posar bomba sense pensar
-    [SerializeField] private float penaltyDeath = -1.5f; // Gran penalització per morir
+    [Header("Recompenses (v5)")]
+    [SerializeField] private float rewardTarget = 5f;       // Subido de 2 a 5
+    [SerializeField] private float rewardDestroyBlock = 0.4f; // Subido de 0.2 a 0.4
+    [SerializeField] private float penaltyStep = -0.002f;   // Más presión de tiempo
+    [SerializeField] private float penaltyDeath = -1f;      // Castigo menos terrorífico
 
     private Rigidbody2D rb;
     private BombController bombController;
     private Vector2 initialPosition;
 
-    private float lastResetTime = 0f;
-    private float resetCooldown = 0.5f;
+    [Header("Detecció")]
+    [SerializeField] private LayerMask obstacleLayerMask;
+    [SerializeField] private LayerMask destructibleLayerMask;
+    [SerializeField] private LayerMask dangerLayerMask;
 
     public override void Initialize()
     {
@@ -34,29 +35,24 @@ public class SimpleAgent : Agent
 
     public override void OnEpisodeBegin()
     {
-        Debug.Log("[SimpleAgent] 🔄 Reiniciant episodi...");
-        lastResetTime = Time.time;
-        
-        this.enabled = true;
-        
         if (rb != null) {
-            rb.simulated = true;
             rb.linearVelocity = Vector2.zero;
             rb.angularVelocity = 0f;
-            rb.bodyType = RigidbodyType2D.Dynamic;
         }
-
         transform.localPosition = initialPosition;
+
+        // RESETEAR EL ESCENARIO COMPLETO
+        if (GameManager.Instance != null) {
+            GameManager.Instance.ResetStage();
+        }
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // 1. Posició de l'agent (2)
         sensor.AddObservation(transform.localPosition.x / arenaLimit);
         sensor.AddObservation(transform.localPosition.y / arenaLimit);
 
-        // 2. Posició del target (2)
-        if (target != null) {
+        if (target != null && target.gameObject.activeInHierarchy) {
             sensor.AddObservation((target.localPosition.x - transform.localPosition.x) / arenaLimit);
             sensor.AddObservation((target.localPosition.y - transform.localPosition.y) / arenaLimit);
         } else {
@@ -64,35 +60,32 @@ public class SimpleAgent : Agent
             sensor.AddObservation(0f);
         }
 
-        // 3. Detecció d'obstacles i BOMBRES (8)
-        // Ara mirem també si hi ha bombes per no morir
-        sensor.AddObservation(IsObstacle(Vector2.up) ? 1f : 0f);
-        sensor.AddObservation(IsObstacle(Vector2.down) ? 1f : 0f);
-        sensor.AddObservation(IsObstacle(Vector2.left) ? 1f : 0f);
-        sensor.AddObservation(IsObstacle(Vector2.right) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.up, obstacleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.down, obstacleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.left, obstacleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.right, obstacleLayerMask) ? 1f : 0f);
+
+        sensor.AddObservation(IsLayerNearby(Vector2.up, destructibleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.down, destructibleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.left, destructibleLayerMask) ? 1f : 0f);
+        sensor.AddObservation(IsLayerNearby(Vector2.right, destructibleLayerMask) ? 1f : 0f);
         
-        sensor.AddObservation(IsDanger(Vector2.up) ? 1f : 0f);
-        sensor.AddObservation(IsDanger(Vector2.down) ? 1f : 0f);
-        sensor.AddObservation(IsDanger(Vector2.left) ? 1f : 0f);
-        sensor.AddObservation(IsDanger(Vector2.right) ? 1f : 0f);
-    }
+        sensor.AddObservation(IsDanger(Vector2.zero) ? 1f : 0f);
 
-    [Header("Detecció")]
-    [SerializeField] private LayerMask obstacleLayerMask;
-    [SerializeField] private LayerMask dangerLayerMask; // Per a bombes i explosions
-
-    private bool IsObstacle(Vector2 direction)
-    {
-        float rayDistance = cellSize * 0.8f;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayDistance, obstacleLayerMask);
-        return hit.collider != null;
-    }
-
-    private bool IsDanger(Vector2 direction)
-    {
-        float rayDistance = cellSize * 2f; // Mirem més lluny el perill
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayDistance, dangerLayerMask);
-        return hit.collider != null;
+        Bomb[] bombs = Object.FindObjectsByType<Bomb>(FindObjectsSortMode.None);
+        if (bombs.Length > 0) {
+            Bomb nearest = bombs[0];
+            float minD = Vector2.Distance(transform.position, nearest.transform.position);
+            foreach (var b in bombs) {
+                float d = Vector2.Distance(transform.position, b.transform.position);
+                if (d < minD) { minD = d; nearest = b; }
+            }
+            sensor.AddObservation((nearest.transform.position.x - transform.position.x) / arenaLimit);
+            sensor.AddObservation((nearest.transform.position.y - transform.position.y) / arenaLimit);
+        } else {
+            sensor.AddObservation(0f);
+            sensor.AddObservation(0f);
+        }
     }
 
     public override void OnActionReceived(ActionBuffers actions)
@@ -106,65 +99,49 @@ public class SimpleAgent : Agent
             case 2: dir = Vector2.down; break;
             case 3: dir = Vector2.left; break;
             case 4: dir = Vector2.right; break;
-            case 5: 
-                if (bombController != null) {
-                    bombController.PlaceBomb();
-                    AddReward(penaltyBombSpam); // Penalitzem posar bombes per evitar spam innecessari
-                }
-                break;
+            case 5: if (bombController != null) bombController.PlaceBomb(); break;
         }
 
         rb.linearVelocity = dir * moveSpeed;
-        
-        // Recompensa per apropar-se al target
-        if (target != null) {
-            float distance = Vector2.Distance(transform.localPosition, target.localPosition);
-            AddReward(0.01f / (distance + 1f));
-        }
-
         AddReward(penaltyStep);
     }
 
-    public override void Heuristic(in ActionBuffers actionsOut)
-    {
-        var a = actionsOut.DiscreteActions;
-        a[0] = 0;
-        if (Input.GetKey(KeyCode.UpArrow)) a[0] = 1;
-        else if (Input.GetKey(KeyCode.DownArrow)) a[0] = 2;
-        else if (Input.GetKey(KeyCode.LeftArrow)) a[0] = 3;
-        else if (Input.GetKey(KeyCode.RightArrow)) a[0] = 4;
-        else if (Input.GetKey(KeyCode.Space)) a[0] = 5;
+    private bool IsLayerNearby(Vector2 direction, LayerMask mask) {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, cellSize * 0.8f, mask);
+        return hit.collider != null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (Time.time - lastResetTime < resetCooldown) return;
+    private bool IsDanger(Vector2 direction) {
+        Collider2D[] cols = Physics2D.OverlapCircleAll((Vector2)transform.position + (direction * cellSize), cellSize * 0.4f);
+        foreach (var c in cols) if (c.GetComponent<Bomb>() != null || c.gameObject.layer == LayerMask.NameToLayer("Explosion")) return true;
+        return false;
+    }
 
-        if (collision.transform.CompareTag("Target"))
-        {
-            Debug.Log("[SimpleAgent] 🎯 Reset: Target detectat!");
-            AddReward(rewardTarget);
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.transform.CompareTag("Target")) {
+            AddReward(rewardTarget); 
             EndEpisode();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Explosion") || other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
     {
-        if (Time.time - lastResetTime < resetCooldown) return;
-
-        // Si la explosión toca al agente, éste "muere"
-        // Asegúrate de que tus explosiones estén en una Layer llamada "Explosion"
-        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+        // 1. Si estamos entrenando (comando docker), reiniciamos rápido
+        if (StepCount > 0 && GameManager.Instance.isTraining) 
         {
-            Debug.Log("[SimpleAgent] 💥 Reset: Explosió detectada!");
-            AddReward(-1f); // Gran penalización por morir
-            EndEpisode();  // Reiniciamos el episodio
+            AddReward(-1f);
+            EndEpisode(); 
+        }
+        else 
+        {
+            // 2. Si estamos JUGANDO (isTraining desactivado), avisamos al GameManager
+            // Usamos el ID que le diste a la IA en el Start: "rival_ia_id"
+            GameManager.Instance.OnPlayerDeath("rival_ia_id");
         }
     }
+}
 
-    // Crida aquesta funció des del script que gestiona la destrucció de blocs per donar recompensa
-    public void OnBlockDestroyed()
-    {
-        AddReward(rewardDestroyBlock);
-    }
+    public void OnBlockDestroyed() { AddReward(rewardDestroyBlock); }
 }

@@ -55,26 +55,35 @@ public class BombController : MonoBehaviour
          // Instanciar localmente
          GameObject bombObj = Instantiate(bombPrefab, position, Quaternion.identity);
          
-         // Configurar script Bomb dinámicamente si no está en el prefab
+         // Configurar script Bomb dinámicamente preservando los del prefab si los nuestros están vacíos
          Bomb bombScript = bombObj.GetComponent<Bomb>();
          if (bombScript == null) bombScript = bombObj.AddComponent<Bomb>();
          
-         bombScript.fuseTime = bombFuseTime;
-         bombScript.explosionPrefab = explosionPrefab;
-         bombScript.explosionLayerMask = explosionLayerMask;
-         bombScript.explosionDuration = explosionDuration;
-         bombScript.explosionRadius = explosionRadius;
-         bombScript.destructibleTiles = destructibleTiles;
-         bombScript.destructiblePrefab = destructiblePrefab;
+         if (bombFuseTime > 0) bombScript.fuseTime = bombFuseTime;
+         if (explosionPrefab != null) bombScript.explosionPrefab = explosionPrefab;
+         if (explosionLayerMask != 0) bombScript.explosionLayerMask = explosionLayerMask;
+         if (explosionDuration > 0) bombScript.explosionDuration = explosionDuration;
+         if (explosionRadius > 0) bombScript.explosionRadius = explosionRadius;
+         if (destructibleTiles != null) bombScript.destructibleTiles = destructibleTiles;
+         if (destructiblePrefab != null) bombScript.destructiblePrefab = destructiblePrefab;
 
          bombsRemaining--;
 
-         // Notificar al servidor
-         if (WebSocketManager.Instance != null) {
-             PositionalMessage msg = new PositionalMessage { x = position.x, y = position.y };
-             WebSocketManager.Instance.SendMessage("place-bomb", JsonUtility.ToJson(msg));
-         }
-
+// Solo intentará enviar si el objeto existe Y no es nulo internamente
+if (WebSocketManager.Instance != null && WebSocketManager.Instance.gameObject.activeInHierarchy) {
+    try {
+        string xb = position.x.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        string yb = position.y.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        string sId = GameManager.Instance != null ? GameManager.Instance.sessionId : "";
+        string playerCode = GameManager.Instance != null && GameManager.Instance.localPlayer != null 
+                             ? GameManager.Instance.localPlayer.GetComponent<MovementController>().playerId : "";
+        
+        string json = "{\"type\":\"place-bomb\",\"playerId\":\"" + playerCode + "\",\"sessionId\":\"" + sId + "\",\"x\":" + xb + ",\"y\":" + yb + "}";
+        WebSocketManager.Instance.SendRaw(json);
+    } catch {
+        // Ignoramos el error durante el entrenamiento para que no se detenga el agente
+    }
+}
          // Recuperar la bomba después del tiempo de espera
          yield return new WaitForSeconds(bombFuseTime);
          bombsRemaining++;

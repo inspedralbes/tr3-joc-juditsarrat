@@ -2,98 +2,128 @@ using UnityEngine;
 
 public class RemotePlayerController : MonoBehaviour
 {
-    private string playerId;
     private Rigidbody2D rb;
     private Vector2 targetPosition;
-    public float speed = 5f;
+    public float speed = 10f;
 
     [Header("Animations")]
     public AnimatedSpriteRenderer spriteRendererUp;
     public AnimatedSpriteRenderer spriteRendererDown;
     public AnimatedSpriteRenderer spriteRendererLeft;
     public AnimatedSpriteRenderer spriteRendererRight;
+    public AnimatedSpriteRenderer spriteRendererDeath;
     private AnimatedSpriteRenderer activeSpriteRenderer;
-    
-    public void Initialize(string id)
+
+    private float lastMoveTime;
+    private bool initialized = false;
+
+    private void Awake()
     {
-        playerId = id;
         rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
         targetPosition = transform.position;
-        // Posicionamiento inmediato inicial
-        if (rb != null) rb.position = transform.position;
-        
-        activeSpriteRenderer = spriteRendererDown;
     }
-    
+
+    private void Start()
+    {
+        InitSprites();
+    }
+
+    private void InitSprites()
+    {
+        if (initialized) return;
+
+        MovementController mc = GetComponent<MovementController>();
+        if (mc != null)
+        {
+            if (spriteRendererUp    == null) spriteRendererUp    = mc.spriteRendererUp;
+            if (spriteRendererDown  == null) spriteRendererDown  = mc.spriteRendererDown;
+            if (spriteRendererLeft  == null) spriteRendererLeft  = mc.spriteRendererLeft;
+            if (spriteRendererRight == null) spriteRendererRight = mc.spriteRendererRight;
+            if (spriteRendererDeath == null) spriteRendererDeath = mc.spriteRendererDeath;
+        }
+
+        activeSpriteRenderer = spriteRendererDown;
+        initialized = true;
+    }
+
+    // ─── Llamado desde GameManager cuando llega un mensaje de red ───────────
     public void MoveToPosition(Vector2 newPosition)
     {
+        // Asegurarnos de que los sprites están inicializados antes de animar
+        if (!initialized) InitSprites();
+
+        Vector2 currentPos = rb != null ? rb.position : (Vector2)transform.position;
+        Vector2 dir = (newPosition - currentPos);
+
+        // Solo animamos si el movimiento es significativo
+        if (dir.magnitude > 0.01f)
+        {
+            lastMoveTime = Time.time;
+            PlayWalkAnimation(dir.normalized);
+        }
+
         targetPosition = newPosition;
     }
-    
+
+    public void PlayDeathAnimation()
+    {
+        if (rb != null) rb.simulated = false;
+        if (spriteRendererUp    != null) spriteRendererUp.enabled    = false;
+        if (spriteRendererDown  != null) spriteRendererDown.enabled  = false;
+        if (spriteRendererLeft  != null) spriteRendererLeft.enabled  = false;
+        if (spriteRendererRight != null) spriteRendererRight.enabled = false;
+        if (spriteRendererDeath != null) spriteRendererDeath.enabled = true;
+    }
+
     private void FixedUpdate()
     {
         if (rb == null) return;
 
         float distance = Vector2.Distance(targetPosition, rb.position);
-        
-        // Si la distancia es muy grande (lag), teletransportar inmediatamente
-        if (distance > 2.0f)
+
+        // Teleport si la diferencia es muy grande (lag o desconexión breve)
+        if (distance > 3f)
         {
             rb.position = targetPosition;
-            rb.linearVelocity = Vector2.zero;
-            UpdateAnimation(Vector2.zero);
             return;
         }
 
-        // Si ya estamos muy cerca, detenerse (Zona muerta)
-        if (distance < 0.05f)
+        // Moverse hacia el target
+        if (distance > 0.01f)
         {
-            rb.linearVelocity = Vector2.zero;
-            UpdateAnimation(Vector2.zero);
-            return;
+            Vector2 nextPos = Vector2.MoveTowards(rb.position, targetPosition, speed * Time.fixedDeltaTime);
+            rb.MovePosition(nextPos);
         }
 
-        // Calcular dirección de movimiento para la animación
-        Vector2 moveDirection = (targetPosition - rb.position).normalized;
-        UpdateAnimation(moveDirection);
-
-        // Mover gradualmente hacia la posición objetivo usando MovePosition
-        Vector2 nextPos = Vector2.MoveTowards(rb.position, targetPosition, speed * Time.fixedDeltaTime);
-        rb.MovePosition(nextPos);
+        // Poner idle si no recibimos nuevas coordenadas en 150ms
+        if (Time.time - lastMoveTime > 0.15f)
+        {
+            if (activeSpriteRenderer != null && !activeSpriteRenderer.idle)
+                activeSpriteRenderer.idle = true;
+        }
     }
 
-    private void UpdateAnimation(Vector2 dir)
+    // ─── Activa el sprite correcto y pone en marcha la animación ────────────
+    private void PlayWalkAnimation(Vector2 dir)
     {
-        if (spriteRendererUp == null) return; // Si no están asignados, ignoramos
+        AnimatedSpriteRenderer nextRenderer;
 
-        if (dir == Vector2.zero)
-        {
-            if (activeSpriteRenderer != null) activeSpriteRenderer.idle = true;
-            return;
-        }
-
-        AnimatedSpriteRenderer nextRenderer = activeSpriteRenderer;
-
-        // Determinar qué renderer activar basado en la dirección dominante
         if (Mathf.Abs(dir.y) > Mathf.Abs(dir.x))
-        {
             nextRenderer = (dir.y > 0) ? spriteRendererUp : spriteRendererDown;
-        }
         else
-        {
             nextRenderer = (dir.x > 0) ? spriteRendererRight : spriteRendererLeft;
-        }
 
-        if (nextRenderer != activeSpriteRenderer)
-        {
-            if (spriteRendererUp != null) spriteRendererUp.enabled = (nextRenderer == spriteRendererUp);
-            if (spriteRendererDown != null) spriteRendererDown.enabled = (nextRenderer == spriteRendererDown);
-            if (spriteRendererLeft != null) spriteRendererLeft.enabled = (nextRenderer == spriteRendererLeft);
-            if (spriteRendererRight != null) spriteRendererRight.enabled = (nextRenderer == spriteRendererRight);
-            
-            activeSpriteRenderer = nextRenderer;
-        }
+        if (nextRenderer == null) return;
 
-        if (activeSpriteRenderer != null) activeSpriteRenderer.idle = false;
+        // Mostrar solo el sprite de la dirección correcta
+        if (spriteRendererUp    != null) spriteRendererUp.enabled    = (nextRenderer == spriteRendererUp);
+        if (spriteRendererDown  != null) spriteRendererDown.enabled  = (nextRenderer == spriteRendererDown);
+        if (spriteRendererLeft  != null) spriteRendererLeft.enabled  = (nextRenderer == spriteRendererLeft);
+        if (spriteRendererRight != null) spriteRendererRight.enabled = (nextRenderer == spriteRendererRight);
+
+        // Desactivar idle -> se reproducirá la animación de caminar
+        activeSpriteRenderer = nextRenderer;
+        activeSpriteRenderer.idle = false;
     }
 }

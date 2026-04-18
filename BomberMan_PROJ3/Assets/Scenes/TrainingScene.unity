@@ -2082,6 +2082,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1533028912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1533028914}
+  - component: {fileID: 1533028913}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1533028913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533028912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeacd15919d54764da242194dc4139c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  bombPrefab: {fileID: 1107493646144990734, guid: d77b2ca5e14bbe8459f8ac0ff725cc72, type: 3}
+  remotePlayerPrefab: {fileID: 6512764182836688455, guid: 711383f9ef2bb701ebb40ee84dceb171, type: 3}
+  localPlayer: {fileID: 1985346537}
+  remotePlayer: {fileID: 2071095892}
+  isTraining: 0
+  destructibleTiles: {fileID: 1398072263}
+  blockTile: {fileID: 11400000, guid: fe1a3ae7160e18c53830e4e6313d373b, type: 2}
+--- !u!4 &1533028914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533028912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09036571, y: 1.0886631, z: -0.017092738}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621516337
 GameObject:
   m_ObjectHideFlags: 0
@@ -3708,7 +3760,7 @@ GameObject:
   - component: {fileID: 1915533024}
   - component: {fileID: 1915533023}
   - component: {fileID: 1915533025}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: INDESTRUCTIBLES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4786,7 +4838,7 @@ GameObject:
   - component: {fileID: 1985346539}
   - component: {fileID: 1985346538}
   - component: {fileID: 1985346542}
-  - component: {fileID: 1985346543}
+  - component: {fileID: 1985346544}
   m_Layer: 3
   m_Name: Player
   m_TagString: Target
@@ -4901,7 +4953,7 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1398072263}
   destructiblePrefab: {fileID: -1845922954536052988, guid: 8126ba06b68ef79429093e9eb8d21246, type: 3}
---- !u!114 &1985346543
+--- !u!114 &1985346544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4910,10 +4962,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985346537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c705da4632f66a445906e1d314bd7bcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 10aeb1d4c78fd584c871d7fb3443c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  speed: 5
+  inputUp: 119
+  inputDown: 115
+  inputLeft: 97
+  inputRight: 100
+  spriteRendererUp: {fileID: 18725502}
+  spriteRendererDown: {fileID: 1357903206}
+  spriteRendererLeft: {fileID: 535625284}
+  spriteRendererRight: {fileID: 654042223}
+  spriteRendererDeath: {fileID: 1530505407}
+  playerId: 
+  isLocalPlayer: 1
 --- !u!1 &2071095892
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,10 +5144,16 @@ MonoBehaviour:
   rewardTarget: 1
   rewardDestroyBlock: 0.1
   penaltyStep: -0.001
-  penaltyArenaExit: -1
+  penaltyDeath: -1.5
   obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  destructibleLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  dangerLayerMask:
+    serializedVersion: 2
+    m_Bits: 384
 --- !u!114 &2071095901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,7 +5167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 8
+    VectorObservationSize: 15
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 0
@@ -5107,7 +5176,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 74920fefe4e74eb68a6b6962b332b406, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: SimpleBehavior
@@ -5125,3 +5194,4 @@ SceneRoots:
   - {fileID: 1804079558}
   - {fileID: 1985346540}
   - {fileID: 2071095898}
+  - {fileID: 1533028914}

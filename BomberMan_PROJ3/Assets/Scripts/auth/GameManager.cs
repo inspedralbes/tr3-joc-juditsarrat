@@ -1,24 +1,36 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    
+
+    public string sessionId { get; private set; } = System.Guid.NewGuid().ToString();
+
     public GameObject[] players;
 
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject remotePlayerPrefab;
-    
+
     public GameObject localPlayer;
     public GameObject remotePlayer;
     private string localPlayerId;
+    private Vector2 lastRemotePosition;
 
-    private string localPlayerName;      // ← NUEVO
+    private string localPlayerName;
+    private string remotePlayerName;
+    private bool gameEnded = false;
 
-    private string remotePlayerName;     // ← NUEVO
-    private bool gameEnded = false; 
-    
+    [Header("Training Mode")]
+    public bool isTraining = false;
+
+    [Header("Stage Reset")]
+    public Tilemap destructibleTiles;
+    public TileBase blockTile;
+    private List<Vector3Int> initialBlockPositions = new List<Vector3Int>();
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,207 +41,212 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    [System.Serializable]
-    public class WsMessage {
-        public string type;
-        public string playerId;
-        public float x;
-        public float y;
-        public float dataX; // Fallback
-        public float dataY; // Fallback
+    private void Start()
+    {
+        localPlayerId = AuthManager.Instance?.JugadorActual?.id;
+        if (string.IsNullOrEmpty(localPlayerId)) localPlayerId = "local_player_id";
+
+        localPlayerName = AuthManager.Instance?.JugadorActual?.username ?? "Jugador Local";
+        remotePlayerName = "Jugador Remoto";
+
+        if (destructibleTiles != null) SaveInitialLayout();
+
+        if (isTraining)
+        {
+            // ── MODO ENTRENAMIENTO ──────────────────────────────────────────
+            // Respetar lo que hay en el Inspector: busca el MC marcado como
+            // isLocalPlayer=true y lo deja como está. No toca la IA ni el WS.
+            foreach (var p in players)
+            {
+                if (p == null) continue;
+                var mc = p.GetComponent<MovementController>();
+                if (mc == null) continue;
+
+                if (mc.isLocalPlayer)
+                {
+                    mc.enabled = true;
+                    localPlayer = p;
+                    Debug.Log($"[GameManager] Training: Local Player = {p.name}");
+                }
+                // El jugador de la IA lo maneja SimpleAgent; no tocamos su MC.
+            }
+            // No conectar WebSocket en entrenamiento
+            return;
+        }
+
+        // ── MODO MULTIJUGADOR ───────────────────────────────────────────────
+        int myIndex = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
+        Debug.Log($"[GameManager] My Player Index: {myIndex}, Local ID: {localPlayerId}");
+
+        // Asignar players por el orden en el array (0=P1, 1=P2)
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i] == null) continue;
+            
+            MovementController mc = players[i].GetComponent<MovementController>();
+            RemotePlayerController rpc = players[i].GetComponent<RemotePlayerController>();
+            Rigidbody2D rb = players[i].GetComponent<Rigidbody2D>();
+
+            if (mc == null) continue;
+
+            if (i == myIndex)
+            {
+                mc.isLocalPlayer = true;
+                mc.playerId = localPlayerId; // Sincronizamos el ID dinámico
+                mc.enabled = true;
+                if (rpc != null) rpc.enabled = false;
+                if (rb != null) rb.bodyType = RigidbodyType2D.Dynamic;
+
+                localPlayer = players[i];
+                Debug.Log($"[GameManager] Asignado Local Player a {players[i].name}");
+            }
+            else
+            {
+                mc.isLocalPlayer = false;
+                mc.enabled = false; // No lee teclado
+                if (rpc != null) rpc.enabled = true;
+                if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
+
+                remotePlayer = players[i];
+                lastRemotePosition = players[i].transform.position;
+                Debug.Log($"[GameManager] Asignado Remote Player a {players[i].name}");
+            }
+        }
+
+        var wsManager = WebSocketManager.GetOrCreate();
+        if (wsManager != null) wsManager.OnMessageReceived += HandleWebSocketMessage;
     }
-    
-private void Start()
-{
-    localPlayerId = AuthManager.Instance?.JugadorActual?.id;
-    localPlayerName = AuthManager.Instance?.JugadorActual?.username ?? "Jugador Local";
-    remotePlayerName = "Rival"; // En una versió millorada, això vindria del servidor o lobby
 
-    int index = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
-    Debug.Log($"[GameManager] Local: {localPlayerName} | Remote: {remotePlayerName}");
-
-    // 1. Encontrar todos los jugadores
-    MovementController[] allPlayers = FindObjectsByType<MovementController>(FindObjectsSortMode.None);
-    System.Array.Sort(allPlayers, (a, b) => string.Compare(a.name, b.name));
-
-    // 2. Asignar roles
-    for (int i = 0; i < allPlayers.Length; i++) {
-        if (i == index) {
-            localPlayer = allPlayers[i].gameObject;
-            allPlayers[i].enabled = true;
-            
-            // Assignar ID local
-            allPlayers[i].playerId = localPlayerId;
-            
-            Debug.Log($"[GameManager] ✅ ERES LOCAL: {localPlayer.name} (ID={localPlayerId})");
-        } else {
-            remotePlayer = allPlayers[i].gameObject;
-            allPlayers[i].enabled = false;
-            
-            // Assignar ID remot (el que sigui que no sigui el local)
-            // En un futur això podria venir d'una llista de jugadors
-            allPlayers[i].playerId = "rival_id"; 
-            
-            RemotePlayerController rpc = remotePlayer.GetComponent<RemotePlayerController>();
-            if (rpc == null) rpc = remotePlayer.AddComponent<RemotePlayerController>();
-            
-            // Vincular sprites para que el remoto también se anime
-            MovementController mc = allPlayers[i];
-            rpc.spriteRendererUp = mc.spriteRendererUp;
-            rpc.spriteRendererDown = mc.spriteRendererDown;
-            rpc.spriteRendererLeft = mc.spriteRendererLeft;
-            rpc.spriteRendererRight = mc.spriteRendererRight;
-
-            rpc.Initialize("");
-            Debug.Log($"[GameManager] 👤 EL OTRO ES REMOTE: {remotePlayer.name} (ID=rival_id)");
+    private void SaveInitialLayout()
+    {
+        initialBlockPositions.Clear();
+        BoundsInt bounds = destructibleTiles.cellBounds;
+        foreach (Vector3Int pos in bounds.allPositionsWithin)
+        {
+            if (destructibleTiles.HasTile(pos)) initialBlockPositions.Add(pos);
         }
     }
 
-    // 3. Registrar WebSocket
-    var wsManager = WebSocketManager.GetOrCreate();
-    if (wsManager != null) wsManager.OnMessageReceived += HandleWebSocketMessage;
-}
+    public void ResetStage()
+    {
+        if (destructibleTiles == null || !isTraining) return;
 
-private void RegisterWebSocketListener()
-{
-    if (WebSocketManager.Instance != null)
-    {
-        WebSocketManager.Instance.OnMessageReceived += HandleWebSocketMessage;
-        Debug.Log("[GameManager] ✅ WebSocket listener registrado");
+        destructibleTiles.ClearAllTiles();
+        foreach (Vector3Int pos in initialBlockPositions)
+            destructibleTiles.SetTile(pos, blockTile);
+
+        GameObject[] bombs = GameObject.FindGameObjectsWithTag("Bomb");
+        foreach (var b in bombs) Destroy(b);
+
+        if (localPlayer != null) localPlayer.SetActive(true);
     }
-    else
-    {
-        Debug.LogError("[GameManager] ❌ WebSocketManager.Instance sigue siendo null");
-    }
-}
+
     private void HandleWebSocketMessage(string json)
     {
-        // Log crudo para inspección manual
-        Debug.Log("[WS-Raw] " + json);
-        
-        WsMessage msg = JsonUtility.FromJson<WsMessage>(json);
-        if (msg == null || string.IsNullOrEmpty(msg.type)) return;
+        var data = JsonUtility.FromJson<WsMessage>(json);
+        if (data == null || string.IsNullOrEmpty(data.type)) return;
 
-        // Si el mensaje es nuestro, lo ignoramos 
-        if (!string.IsNullOrEmpty(localPlayerId) && msg.playerId == localPlayerId) return;
-        
-        if (msg.type == "player-moved")
-        {
-            MoveRemotePlayer(msg.x, msg.y);
+        // DEBUG LOG para ayudar a ver por qué se ignora el movimiento
+        Debug.Log($"[GameManager] Recibido WS: {data.type} de ID: {data.playerId}. Local ID es: {localPlayerId}");
+
+        // Si el backend recorta el sessionId, esto previene que se coma sus propios mensajes
+        // Usamos tanto sessionId como localPlayerId para evitar el eco.
+        if (!string.IsNullOrEmpty(data.sessionId) && data.sessionId == sessionId) {
+            Debug.Log("[GameManager] Ignorando (eco de sessionId)");
+            return;
         }
-        
-        if (msg.type == "bomb-placed")
-        {
-            CreateRemoteBomb(msg.x, msg.y);
+        if (data.playerId == localPlayerId) {
+            Debug.Log("[GameManager] Ignorando (eco de playerId). SI USAS LA MISMA CUENTA EN AMBOS PCS, EL JUEGO SE BLOQUEA AQUÍ.");
+            return;
         }
+
+        if (data.type == "player-move" || data.type == "player-moved")
+        {
+            Debug.Log($"[GameManager] Moviendo REMOTE a {data.x}, {data.y}");
+            MoveRemotePlayer(data.x, data.y);
+        }
+        else if (data.type == "place-bomb" || data.type == "bomb-placed")
+        {
+            Debug.Log($"[GameManager] BOMBA REMOTE plantada en {data.x}, {data.y}");
+            CreateRemoteBomb(data.x, data.y);
+        }
+        else if (data.type == "player-death")
+            OnRemotePlayerDeath();
+    }
+
+    private void MoveRemotePlayer(float x, float y)
+    {
+        if (remotePlayer == null) return;
+
+        Vector2 newPos = new Vector2(x, y);
+        Vector2 dir = (newPos - lastRemotePosition).normalized;
+
+        // Animar usando el mismo sistema que el jugador local
+        var mc = remotePlayer.GetComponent<MovementController>();
+        if (mc != null) mc.ApplyRemoteMovement(dir);
+
+        // Mover fisicamente
+        var rpc = remotePlayer.GetComponent<RemotePlayerController>();
+        if (rpc != null)
+        {
+            rpc.MoveToPosition(newPos);
+        }
+        else
+        {
+            var rb = remotePlayer.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.MovePosition(newPos);
+        }
+
+        lastRemotePosition = newPos;
+    }
+
+    public void OnRemotePlayerDeath()
+    {
+        if (remotePlayer == null) return;
+        var rpc = remotePlayer.GetComponent<RemotePlayerController>();
+        if (rpc != null) rpc.PlayDeathAnimation();
+    }
+
+    public void OnPlayerDeath(string playerId)
+    {
+        if (gameEnded || isTraining) return;
+        gameEnded = true;
+
+        bool localPlayerDied = (localPlayerId == playerId);
+        string winnerName = localPlayerDied ? remotePlayerName : localPlayerName;
+
+        GameOverData.WinnerName = winnerName;
+        GameOverData.IsLocalWinner = !localPlayerDied;
+
+        SceneManager.LoadScene("GameOverScene");
     }
 
     private void CreateRemoteBomb(float x, float y)
     {
-        try {
-            Debug.Log($"[GameManager] Bomba enemiga en: ({x}, {y})");
-            if (bombPrefab != null) {
-                GameObject bombObj = Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
-                
-                // Configurar con los valores del BombController local para que sea idéntico
-                BombController localBC = localPlayer?.GetComponent<BombController>();
-                if (localBC != null) {
-                    Bomb b = bombObj.GetComponent<Bomb>();
-                    if (b == null) b = bombObj.AddComponent<Bomb>();
-                    
-                    b.fuseTime = localBC.bombFuseTime;
-                    b.explosionPrefab = localBC.explosionPrefab;
-                    b.explosionLayerMask = localBC.explosionLayerMask;
-                    b.explosionDuration = localBC.explosionDuration;
-                    b.explosionRadius = localBC.explosionRadius;
-                    b.destructibleTiles = localBC.destructibleTiles;
-                    b.destructiblePrefab = localBC.destructiblePrefab;
-                }
+        if (bombPrefab != null) {
+            GameObject bombObj = Instantiate(bombPrefab, new Vector3(x, y, 0), Quaternion.identity);
+            BombController localBC = localPlayer?.GetComponent<BombController>();
+            if (localBC != null) {
+                Bomb b = bombObj.GetComponent<Bomb>();
+                if (b == null) b = bombObj.AddComponent<Bomb>();
+                b.fuseTime = localBC.bombFuseTime;
+                b.explosionPrefab = localBC.explosionPrefab;
+                b.explosionLayerMask = localBC.explosionLayerMask;
+                b.explosionDuration = localBC.explosionDuration;
+                b.explosionRadius = localBC.explosionRadius;
+                b.destructibleTiles = localBC.destructibleTiles;
+                b.destructiblePrefab = localBC.destructiblePrefab;
             }
-        }
-        catch (System.Exception e) {
-            Debug.LogError("[GameManager] Error: " + e.Message);
-        }
-    }
-    public GameObject GetBombPrefab()
-{
-    return bombPrefab;
-}
-    private void MoveRemotePlayer(float x, float y)
-    {
-        try
-        {
-            if (remotePlayer != null)
-            {
-                RemotePlayerController controller = remotePlayer.GetComponent<RemotePlayerController>();
-                if (controller != null)
-                {
-                    controller.MoveToPosition(new Vector2(x, y));
-                }
-            }
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError("[GameManager] Error moviendo rival: " + e.Message);
-        }
-    }
-    
-    public void CheckWinState()
-    {
-        int aliveCount = 0;
-        foreach (GameObject player in players)
-        {
-            if (player.activeSelf)
-            {
-                aliveCount++;
-            }
-        }
-        if (aliveCount <= 1)
-        {
-            Invoke(nameof(NewRound), 3f);
-        }
-    }
-    
-    private void NewRound()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    
-    private void OnDestroy()
-    {
-        if (WebSocketManager.Instance != null)
-        {
-            WebSocketManager.Instance.OnMessageReceived -= HandleWebSocketMessage;
         }
     }
 
-   // Busca esto en tu GameManager y déjalo exactamente así:
-public void OnPlayerDeath(string playerId) 
-{
-    if (gameEnded) return; // Evitar llamadas múltiples
-    
-    gameEnded = true;
-    Debug.Log("[GameManager] El jugador " + playerId + " ha muerto.");
-    
-    // Determinar quién ganó
-    bool localPlayerDied = (localPlayerId == playerId);
-    bool localWinner = !localPlayerDied;
-    
-    string winnerName = localWinner ? localPlayerName : remotePlayerName;
-    
-    Debug.Log($"[GameManager] 🎉 GANADOR: {winnerName} (Local Winner: {localWinner})");
-    
-    // Guardar los datos en GameOverData
-    GameOverData.WinnerName = winnerName;
-    GameOverData.IsLocalWinner = localWinner;
-    
-    // Cargar la escena de Game Over
-    SceneManager.LoadScene("GameOverScene");
-}
-
-private System.Collections.IEnumerator WaitAndLoad()
-{
-    yield return new WaitForSeconds(2f);
-    UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
-}
+    [System.Serializable]
+    public class WsMessage
+    {
+        public string type;
+        public string playerId;
+        public string sessionId;
+        public float x;
+        public float y;
+    }
 }

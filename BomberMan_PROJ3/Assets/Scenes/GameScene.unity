@@ -262,6 +262,11 @@ MonoBehaviour:
   - {fileID: 2071095892}
   bombPrefab: {fileID: 1107493646144990734, guid: d77b2ca5e14bbe8459f8ac0ff725cc72, type: 3}
   remotePlayerPrefab: {fileID: 6512764182836688455, guid: 711383f9ef2bb701ebb40ee84dceb171, type: 3}
+  localPlayer: {fileID: 1985346537}
+  remotePlayer: {fileID: 2071095892}
+  isTraining: 0
+  destructibleTiles: {fileID: 0}
+  blockTile: {fileID: 0}
 --- !u!4 &185326664
 Transform:
   m_ObjectHideFlags: 0
@@ -4993,7 +4998,8 @@ MonoBehaviour:
   spriteRendererLeft: {fileID: 535625284}
   spriteRendererRight: {fileID: 654042223}
   spriteRendererDeath: {fileID: 1530505407}
-  bombPrefab: {fileID: 0}
+  playerId: 
+  isLocalPlayer: 1
 --- !u!114 &1985346542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5042,9 +5048,9 @@ GameObject:
   - component: {fileID: 2071095898}
   - component: {fileID: 2071095897}
   - component: {fileID: 2071095896}
-  - component: {fileID: 2071095895}
   - component: {fileID: 2071095894}
   - component: {fileID: 2071095893}
+  - component: {fileID: 2071095899}
   m_Layer: 3
   m_Name: Player 2
   m_TagString: Player
@@ -5089,29 +5095,6 @@ MonoBehaviour:
   explosionRadius: 1
   destructibleTiles: {fileID: 1398072263}
   destructiblePrefab: {fileID: -1845922954536052988, guid: 8126ba06b68ef79429093e9eb8d21246, type: 3}
---- !u!114 &2071095895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071095892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10aeb1d4c78fd584c871d7fb3443c749, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  inputUp: 273
-  inputDown: 274
-  inputLeft: 276
-  inputRight: 275
-  spriteRendererUp: {fileID: 1634465573}
-  spriteRendererDown: {fileID: 1017852719}
-  spriteRendererLeft: {fileID: 1415824189}
-  spriteRendererRight: {fileID: 1527094110}
-  spriteRendererDeath: {fileID: 598726210}
-  bombPrefab: {fileID: 0}
 --- !u!58 &2071095896
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5195,6 +5178,30 @@ Transform:
   - {fileID: 598726212}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2071095899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071095892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10aeb1d4c78fd584c871d7fb3443c749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  inputUp: 119
+  inputDown: 115
+  inputLeft: 97
+  inputRight: 100
+  spriteRendererUp: {fileID: 1634465573}
+  spriteRendererDown: {fileID: 1017852719}
+  spriteRendererLeft: {fileID: 1415824189}
+  spriteRendererRight: {fileID: 1527094110}
+  spriteRendererDeath: {fileID: 598726210}
+  playerId: 
+  isLocalPlayer: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

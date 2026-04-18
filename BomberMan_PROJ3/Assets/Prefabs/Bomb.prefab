@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5554014541819593524}
   - component: {fileID: 8683626854499949000}
   - component: {fileID: 2005570398119971979}
+  - component: {fileID: -5429899625538635077}
   m_Layer: 10
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,3 +175,24 @@ MonoBehaviour:
   animationTime: 0.25
   loop: 1
   idle: 0
+--- !u!114 &-5429899625538635077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107493646144990734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7721772bed3ac26bd86ed304bd2217e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuseTime: 3
+  explosionPrefab: {fileID: 8361796160677897358, guid: 9a78a051d8a855c45a7453e7f6773b79, type: 3}
+  explosionLayerMask:
+    serializedVersion: 2
+    m_Bits: 1088
+  explosionDuration: 1
+  explosionRadius: 1
+  destructibleTiles: {fileID: 0}
+  destructiblePrefab: {fileID: -1845922954536052988, guid: 8126ba06b68ef79429093e9eb8d21246, type: 3}

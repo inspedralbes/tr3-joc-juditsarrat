@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Target
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Bomb
   - Explosion
   - Item
-  - 
+  - Destructible
   - 
   - 
   - 
