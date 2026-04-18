@@ -49,7 +49,10 @@ public class ServerConfig : MonoBehaviour
 
     private void LoadEnvironment()
     {
-        currentEnvironment = (ServerEnvironment)PlayerPrefs.GetInt(PREF_KEY, (int)ServerEnvironment.Local);
+        if (PlayerPrefs.HasKey(PREF_KEY))
+        {
+            currentEnvironment = (ServerEnvironment)PlayerPrefs.GetInt(PREF_KEY);
+        }
     }
 
     public string GetBaseUrl(string servicePath)
