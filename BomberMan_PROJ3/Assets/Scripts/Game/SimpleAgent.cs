@@ -131,7 +131,7 @@ public class SimpleAgent : Agent
         // 1. Si estamos entrenando (comando docker), reiniciamos rápido
         if (StepCount > 0 && GameManager.Instance.isTraining) 
         {
-            AddReward(-1f);
+            AddReward(penaltyDeath);
             EndEpisode(); 
         }
         else 

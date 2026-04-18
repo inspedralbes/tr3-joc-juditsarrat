@@ -102,6 +102,7 @@ public class AuthManager : MonoBehaviour
             JugadorActual = resposta.user;
             // ✅ MILLOR VALIDACIÓ
             Debug.Log("[AuthManager] Buscant GameService...");
+            GameService gameService = FindFirstObjectByType<GameService>();
             if (gameService != null)
             {
                 gameService.SetToken(TokenJWT);
@@ -116,7 +117,7 @@ public class AuthManager : MonoBehaviour
             }
 
             // ✅ INICIALITZAR TAMBÉ STATS SERVICE
-            StatsService statsService = FindObjectOfType<StatsService>();
+            StatsService statsService = FindFirstObjectByType<StatsService>();
             if (statsService == null)
             {
                 GameObject ssObj = new GameObject("StatsService");

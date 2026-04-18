@@ -34,6 +34,7 @@ public class ServerConfig : MonoBehaviour
         }
     }
 
+    [ContextMenu("Toggle Environment")]
     public void ToggleEnvironment()
     {
         currentEnvironment = (currentEnvironment == ServerEnvironment.Local) 

@@ -24,9 +24,8 @@
                     <ui:Label text="PASSWORD" class="label" />
                     <ui:TextField name="camp-password" placeholder-text="••••••••" password="true" class="input" />
 
-                    <!-- Toggle Tema y Entorno -->
-                    <ui:Button name="btn-tema" text="MODE: DIA" class="boto boto-primary" style="margin-top: 14px; margin-bottom: 2px;" />
-                    <ui:Button name="btn-env" text="ENV: LOCAL" class="boto boto-secondary" style="margin-bottom: 4px;" />
+                    <!-- Toggle Tema -->
+                    <ui:Button name="btn-tema" text="MODE: DIA" class="boto boto-primary" style="margin-top: 14px; margin-bottom: 4px;" />
 
                     <ui:Label name="text-error" class="text-error" />
 

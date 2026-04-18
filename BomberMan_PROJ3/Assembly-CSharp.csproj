@@ -68,10 +68,12 @@
     <Compile Include="Assets\Scripts\Game\ThemeManager.cs" />
     <Compile Include="Assets\Scripts\ui\GameLobbyUI.cs" />
     <Compile Include="Assets\Scripts\auth\AuthManager.cs" />
+    <Compile Include="Assets\Scripts\auth\ServerConfig.cs" />
     <Compile Include="Assets\Scripts\Game\Bomb.cs" />
     <Compile Include="Assets\Scripts\models\GameData.cs" />
     <Compile Include="Assets\Scripts\Game\MovementController.cs" />
     <Compile Include="Assets\Scripts\Game\ItemPickup.cs" />
+    <Compile Include="Assets\Scripts\auth\StatsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

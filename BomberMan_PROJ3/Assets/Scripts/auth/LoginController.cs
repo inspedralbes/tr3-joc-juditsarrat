@@ -23,7 +23,6 @@ public class LoginController : MonoBehaviour
     private Button _botoConfirmarRegistre;
     private Button _botoCancelarRegistre;
     private Label _textErrorRegistre;
-    private Button _btnEnv;
     private Button _btnTema;
 
     // ─── INICIALITZACIÓ ───────────────────────────────────────────
@@ -43,9 +42,8 @@ public class LoginController : MonoBehaviour
         _botoMostrarRegistre = root.Q<Button>("boto-mostrar-registre");
         _textError = root.Q<Label>("text-error");
 
-        // Query para botones de configuración
+        // Query para el botón de tema
         _btnTema = root.Q<Button>("btn-tema");
-        _btnEnv = root.Q<Button>("btn-env");
 
         // Querys registre
         _campUsuari = root.Q<TextField>("camp-usuari");
@@ -67,12 +65,6 @@ public class LoginController : MonoBehaviour
             UpdateThemeButtonText();
             if (ThemeManager.Instance != null)
                 ThemeManager.Instance.OnThemeChanged += OnThemeChanged;
-        }
-
-        if (_btnEnv != null)
-        {
-            _btnEnv.clicked += OnClickEnv;
-            UpdateEnvButtonText();
         }
 
         // Permet fer login prement Enter
@@ -97,11 +89,6 @@ public class LoginController : MonoBehaviour
             if (ThemeManager.Instance != null)
                 ThemeManager.Instance.OnThemeChanged -= OnThemeChanged;
         }
-
-        if (_btnEnv != null)
-        {
-            _btnEnv.clicked -= OnClickEnv;
-        }
     }
 
     private void OnClickTema()
@@ -109,21 +96,6 @@ public class LoginController : MonoBehaviour
         if (ThemeManager.Instance != null)
         {
             ThemeManager.Instance.ToggleTheme();
-        }
-    }
-
-    private void OnClickEnv()
-    {
-        if (ServerConfig.Instance != null)
-        {
-            ServerConfig.Instance.ToggleEnvironment();
-            UpdateEnvButtonText();
-        }
-        else {
-            // Si el objeto no existe en escena (raro), lo creamos
-            GameObject scObj = new GameObject("ServerConfig");
-            scObj.AddComponent<ServerConfig>().ToggleEnvironment();
-            UpdateEnvButtonText();
         }
     }
 
@@ -137,19 +109,6 @@ public class LoginController : MonoBehaviour
         if (_btnTema != null && ThemeManager.Instance != null)
         {
             _btnTema.text = "MODE: " + (ThemeManager.Instance.currentTheme == ThemeMode.Day ? "DIA" : "NIT");
-        }
-    }
-
-    private void UpdateEnvButtonText()
-    {
-        if (_btnEnv != null && ServerConfig.Instance != null)
-        {
-            _btnEnv.text = "ENV: " + (ServerConfig.Instance.CurrentEnvironment == ServerEnvironment.Local ? "LOCAL" : "SERVER");
-            // Cambiar color para distinguir visualmente
-            if (ServerConfig.Instance.CurrentEnvironment == ServerEnvironment.Remote)
-                _btnEnv.style.color = new StyleColor(new Color(1f, 0.8f, 0.2f)); // Amarillo/Dorado
-            else
-                _btnEnv.style.color = new StyleColor(Color.white);
         }
     }
 

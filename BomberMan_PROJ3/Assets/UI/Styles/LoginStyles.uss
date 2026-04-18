@@ -13,7 +13,7 @@
 
 /* ── CARD ───────────────────────────────────────────────── */
 .card {
-    width: 380px;
+    width: 360px; /* Reducido de 380 */
     padding: 0;
     background-color: #000000;
 }
@@ -60,10 +60,10 @@
 
 /* ── BODY ───────────────────────────────────────────────── */
 .card-body {
-    padding-top: 8px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     flex-direction: column;
     background-color: #000000;
 }
@@ -119,9 +119,9 @@
 
 /* ── BOTONS ─────────────────────────────────────────────── */
 .boto {
-    height: 36px;
+    height: 32px; /* Reducido de 36 */
     border-radius: 0;
-    margin-top: 6px;
+    margin-top: 4px;
     border-width: 0;
     -unity-font-style: bold;
     font-size: 12px;
@@ -130,7 +130,7 @@
 .boto-primary {
     background-color: #c8b400;
     color: #000000;
-    margin-top: 12px;
+    margin-top: 8px; /* Reducido de 12 */
 }
 
 .boto-primary:hover {

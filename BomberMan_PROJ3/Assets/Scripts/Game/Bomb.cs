@@ -28,7 +28,7 @@ public class Bomb : MonoBehaviour
                     }
                 }
             }
-            if (destructibleTiles == null) destructibleTiles = FindObjectOfType<Tilemap>();
+            if (destructibleTiles == null) destructibleTiles = FindFirstObjectByType<Tilemap>();
         }
 
         StartCoroutine(FuseRoutine());

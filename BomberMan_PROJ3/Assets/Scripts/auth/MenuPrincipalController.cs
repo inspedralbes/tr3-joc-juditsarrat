@@ -73,7 +73,7 @@ public class MenuPrincipalController : MonoBehaviour
                 onSuccess: (joinJson) => {
                     Debug.Log("✅ Unido a la sala");
                     AuthManager.Instance.PlayerIndex = 1; // Joiner es Player 1 (índice real)
-                    MenuSala menuSala = FindObjectOfType<MenuSala>();
+                    MenuSala menuSala = FindFirstObjectByType<MenuSala>();
                     if (menuSala != null) {
                         menuSala.JoinExistingGame(gameId, code);
                     }
