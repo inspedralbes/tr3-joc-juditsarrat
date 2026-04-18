@@ -1,11 +1,8 @@
 version: '3.8'
 
 services:
-  # Servei d'Autenticació
   servei-auth:
-    build: 
-      context: ./servei-auth
-      dockerfile: Dockerfile
+    build: ./servei-auth
     container_name: servei-auth
     ports:
       - "3001:3001"
@@ -18,9 +15,7 @@ services:
       - bomberman_network
 
   servei-joc:
-    build:
-      context: ./servei-joc
-      dockerfile: Dockerfile
+    build: ./servei-joc
     container_name: servei-joc
     ports:
       - "3002:3002"
@@ -31,9 +26,7 @@ services:
       - bomberman_network
 
   servei-estadistiques:
-    build:
-      context: ./servei-estadistiques
-      dockerfile: Dockerfile
+    build: ./servei-estadistiques
     container_name: servei-estadistiques
     ports:
       - "3003:3003"
@@ -43,11 +36,8 @@ services:
     networks:
       - bomberman_network
 
-  # Gateway (Nginx)
   gateway:
-    build:
-      context: ./gateway
-      dockerfile: Dockerfile
+    build: ./gateway
     container_name: gateway
     ports:
       - "${GATEWAY_PORT}:80"
