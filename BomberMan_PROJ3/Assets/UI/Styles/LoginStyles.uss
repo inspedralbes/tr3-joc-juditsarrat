@@ -1,91 +1,162 @@
-/* ── ROOT ──────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════
+   BOMBERMAN — Login Screen  |  Estilo NES clásico
+   Negro · Amarillo oliva · Blanco
+   ════════════════════════════════════════════════════════ */
+
+/* ── ROOT ───────────────────────────────────────────────── */
 .root {
     flex: 1;
     align-items: center;
     justify-content: center;
-    background-color: #1a1a1a;
+    background-color: #000000;
 }
 
-/* ── CARD ──────────────────────────────────────────── */
+/* ── CARD ───────────────────────────────────────────────── */
 .card {
-    width: 320px;
-    padding: 24px;
-    background-color: #262626;
-    border-radius: 8px;
+    width: 380px;
+    padding: 0;
+    background-color: #000000;
 }
 
-/* ── TÍTOL ─────────────────────────────────────────── */
+/* ── CABECERA ───────────────────────────────────────────── */
+.card-header {
+    background-color: #000000;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    border-bottom-width: 3px;
+    border-bottom-color: #c8b400;
+}
+
+/* ── TÍTULO ─────────────────────────────────────────────── */
 .titol {
-    font-size: 22px;
-    color: #ffffff;
+    font-size: 34px;
+    color: #c8b400;
     -unity-font-style: bold;
     -unity-text-align: middle-center;
-    margin-bottom: 20px;
+    margin-bottom: 2px;
 }
 
-/* ── LABELS ────────────────────────────────────────── */
+.titol-sub {
+    font-size: 11px;
+    color: #ffffff;
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+/* ── SEPARADOR ──────────────────────────────────────────── */
+.pixel-row {
+    height: 2px;
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+
+.pixel-dot {
+    display: none;
+}
+
+/* ── BODY ───────────────────────────────────────────────── */
+.card-body {
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+/* ── LABELS ─────────────────────────────────────────────── */
 .label {
     font-size: 11px;
-    color: #999999;
-    margin-bottom: 4px;
-    margin-top: 10px;
-    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    -unity-font-style: bold;
 }
 
-/* ── INPUTS ────────────────────────────────────────── */
+/* ── INPUTS ─────────────────────────────────────────────── */
 .input {
-    height: 36px;
-    background-color: #1f1f1f;
-    border-radius: 4px;
-    border-width: 1px;
-    border-color: #333333;
+    height: 34px;
+    background-color: #000000;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #ffffff;
     color: #ffffff;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+/* Forzar fondo negro dentro del TextField */
+.input > #unity-text-input {
+    background-color: #000000;
+    color: #ffffff;
+    border-width: 0;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .input:focus {
-    border-color: #007aff; /* Blau estàndard de focus */
+    border-color: #c8b400;
 }
 
-/* ── TEXT ERROR ────────────────────────────────────── */
+.input:focus > #unity-text-input {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* ── ERROR ──────────────────────────────────────────────── */
 .text-error {
-    font-size: 11px;
-    color: #ff4d4d;
+    font-size: 10px;
+    color: #ff5555;
     margin-top: 4px;
     -unity-text-align: middle-center;
-}
-
-/* ── BOTONS ────────────────────────────────────────── */
-.boto {
-    height: 38px;
-    border-radius: 4px;
-    margin-top: 8px;
-    border-width: 0;
     -unity-font-style: bold;
 }
 
+/* ── BOTONS ─────────────────────────────────────────────── */
+.boto {
+    height: 36px;
+    border-radius: 0;
+    margin-top: 6px;
+    border-width: 0;
+    -unity-font-style: bold;
+    font-size: 12px;
+}
+
 .boto-primary {
-    background-color: #ffffff;
+    background-color: #c8b400;
     color: #000000;
+    margin-top: 12px;
 }
 
 .boto-primary:hover {
-    background-color: #e0e0e0;
+    background-color: #e0ca00;
 }
 
 .boto-primary:disabled {
-    background-color: #444444;
-    color: #888888;
+    background-color: #444400;
+    color: #666600;
 }
 
 .boto-secondary {
     background-color: transparent;
-    color: #ffffff;
+    color: #888888;
     border-width: 1px;
-    border-color: #444444;
+    border-color: #333333;
+    font-size: 11px;
+    margin-top: 4px;
 }
 
-/* ── PANELLS ───────────────────────────────────────── */
+.boto-secondary:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* ── PANELLS ────────────────────────────────────────────── */
 .panell {
     flex-direction: column;
 }

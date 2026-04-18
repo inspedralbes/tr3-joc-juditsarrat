@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:VisualElement name="contenedor-principal" style="flex-grow: 1; justify-content: center; align-items: center; background-color: rgb(20, 20, 20); gap: 0;">
-        
-        <!-- SECCION MENU PRINCIPAL -->
-        <ui:VisualElement name="seccion-menu" style="flex-direction: column; align-items: center; gap: 20px;">
-            <ui:Label text="BOMBERMAN" style="font-size: 36px; color: white; -unity-font-style: bold; margin-bottom: 30px;" />
-            
-            <ui:Button name="btn-crear" text="Crear Sala" style="width: 200px; height: 40px; font-size: 14px;" />
-            <ui:Button name="btn-llm" text="Jugar vs IA" style="width: 200px; height: 40px; font-size: 14px;" />
-            
-            <ui:VisualElement style="flex-direction: row; gap: 10px; margin-top: 20px;">
-                <ui:TextField name="input-codigo" placeholder-text="Código" style="width: 120px; height: 36px; font-size: 12px;" />
-                <ui:Button name="btn-unirse" text="Unirse" style="width: 70px; height: 36px; font-size: 12px;" />
+    <Style src="project://database/Assets/UI/Styles/MainMenuStyles.uss" />
+
+    <ui:VisualElement name="contenedor-principal" class="root">
+
+        <!-- ══ SECCIÓN MENÚ PRINCIPAL ══ -->
+        <ui:VisualElement name="seccion-menu" class="menu-section">
+
+            <!-- Título estilo NES -->
+            <ui:Label text="BOMBERMAN" class="title" />
+            <ui:Label text="► START    CONTINUE" class="title-sub" />
+            <ui:VisualElement class="title-divider" />
+
+            <!-- Botones principales -->
+            <ui:Button name="btn-crear" text="► CREAR SALA" class="btn-main" />
+            <ui:Button name="btn-llm"   text="► JUGAR VS IA" class="btn-main" />
+
+            <!-- Fila: código + unirse -->
+            <ui:VisualElement class="join-row">
+                <ui:TextField name="input-codigo" placeholder-text="CÓDIGO" class="code-input" />
+                <ui:Button name="btn-unirse" text="UNIRSE" class="btn-join" />
             </ui:VisualElement>
+
         </ui:VisualElement>
 
-        <!-- SECCION LOBBY -->
-        <ui:VisualElement name="seccion-lobby" style="display: none; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
-            
-            <ui:Label text="SALA CREADA" style="font-size: 24px; color: white; -unity-font-style: bold;" />
-            
-            <ui:Label name="label-codi-sala" text="AB12CD" style="font-size: 48px; color: rgb(175, 218, 230); -unity-font-style: bold; letter-spacing: 4px;" />
-            
-            <ui:Button name="btn-copiar-codi" text="Copiar Código" style="width: 180px; height: 36px; font-size: 12px;" />
-            
-            <ui:Label name="label-espectadors" text="1/2 jugadores" style="font-size: 14px; color: rgb(150, 150, 150); margin-top: 10px;" />
-            
-            <ui:Button name="btn-iniciar" text="Iniciar Partida" style="width: 180px; height: 40px; font-size: 14px; margin-top: 10px;" />
-            
-            <ui:Button name="btn-tornar-menu" text="Volver" style="width: 180px; height: 36px; font-size: 12px;" />
+        <!-- ══ SECCIÓN LOBBY ══ -->
+        <ui:VisualElement name="seccion-lobby" style="display: none;" class="lobby-section">
+
+            <ui:Label text="SALA CREADA" class="lobby-title" />
+            <ui:Label name="label-codi-sala" text="AB12CD" class="lobby-code" />
+
+            <ui:VisualElement class="lobby-divider" />
+
+            <ui:Label name="label-espectadors" text="1/2 jugadores conectados" class="lobby-players" />
+            <ui:Button name="btn-iniciar" text="► INICIAR PARTIDA" class="btn-main" />
+            <ui:Button name="btn-tornar-menu" text="◄ VOLVER" class="btn-secondary" />
+
         </ui:VisualElement>
+
     </ui:VisualElement>
 </ui:UXML>

@@ -1,15 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-    <ui:VisualElement name="background" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.9);">
-        <ui:VisualElement name="panel" style="width: 400px; padding: 40px; background-color: rgb(45, 45, 45); border-radius: 20px; border-width: 4px; border-color: rgb(76, 175, 80);">
-            
-            <ui:Label name="label-resultado" text="FINAL DE PARTIDA" style="font-size: 32px; color: white; -unity-font-style: bold; -unity-text-align: middle-center; margin-bottom: 20px;" />
-            
-            <ui:Label name="WinnerMessage" text="Calculant guanyador..." style="font-size: 20px; color: rgb(200, 200, 200); -unity-text-align: middle-center; margin-bottom: 40px;" />
-            
-            <ui:Button name="btn-reiniciar" text="Nova Partida" style="height: 50px; font-size: 18px; background-color: rgb(76, 175, 80); color: white; border-radius: 10px; margin-bottom: 10px;" />
-            <ui:Button name="btn-lobby" text="Tornar al Lobby" style="height: 50px; font-size: 18px; background-color: rgb(33, 150, 243); color: white; border-radius: 10px;" />
-            
+
+    <ui:VisualElement name="background" style="
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        background-color: #000000;">
+
+        <ui:VisualElement name="panel" style="
+            width: 420px;
+            background-color: #000000;
+            border-width: 3px;
+            border-color: #c8b400;
+            border-radius: 0;
+            padding: 0;">
+
+            <!-- ── CABECERA ── -->
+            <ui:VisualElement style="
+                background-color: #000000;
+                border-bottom-width: 3px;
+                border-bottom-color: #c8b400;
+                padding-top: 20px;
+                padding-bottom: 14px;
+                align-items: center;">
+
+                <ui:Label name="label-resultado" text="GAME OVER" style="
+                    font-size: 38px;
+                    color: #c8b400;
+                    -unity-font-style: bold;
+                    -unity-text-align: middle-center;
+                    margin-bottom: 0;" />
+
+                <ui:Label text="BOMBERMAN" style="
+                    font-size: 12px;
+                    color: #ffffff;
+                    -unity-text-align: middle-center;
+                    margin-top: 4px;" />
+            </ui:VisualElement>
+
+            <!-- ── RESULTADO ── -->
+            <ui:VisualElement style="
+                padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+                padding-right: 30px;
+                align-items: center;">
+
+                <!-- Mensaje ganador/perdedor -->
+                <ui:Label name="WinnerMessage" text="Calculant guanyador..." style="
+                    font-size: 22px;
+                    color: #ffffff;
+                    -unity-font-style: bold;
+                    -unity-text-align: middle-center;
+                    margin-bottom: 30px;
+                    white-space: normal;" />
+
+                <!-- Separador -->
+                <ui:VisualElement style="
+                    height: 2px;
+                    background-color: #333333;
+                    width: 100%;
+                    margin-bottom: 30px;" />
+
+                <!-- Botón VOLVER (único botón ahora) -->
+                <ui:Button name="btn-lobby" text="◄ VOLVER AL MENÚ" style="
+                    width: 100%;
+                    height: 50px;
+                    font-size: 16px;
+                    -unity-font-style: bold;
+                    background-color: #c8b400;
+                    color: #000000;
+                    border-width: 0;
+                    border-radius: 0;
+                    margin-bottom: 0;" />
+
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

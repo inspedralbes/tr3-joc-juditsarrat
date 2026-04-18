@@ -6,42 +6,22 @@ public class GameOverUI : MonoBehaviour
 {
     private VisualElement _root;
     private Label _winnerLabel;
-    private Button _btnReiniciar;
     private Button _btnLobby;
 
     private void OnEnable()
     {
         UIDocument doc = GetComponent<UIDocument>();
-        if (doc == null) {
-            Debug.LogError("[GameOverUI] ❌ No s'ha trobat el component UIDocument en aquest GameObject!");
-            return;
-        }
-
-        if (doc.panelSettings == null) {
-            Debug.LogWarning("[GameOverUI] ⚠️ El UIDocument no té Panel Settings assignats! Assigna 'MainPanelSetting' a l'Inspector.");
-        }
-
-        if (doc.visualTreeAsset == null) {
-            Debug.LogError("[GameOverUI] ❌ El UIDocument no té cap UXML (Source Asset) assignat!");
-            return;
-        }
+        if (doc == null) return;
 
         _root = doc.rootVisualElement;
-        if (_root == null) {
-            Debug.LogError("[GameOverUI] ❌ El rootVisualElement és nul!");
-            return;
-        }
+        if (_root == null) return;
 
         _winnerLabel = _root.Q<Label>("WinnerMessage");
-        _btnReiniciar = _root.Q<Button>("btn-reiniciar");
         _btnLobby = _root.Q<Button>("btn-lobby");
 
-        // Configurar text del guanyador
+        // Configurar text del guanyador / perdedor
         if (_winnerLabel != null)
         {
-            string winner = GameOverData.WinnerName;
-            if (string.IsNullOrEmpty(winner)) winner = "Algú";
-
             if (GameOverData.IsLocalWinner)
             {
                 _winnerLabel.text = "HAS GUANYAT!";
@@ -49,43 +29,29 @@ public class GameOverUI : MonoBehaviour
             }
             else
             {
-                _winnerLabel.text = "GAME OVER: " + winner + " ha guanyat, torna-ho a intentar";
+                _winnerLabel.text = "¡HAS MORT!";
                 _winnerLabel.style.color = new StyleColor(new Color(1f, 0.2f, 0.2f)); // Vermell
             }
-
-            Debug.Log($"[GameOverUI] ✅ Text personalitzat establert. Guanyador local: {GameOverData.IsLocalWinner}");
-        }
-        else {
-            Debug.LogWarning("[GameOverUI] ⚠️ No s'ha trobat el Label 'WinnerMessage' al UXML. Revisa el nom!");
         }
 
-        // Callbacks dels botons
-        if (_btnReiniciar != null) {
-            _btnReiniciar.clicked += OnReiniciarClicked;
-            Debug.Log("[GameOverUI] ✅ Botó reiniciar trobat i vinculat.");
-        } else {
-            Debug.LogWarning("[GameOverUI] ⚠️ No s'ha trobat el Botó 'btn-reiniciar' al UXML.");
-        }
-
-        if (_btnLobby != null) {
+        if (_btnLobby != null)
+        {
             _btnLobby.clicked += OnLobbyClicked;
-            Debug.Log("[GameOverUI] ✅ Botó lobby trobat i vinculat.");
-        } else {
-            Debug.LogWarning("[GameOverUI] ⚠️ No s'ha trobat el Botó 'btn-lobby' al UXML.");
         }
     }
 
-    private void OnReiniciarClicked()
+    private void OnDisable()
     {
-        Debug.Log("[GameOverUI] Reiniciant partida...");
-        // Carrega l'escena de joc
-        SceneManager.LoadScene("GameScene"); 
+        if (_btnLobby != null)
+        {
+            _btnLobby.clicked -= OnLobbyClicked;
+        }
     }
 
     private void OnLobbyClicked()
     {
-        Debug.Log("[GameOverUI] Tornant al lobby...");
-        // Carrega l'escena del menú principal o lobby (ajusta el nom segons el teu projecte)
+        // Al volver al menú, cerramos conexión si fuera necesario, 
+        // pero WebSocketManager ya se encarga o persiste.
         SceneManager.LoadScene("MenuPrincipal"); 
     }
 }
