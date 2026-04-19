@@ -168,12 +168,15 @@ Variables d'entorn mínimes:
 ├── openspec/                 # Especificacions i canvis (OpenSpec)
 ├── docker-compose.yml        # Orquestració global
 └── README.md
-```
- 
-## Llicència
 
+```
+## Guia Open Spec
+[OpenSpec _ Guia de propmts.pdf](https://github.com/user-attachments/files/26875083/OpenSpec._.Guia.de.propmts.pdf)
+
+
+## Esquema entitat relació 
 <img width="941" height="311" alt="Entitat_Relacio_BombermanJudit drawio" src="https://github.com/user-attachments/assets/fce37e8e-164c-48e5-a39c-9c57fc842e90" />
 
- 
+## Llicència
 Aquest projecte es distribueix sota la llicència especificada al fitxer [`LICENSE`](./LICENSE).
  
