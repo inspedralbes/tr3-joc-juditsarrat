@@ -34,9 +34,8 @@ const userStatsSchema = new mongoose.Schema({
 });
 
 // Middleware per actualitzar la data de modificació automàticament
-userStatsSchema.pre('save', function (next) {
+userStatsSchema.pre('save', function () {
     this.updatedAt = new Date();
-    next();
 });
 
 module.exports = mongoose.model('UserStats', userStatsSchema);

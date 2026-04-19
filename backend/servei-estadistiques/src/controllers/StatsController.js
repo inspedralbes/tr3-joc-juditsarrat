@@ -47,6 +47,7 @@ class StatsController {
             const result = await this.estadistiquesService.guardarResultat(gameId, winnerId, players, duration);
             res.status(201).json(result);
         } catch (err) {
+            console.error(err);
             res.status(500).json({ message: err.message });
         }
     }
