@@ -67,9 +67,7 @@ public class StatsService : MonoBehaviour
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success) {
-            Debug.Log("[StatsService] ✅ Resultats guardats amb èxit");
-        } else {
-            Debug.LogError("[StatsService] ❌ Error guardant resultats: " + request.error + " - " + request.downloadHandler.text);
+            Debug.Log("[StatsService] Resultats guardats amb èxit");
         }
         request.Dispose();
     }
