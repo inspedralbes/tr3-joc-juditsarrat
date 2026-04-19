@@ -57,7 +57,7 @@ public class MovementController : MonoBehaviour
         Vector2 translation = direction * speed * Time.fixedDeltaTime;
         rigidbody.MovePosition(rigidbody.position + translation);
 
-        if (direction != Vector2.zero) {
+        if (direction != Vector2.zero && GameManager.Instance != null && !GameManager.Instance.isTraining) {
             SendMovementToServer(rigidbody.position);
         }
     }

@@ -7,7 +7,6 @@ dotenv.config();
 
 
 const ResultRepository = require('./repositoris/ResultRepository');
-const UserStatsRepository = require('./repositoris/UserStatsRepository');
 const EstadistiquesService = require('./serveis/EstadistiquesService');
 const StatsController = require('./controllers/StatsController');
 const createStatsRouter = require('./rutes/statsRoutes');
@@ -30,8 +29,7 @@ mongoose.connect(mongoURI)
 
 
 const resultRepo = new ResultRepository();
-const userStatsRepo = new UserStatsRepository();
-const statsService = new EstadistiquesService(resultRepo, userStatsRepo);
+const statsService = new EstadistiquesService(resultRepo);
 const statsController = new StatsController(statsService);
 
 
@@ -39,7 +37,7 @@ app.use('/', createStatsRouter(statsController));
 
 
 app.get('/', function (req, res) {
-    res.send("Servei d'Estadístiques Bomberman Funcionant!");
+    res.send("Servei d'Estadístiques Bomberman Funcionant (Mode Simple)!");
 });
 
 

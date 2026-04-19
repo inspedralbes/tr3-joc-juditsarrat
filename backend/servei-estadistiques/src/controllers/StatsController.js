@@ -1,19 +1,8 @@
-// Controlador per gestionar les peticions d'estadístiques.
+// Controlador per gestionar les peticions d'estadístiques simplificat.
 
 class StatsController {
     constructor(estadistiquesService) {
         this.estadistiquesService = estadistiquesService;
-    }
-
-    //estadistiques de jugador per id
-    async obtenirJugador(req, res) {
-        try {
-            const userId = req.params.id;
-            const stats = await this.estadistiquesService.obtenirEstadistiquesJugador(userId);
-            res.status(200).json(stats);
-        } catch (err) {
-            res.status(404).json({ message: err.message });
-        }
     }
 
     async obtenirPartida(req, res) {
@@ -23,16 +12,6 @@ class StatsController {
             res.status(200).json(result);
         } catch (err) {
             res.status(404).json({ message: err.message });
-        }
-    }
-
-    async obtenirRanquing(req, res) {
-        try {
-            const limit = parseInt(req.query.limit) || 10;
-            const ranking = await this.estadistiquesService.obtenirRanquing(limit);
-            res.status(200).json(ranking);
-        } catch (err) {
-            res.status(500).json({ message: err.message });
         }
     }
 

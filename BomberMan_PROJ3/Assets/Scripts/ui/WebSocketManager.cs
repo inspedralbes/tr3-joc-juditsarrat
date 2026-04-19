@@ -158,7 +158,6 @@ public class WebSocketManager : MonoBehaviour
     {
         if (_webSocket == null || _webSocket.State != WebSocketState.Open)
         {
-            Debug.LogError("[WebSocket] No conectado");
             return;
         }
         _webSocket.SendText(json);
