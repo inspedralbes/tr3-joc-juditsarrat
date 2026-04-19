@@ -171,6 +171,9 @@ Variables d'entorn mínimes:
 ```
  
 ## Llicència
+
+<img width="941" height="311" alt="Entitat_Relacio_BombermanJudit drawio" src="https://github.com/user-attachments/assets/fce37e8e-164c-48e5-a39c-9c57fc842e90" />
+
  
 Aquest projecte es distribueix sota la llicència especificada al fitxer [`LICENSE`](./LICENSE).
  
