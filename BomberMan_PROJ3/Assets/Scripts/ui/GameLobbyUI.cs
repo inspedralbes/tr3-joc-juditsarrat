@@ -31,7 +31,7 @@ public class GameLobbyUI : MonoBehaviour
     
     Debug.Log($"[Lobby] Conectando a sala {gameId} con {initialPlayerCount} jugadores");
 
-    // ✅ Conectar WebSocket
+    //  Conectar WebSocket
     var wsManager = WebSocketManager.GetOrCreate();
     wsManager.OnPlayerCountChanged += OnPlayerCountChanged;
     wsManager.ConnectToGame(gameId);
@@ -68,7 +68,7 @@ public class GameLobbyUI : MonoBehaviour
     {
         if (_playerCount < 2)
         {
-            Debug.LogError("❌ Necesitas 2 jugadores");
+            Debug.LogError(" Necesitas 2 jugadores");
             return;
         }
 

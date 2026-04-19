@@ -38,7 +38,7 @@ public class MenuPrincipalController : MonoBehaviour
             GameResponse game = JsonUtility.FromJson<GameResponse>(responseJson);
             string gameId = game._id;
             
-            Debug.Log("✅ SALA CREADA - COPIA ESTE ID: " + gameId);
+            Debug.Log(" SALA CREADA - COPIA ESTE ID: " + gameId);
             AuthManager.Instance.PlayerIndex = 0; // Host es siempre Player 0
             PlayerPrefs.SetString("current_game_id", gameId);
         }));
@@ -48,7 +48,6 @@ public class MenuPrincipalController : MonoBehaviour
     private void OnClickLLM()
     {
         Debug.Log("Jugant contra LLM / Entrenament...");
-        // Carreguem la escena de prova/entrenament
         UnityEngine.SceneManagement.SceneManager.LoadScene("TrainingScene");
     }
 
@@ -71,21 +70,21 @@ public class MenuPrincipalController : MonoBehaviour
             
             StartCoroutine(GameService.Instance.JoinGameRoom(gameId, 
                 onSuccess: (joinJson) => {
-                    Debug.Log("✅ Unido a la sala");
-                    AuthManager.Instance.PlayerIndex = 1; // Joiner es Player 1 (índice real)
+                    Debug.Log(" Unido a la sala");
+                    AuthManager.Instance.PlayerIndex = 1; 
                     MenuSala menuSala = FindFirstObjectByType<MenuSala>();
                     if (menuSala != null) {
                         menuSala.JoinExistingGame(gameId, code);
                     }
                 },
                 onError: (err) => {
-                    Debug.LogError("❌ Error: " + err);
+                    Debug.LogError(" Error: " + err);
                     _btnUnirse.SetEnabled(true);
                 }
             ));
         },
         onError: (err) => {
-            Debug.LogError("❌ Código no encontrado: " + err);
+            Debug.LogError(" Código no encontrado: " + err);
             _btnUnirse.SetEnabled(true);
         }
     ));

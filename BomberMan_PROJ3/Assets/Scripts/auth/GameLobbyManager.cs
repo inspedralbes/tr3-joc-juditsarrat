@@ -66,7 +66,7 @@ public class GameLobbyManager : MonoBehaviour
                         ActualizarJugadores();
                         
                         if (_playerCount >= 2) {
-                            Debug.Log("✅ ¡Segundo jugador conectado!");
+                            Debug.Log(" ¡Segundo jugador conectado!");
                         }
                     }
                     

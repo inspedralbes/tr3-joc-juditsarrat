@@ -70,7 +70,7 @@ public class WebSocketManager : MonoBehaviour
 
         if (_webSocket.State == WebSocketState.Open)
         {
-            Debug.Log("[WebSocket] ✅ Conexión establecida");
+            Debug.Log("[WebSocket]  Conexión establecida");
             OnConnected?.Invoke();
         }
         else
@@ -81,7 +81,7 @@ public class WebSocketManager : MonoBehaviour
 
     private void HandleWebSocketOpen()
     {
-        Debug.Log("[WebSocket] ✅ Conectado");
+        Debug.Log("[WebSocket]  Conectado");
         string joinMessage = "{\"type\":\"join-game\",\"gameId\":\"" + _gameId + "\",\"playerId\":\"" + _playerId + "\"}";
         _webSocket.SendText(joinMessage);
     }
@@ -140,7 +140,7 @@ public class WebSocketManager : MonoBehaviour
 
     private void HandleWebSocketError(string errorMsg)
     {
-        Debug.LogError("[WebSocket] ❌ Error: " + errorMsg);
+        Debug.LogError("[WebSocket]  Error: " + errorMsg);
         OnDisconnected?.Invoke();
         OnError?.Invoke(errorMsg);
     }
@@ -153,7 +153,7 @@ public class WebSocketManager : MonoBehaviour
         _webSocket.SendText(json);
     }
 
-    // ✅ Envío directo sin wrapper — usado para movimiento
+    //  Envío directo sin wrapper — usado para movimiento
     public void SendRaw(string json)
     {
         if (_webSocket == null || _webSocket.State != WebSocketState.Open)

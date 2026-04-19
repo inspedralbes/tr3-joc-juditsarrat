@@ -54,8 +54,7 @@ public class GameManager : MonoBehaviour
         if (isTraining)
         {
             // ── MODO ENTRENAMIENTO ──────────────────────────────────────────
-            // Respetar lo que hay en el Inspector: busca el MC marcado como
-            // isLocalPlayer=true y lo deja como está. No toca la IA ni el WS.
+            
             foreach (var p in players)
             {
                 if (p == null) continue;
@@ -68,9 +67,9 @@ public class GameManager : MonoBehaviour
                     localPlayer = p;
                     Debug.Log($"[GameManager] Training: Local Player = {p.name}");
                 }
-                // El jugador de la IA lo maneja SimpleAgent; no tocamos su MC.
+                
             }
-            // No conectar WebSocket en entrenamiento
+            
             return;
         }
 
@@ -78,7 +77,7 @@ public class GameManager : MonoBehaviour
         int myIndex = AuthManager.Instance != null ? AuthManager.Instance.PlayerIndex : 0;
         Debug.Log($"[GameManager] My Player Index: {myIndex}, Local ID: {localPlayerId}");
 
-        // Asignar players por el orden en el array (0=P1, 1=P2)
+    
         for (int i = 0; i < players.Length; i++)
         {
             if (players[i] == null) continue;
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour
             if (i == myIndex)
             {
                 mc.isLocalPlayer = true;
-                mc.playerId = localPlayerId; // Sincronizamos el ID dinámico
+                mc.playerId = localPlayerId;
                 mc.enabled = true;
                 if (rpc != null) rpc.enabled = false;
                 if (rb != null) rb.bodyType = RigidbodyType2D.Dynamic;
@@ -103,7 +102,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 mc.isLocalPlayer = false;
-                mc.enabled = false; // No lee teclado
+                mc.enabled = false; 
                 if (rpc != null) rpc.enabled = true;
                 if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
 
@@ -146,17 +145,8 @@ public class GameManager : MonoBehaviour
         var data = JsonUtility.FromJson<WsMessage>(json);
         if (data == null || string.IsNullOrEmpty(data.type)) return;
 
-        // DEBUG LOG para ayudar a ver por qué se ignora el movimiento
-        Debug.Log($"[GameManager] Recibido WS: {data.type} de ID: {data.playerId}. Local ID es: {localPlayerId}");
-
-        // Si el backend recorta el sessionId, esto previene que se coma sus propios mensajes
-        // Usamos tanto sessionId como localPlayerId para evitar el eco.
         if (!string.IsNullOrEmpty(data.sessionId) && data.sessionId == sessionId) {
             Debug.Log("[GameManager] Ignorando (eco de sessionId)");
-            return;
-        }
-        if (data.playerId == localPlayerId) {
-            Debug.Log("[GameManager] Ignorando (eco de playerId). SI USAS LA MISMA CUENTA EN AMBOS PCS, EL JUEGO SE BLOQUEA AQUÍ.");
             return;
         }
 
@@ -181,11 +171,9 @@ public class GameManager : MonoBehaviour
         Vector2 newPos = new Vector2(x, y);
         Vector2 dir = (newPos - lastRemotePosition).normalized;
 
-        // Animar usando el mismo sistema que el jugador local
         var mc = remotePlayer.GetComponent<MovementController>();
         if (mc != null) mc.ApplyRemoteMovement(dir);
 
-        // Mover fisicamente
         var rpc = remotePlayer.GetComponent<RemotePlayerController>();
         if (rpc != null)
         {
@@ -220,27 +208,17 @@ public class GameManager : MonoBehaviour
         {
             List<PlayerResultData> results = new List<PlayerResultData>();
             
-            // Guanyador (100 punts)
             string winnerId = localPlayerDied ? "remote_opponent" : localPlayerId; 
-            // Nota: En un sistema real de matchmaking, el remoteId vendria del servidor.
-            // Si el backend reconeix 'remote_opponent' com l'altre jugador de la sala 
-            // o si podem recuperar el seu ID real des del WS.
-            
-            // Per ara, usem els IDs que tinguem. 
-            // Si localPlayer NO ha mort, enviem el seu ID com a winner.
+           
             if (!localPlayerDied)
             {
                 results.Add(new PlayerResultData { playerId = localPlayerId, score = 100 });
-                // El perdedor és el playerId que ens han passat
                 results.Add(new PlayerResultData { playerId = playerId, score = 0 });
                 StatsService.Instance.ReportGameResult(sessionId, localPlayerId, results);
             }
             else
             {
-                // Si el local ha mort, ell és el perdedor (enviem el seu resultat)
                 results.Add(new PlayerResultData { playerId = localPlayerId, score = 0 });
-                // No enviem el de l'altre si no tenim el seu ID real exactament, 
-                // però el backend pot deduir-ho o podem intentar buscar-lo.
                 StatsService.Instance.ReportGameResult(sessionId, "remote_winner", results);
             }
         }

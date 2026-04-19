@@ -17,8 +17,6 @@ public class Destructible : MonoBehaviour
     {
         if (spawnableItems.Length > 0 && Application.isPlaying)
         {
-            // Seed determinista basada en la posició: el mateix bloc sempre dona el mateix resultat
-            // a tots els clients sense necessitat de WebSocket ni configuració extra
             Vector2 pos = transform.position;
             int seed = Mathf.RoundToInt(pos.x * 1000f) + Mathf.RoundToInt(pos.y * 100f);
             System.Random rng = new System.Random(seed);

@@ -18,9 +18,9 @@ public class ThemeManager : MonoBehaviour
     public ThemeMode currentTheme = ThemeMode.Day;
     
     [Header("Lighting Settings")]
-    public Color nightColor = new Color(0.1f, 0.15f, 0.22f); // #1a2639 approximate
+    public Color nightColor = new Color(0.1f, 0.15f, 0.22f); 
     public float nightIntensity = 0.4f;
-    public Color dayColor = new Color(1f, 0.95f, 0.5f); // Tinte amarillento claro
+    public Color dayColor = new Color(1f, 0.95f, 0.5f);
     public float dayIntensity = 1.0f;
 
     public event Action<ThemeMode> OnThemeChanged;
@@ -44,7 +44,7 @@ public class ThemeManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadTheme();
-            ApplyThemeToCurrentScene(); // Aplicar nada más cargar
+            ApplyThemeToCurrentScene(); 
         }
         else
         {
@@ -93,7 +93,7 @@ public class ThemeManager : MonoBehaviour
 
     public void ApplyThemeToCurrentScene()
     {
-        // 1. Aplicar a la Iluminación (2D Lights)
+        
         Light2D globalLight = FindGlobalLight();
         if (globalLight != null)
         {
@@ -106,18 +106,18 @@ public class ThemeManager : MonoBehaviour
             ApplyCameraFallback();
         }
 
-        // 2. Aplicar a la Interfaz (UI Toolkit)
+        
         UIDocument[] docs = FindObjectsByType<UIDocument>(FindObjectsSortMode.None);
         foreach (var doc in docs)
         {
             var root = doc.rootVisualElement;
             if (root != null)
             {
-                // Limpiar clases previas
+                
                 root.RemoveFromClassList("theme-day");
                 root.RemoveFromClassList("theme-night");
                 
-                // Aplicar nueva clase
+             
                 string classToAdd = (currentTheme == ThemeMode.Day) ? "theme-day" : "theme-night";
                 root.AddToClassList(classToAdd);
                 
@@ -150,7 +150,7 @@ public class ThemeManager : MonoBehaviour
             }
             else
             {
-                mainCam.backgroundColor = new Color(0.19f, 0.19f, 0.19f); // Default dark grey
+                mainCam.backgroundColor = new Color(0.19f, 0.19f, 0.19f); 
             }
             Debug.Log($"[ThemeManager] Applied {currentTheme} theme fallback to Camera.");
         }

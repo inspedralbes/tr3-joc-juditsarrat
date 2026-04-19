@@ -52,10 +52,9 @@ public class BombController : MonoBehaviour
          position.x = Mathf.Round(position.x);
          position.y = Mathf.Round(position.y);
 
-         // Instanciar localmente
          GameObject bombObj = Instantiate(bombPrefab, position, Quaternion.identity);
          
-         // Configurar script Bomb dinámicamente preservando los del prefab si los nuestros están vacíos
+    
          Bomb bombScript = bombObj.GetComponent<Bomb>();
          if (bombScript == null) bombScript = bombObj.AddComponent<Bomb>();
          
@@ -69,7 +68,7 @@ public class BombController : MonoBehaviour
 
          bombsRemaining--;
 
-// Solo intentará enviar si el objeto existe Y no es nulo internamente
+
 if (WebSocketManager.Instance != null && WebSocketManager.Instance.gameObject.activeInHierarchy) {
     try {
         string xb = position.x.ToString(System.Globalization.CultureInfo.InvariantCulture);
@@ -81,10 +80,10 @@ if (WebSocketManager.Instance != null && WebSocketManager.Instance.gameObject.ac
         string json = "{\"type\":\"place-bomb\",\"playerId\":\"" + playerCode + "\",\"sessionId\":\"" + sId + "\",\"x\":" + xb + ",\"y\":" + yb + "}";
         WebSocketManager.Instance.SendRaw(json);
     } catch {
-        // Ignoramos el error durante el entrenamiento para que no se detenga el agente
+        
     }
 }
-         // Recuperar la bomba después del tiempo de espera
+        
          yield return new WaitForSeconds(bombFuseTime);
          bombsRemaining++;
     }

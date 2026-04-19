@@ -33,8 +33,6 @@ public class ItemPickup : MonoBehaviour
 
    private void OnTriggerEnter2D(Collider2D other)
     {
-        // En vez de mirar si tiene la etiqueta "Player", comprobamos si "sabe poner bombas". 
-        // Así tanto "Player 1", como la "IA" (Target), pueden recoger los items sin importar su etiqueta.
         if (other.GetComponent<BombController>() != null)
         {
             OnItemPickup(other.gameObject);

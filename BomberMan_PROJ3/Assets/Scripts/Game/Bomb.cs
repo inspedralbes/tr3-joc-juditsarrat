@@ -15,11 +15,11 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-        // Si no se han asignado por inspector (prefab), intentamos encontrarlos en la escena
+     
         if (destructibleTiles == null) {
-            GameObject grid = GameObject.Find("Grid"); // Común en proyectos de tutoriales
+            GameObject grid = GameObject.Find("Grid"); 
             if (grid != null) {
-                // Buscar en los hijos del Grid (donde suelen estar los Tilemaps)
+                
                 Tilemap[] maps = grid.GetComponentsInChildren<Tilemap>();
                 foreach (var map in maps) {
                     if (map.name.Contains("Destructible")) {
@@ -46,12 +46,12 @@ public class Bomb : MonoBehaviour
         position.x = Mathf.Round(position.x);
         position.y = Mathf.Round(position.y);
 
-        // Crear explosión central
+       
         Explosion centralExplosion = Instantiate(explosionPrefab, position, Quaternion.identity);
         centralExplosion.SetActiveRenderer(centralExplosion.start);
         centralExplosion.DestroyAfter(explosionDuration);
 
-        // Disparar explosiones en 4 direcciones
+     
         ExplodeDirection(position, Vector2.up, explosionRadius);
         ExplodeDirection(position, Vector2.down, explosionRadius);
         ExplodeDirection(position, Vector2.left, explosionRadius);
@@ -66,11 +66,11 @@ public class Bomb : MonoBehaviour
 
         position += direction;
 
-        // Verificar colisión con paredes o bloques
+        
         if (Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask))
         {
             ClearDestructible(position);
-            return; // Detener la propagación
+            return; 
         }
 
         Explosion explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
@@ -83,7 +83,7 @@ public class Bomb : MonoBehaviour
 
     private void ClearDestructible(Vector2 position)
     {
-        // 1. Intentar borrar si es un TILE (Tilemap)
+        
         if (destructibleTiles != null) 
         {
             Vector3Int cell = destructibleTiles.WorldToCell(position);
@@ -95,18 +95,17 @@ public class Bomb : MonoBehaviour
                     Instantiate(destructiblePrefab, position, Quaternion.identity);
                 }
                 destructibleTiles.SetTile(cell, null);
-                return; // Si era un tile, hemos terminado
+                return; 
             }
         }
 
-        // 2. Intentar borrar si es un GameObjects (Si no era tile, buscamos objetos físicos)
         Collider2D collider = Physics2D.OverlapBox(position, Vector2.one / 2f, 0f, explosionLayerMask);
         if (collider != null)
         {
-            // Solo lo borramos si es de la capa Destructible para no borrar paredes reales
+           
             if (collider.gameObject.layer == LayerMask.NameToLayer("Destructible"))
             {
-                 // Si tiene el prefab de restos, lo instanciamos
+                 
                 if (destructiblePrefab != null) {
                     Instantiate(destructiblePrefab, collider.transform.position, Quaternion.identity);
                 }

@@ -30,7 +30,7 @@ public class GameService : MonoBehaviour {
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success) {
-            Debug.Log("[GameService] ✅ Sala encontrada");
+            Debug.Log("[GameService]  Sala encontrada");
             onSuccess?.Invoke(request.downloadHandler.text);
         } else {
             onError?.Invoke("Sala no encontrada");
@@ -58,7 +58,7 @@ public class GameService : MonoBehaviour {
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success) {
-            Debug.Log("[GameService] ✅ Sala creada");
+            Debug.Log("[GameService]  Sala creada");
             onSuccess?.Invoke(request.downloadHandler.text);
         } else {
             onError?.Invoke("Error creando sala");

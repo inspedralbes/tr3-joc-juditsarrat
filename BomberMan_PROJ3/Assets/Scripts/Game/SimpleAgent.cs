@@ -12,10 +12,10 @@ public class SimpleAgent : Agent
     [SerializeField] private Transform target;
 
     [Header("Recompenses (v5)")]
-    [SerializeField] private float rewardTarget = 5f;       // Subido de 2 a 5
-    [SerializeField] private float rewardDestroyBlock = 0.4f; // Subido de 0.2 a 0.4
-    [SerializeField] private float penaltyStep = -0.002f;   // Más presión de tiempo
-    [SerializeField] private float penaltyDeath = -1f;      // Castigo menos terrorífico
+    [SerializeField] private float rewardTarget = 5f;       
+    [SerializeField] private float rewardDestroyBlock = 0.4f; 
+    [SerializeField] private float penaltyStep = -0.002f;   
+    [SerializeField] private float penaltyDeath = -1f;     
 
     private Rigidbody2D rb;
     private BombController bombController;
@@ -128,7 +128,7 @@ public class SimpleAgent : Agent
 {
     if (other.CompareTag("Explosion") || other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
     {
-        // 1. Si estamos entrenando (comando docker), reiniciamos rápido
+       
         if (StepCount > 0 && GameManager.Instance.isTraining) 
         {
             AddReward(penaltyDeath);
@@ -136,8 +136,7 @@ public class SimpleAgent : Agent
         }
         else 
         {
-            // 2. Si estamos JUGANDO (isTraining desactivado), avisamos al GameManager
-            // Usamos el ID que le diste a la IA en el Start: "rival_ia_id"
+            
             GameManager.Instance.OnPlayerDeath("rival_ia_id");
         }
     }

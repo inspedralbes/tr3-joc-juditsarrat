@@ -36,7 +36,7 @@ public class MenuSala : MonoBehaviour
         StartCoroutine(GameService.Instance.CreateGameRoom(
             onSuccess: (responseJson) =>
             {
-                Debug.Log("✅ Resposta: " + responseJson);
+                Debug.Log(" Resposta: " + responseJson);
 
                 try
                 {
@@ -45,7 +45,7 @@ public class MenuSala : MonoBehaviour
 
                     if (string.IsNullOrEmpty(_id))
                     {
-                        Debug.LogError("❌ ID no encontrado en la respuesta");
+                        Debug.LogError(" ID no encontrado en la respuesta");
                         return;
                     }
 
@@ -56,12 +56,12 @@ public class MenuSala : MonoBehaviour
                 }
                 catch (System.Exception e)
                 {
-                    Debug.LogError("❌ Error: " + e.Message);
+                    Debug.LogError(" Error: " + e.Message);
                 }
             },
             onError: (error) =>
             {
-                Debug.LogError("❌ Error: " + error);
+                Debug.LogError(" Error: " + error);
             }
         ));
     }
@@ -77,7 +77,7 @@ public class MenuSala : MonoBehaviour
             _lobbyUI.SetGameInfo(_currentGameId, initialPlayerCount);
         }
 
-        Debug.Log("✅ Lobby mostrat!");
+        Debug.Log(" Lobby mostrat!");
     }
 
     public void JoinExistingGame(string gameId, string gameCode)

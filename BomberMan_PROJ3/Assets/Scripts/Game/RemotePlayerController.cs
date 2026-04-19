@@ -50,13 +50,11 @@ public class RemotePlayerController : MonoBehaviour
     // ─── Llamado desde GameManager cuando llega un mensaje de red ───────────
     public void MoveToPosition(Vector2 newPosition)
     {
-        // Asegurarnos de que los sprites están inicializados antes de animar
         if (!initialized) InitSprites();
 
         Vector2 currentPos = rb != null ? rb.position : (Vector2)transform.position;
         Vector2 dir = (newPosition - currentPos);
 
-        // Solo animamos si el movimiento es significativo
         if (dir.magnitude > 0.01f)
         {
             lastMoveTime = Time.time;
@@ -82,7 +80,6 @@ public class RemotePlayerController : MonoBehaviour
 
         float distance = Vector2.Distance(targetPosition, rb.position);
 
-        // Teleport si la diferencia es muy grande (lag o desconexión breve)
         if (distance > 3f)
         {
             rb.position = targetPosition;
@@ -96,7 +93,7 @@ public class RemotePlayerController : MonoBehaviour
             rb.MovePosition(nextPos);
         }
 
-        // Poner idle si no recibimos nuevas coordenadas en 150ms
+       
         if (Time.time - lastMoveTime > 0.15f)
         {
             if (activeSpriteRenderer != null && !activeSpriteRenderer.idle)

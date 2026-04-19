@@ -49,7 +49,7 @@ public class AuthManager : MonoBehaviour
 
     public string TokenJWT { get; private set; }
     public UserData JugadorActual { get; private set; }
-    public int PlayerIndex { get; set; } // 0 = Player 1 (Host), 1 = Player 2
+    public int PlayerIndex { get; set; } 
     public bool EstaAutenticat => !string.IsNullOrEmpty(TokenJWT);
 
     private void Awake()
@@ -85,7 +85,7 @@ public class AuthManager : MonoBehaviour
         if (www.result == UnityWebRequest.Result.Success)
         {
             string respuestaCompleta = www.downloadHandler.text;
-            Debug.Log("[AuthManager] ✅ Respuesta completa del servidor:");
+            Debug.Log("[AuthManager]  Respuesta completa del servidor:");
             Debug.Log(respuestaCompleta);
             
             var resposta = JsonUtility.FromJson<LoginResponse>(respuestaCompleta);
@@ -100,13 +100,13 @@ public class AuthManager : MonoBehaviour
             
             TokenJWT = resposta.token;
             JugadorActual = resposta.user;
-            // ✅ MILLOR VALIDACIÓ
+            
             Debug.Log("[AuthManager] Buscant GameService...");
             GameService gameService = FindFirstObjectByType<GameService>();
             if (gameService != null)
             {
                 gameService.SetToken(TokenJWT);
-                Debug.Log("[AuthManager] Token passat a GameService ✅");
+                Debug.Log("[AuthManager] Token passat a GameService ");
             }
             else
             {
@@ -116,7 +116,7 @@ public class AuthManager : MonoBehaviour
                 gameService.SetToken(TokenJWT);
             }
 
-            // ✅ INICIALITZAR TAMBÉ STATS SERVICE
+            //  INICIALITZAR TAMBÉ STATS SERVICE
             StatsService statsService = FindFirstObjectByType<StatsService>();
             if (statsService == null)
             {
@@ -124,15 +124,15 @@ public class AuthManager : MonoBehaviour
                 statsService = ssObj.AddComponent<StatsService>();
             }
             statsService.SetToken(TokenJWT);
-            Debug.Log("[AuthManager] StatsService a punt ✅");
+            Debug.Log("[AuthManager] StatsService a punt ");
             
             callback(true, "Login correcte");
         }
         else
         {
-            // ❌ GESTIÓ D'ERROR AFEGIDA PER EVITAR QUE EL BUILD ES QUEDI PITJAT
+            
             string error = ExtreureErrorServidor(www.downloadHandler.text);
-            Debug.LogError("[AuthManager] ❌ Error en el login: " + error);
+            Debug.LogError("[AuthManager]  Error en el login: " + error);
             callback(false, error);
         }
     }
@@ -187,7 +187,7 @@ public class AuthManager : MonoBehaviour
         }
         catch
         {
-            // Pot ser que la resposta no sigui JSON (ex: un error 504 de Nginx)
+            
             return "Error de connexió amb el servidor";
         }
     }

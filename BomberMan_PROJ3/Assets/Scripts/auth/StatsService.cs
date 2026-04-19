@@ -32,7 +32,7 @@ public class StatsService : MonoBehaviour
     {
         string url = ServerConfig.Instance.GetBaseUrl("/estadistiques/resultat");
         
-        // Manual JSON construction to avoid issues with nested structures in simple JsonUtility
+     
         string playersJson = "[";
         for (int i = 0; i < players.Count; i++)
         {
@@ -58,7 +58,7 @@ public class StatsService : MonoBehaviour
         }
 
         if (string.IsNullOrEmpty(token)) {
-            Debug.LogError("[StatsService] ❌ No es poden enviar resultats: No hi ha Token!");
+            Debug.LogError("[StatsService]  No es poden enviar resultats: No hi ha Token!");
             yield break;
         }
 

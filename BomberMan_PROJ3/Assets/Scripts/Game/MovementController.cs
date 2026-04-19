@@ -66,7 +66,7 @@ public class MovementController : MonoBehaviour
     {
         if (Time.time - lastSentTime > 0.03f)
         {
-            // JSON directo sin wrapper, x/y con punto decimal invariante
+            
             string x = newPosition.x.ToString(System.Globalization.CultureInfo.InvariantCulture);
             string y = newPosition.y.ToString(System.Globalization.CultureInfo.InvariantCulture);
             string sId = GameManager.Instance != null ? GameManager.Instance.sessionId : "";
