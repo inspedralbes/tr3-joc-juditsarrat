@@ -150,12 +150,12 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (data.type == "player-move" || data.type == "player-moved")
+        if ((data.type == "player-move" || data.type == "player-moved") && data.playerId != localPlayerId)
         {
             Debug.Log($"[GameManager] Moviendo REMOTE a {data.x}, {data.y}");
             MoveRemotePlayer(data.x, data.y);
         }
-        else if (data.type == "place-bomb" || data.type == "bomb-placed")
+        else if ((data.type == "place-bomb" || data.type == "bomb-placed") && data.playerId != localPlayerId)
         {
             Debug.Log($"[GameManager] BOMBA REMOTE plantada en {data.x}, {data.y}");
             CreateRemoteBomb(data.x, data.y);

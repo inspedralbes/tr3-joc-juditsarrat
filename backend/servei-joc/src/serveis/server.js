@@ -148,6 +148,7 @@ function handleGameMessage(gameId, playerId, data) {
             broadcastToGame(gameId, {
                 type: 'player-moved',
                 playerId: playerId,
+                sessionId: data.sessionId, // Afegir sessionId per filtrar ecos al client
                 x: moveX,
                 y: moveY
             });
@@ -157,6 +158,7 @@ function handleGameMessage(gameId, playerId, data) {
             broadcastToGame(gameId, {
                 type: 'bomb-placed',
                 playerId: playerId,
+                sessionId: data.sessionId, // Afegir sessionId per filtrar ecos al client
                 x: data.data ? data.data.x : data.x,
                 y: data.data ? data.data.y : data.y
             });
