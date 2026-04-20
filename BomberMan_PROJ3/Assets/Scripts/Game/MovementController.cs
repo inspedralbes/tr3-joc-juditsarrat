@@ -144,12 +144,12 @@ public class MovementController : MonoBehaviour
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        string idToReport = string.IsNullOrEmpty(playerId) && isLocalPlayer ? (GameManager.Instance != null ? "local_player_id" : "") : playerId;
-        // Si el GameManager tiene un ID real, lo usamos
-        if (isLocalPlayer && GameManager.Instance != null && !string.IsNullOrEmpty(GameManager.Instance.sessionId)) {
-             // Podríamos usar un ID más específico aquí si fuera necesario
-        }
         
-        GameManager.Instance?.OnPlayerDeath(string.IsNullOrEmpty(playerId) ? idToReport : playerId);
+        string idToReport = playerId;
+        if (isLocalPlayer && GameManager.Instance != null) {
+            idToReport = GameManager.Instance.localPlayerId;
+        }
+
+        GameManager.Instance?.OnPlayerDeath(idToReport);
     }
 }

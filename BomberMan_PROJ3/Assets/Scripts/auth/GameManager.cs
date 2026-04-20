@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject localPlayer;
     public GameObject remotePlayer;
-    private string localPlayerId;
+    public string localPlayerId { get; private set; }
     private Vector2 lastRemotePosition;
 
     private string localPlayerName;
