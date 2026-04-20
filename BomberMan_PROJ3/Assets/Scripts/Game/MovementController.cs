@@ -120,7 +120,10 @@ public class MovementController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion") || other.GetComponent<Explosion>() != null)
         {
-            if (GameManager.Instance != null && GameManager.Instance.isTraining) return;
+            // Permitimos la muerte del jugador local incluso en entrenamiento 
+            // (para que pueda ver el Game Over si está probando la escena).
+            if (GameManager.Instance != null && GameManager.Instance.isTraining && !isLocalPlayer) return;
+            
             if (GetComponent<SimpleAgent>() == null) DeathSequence();
         }
     }
@@ -141,6 +144,12 @@ public class MovementController : MonoBehaviour
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        GameManager.Instance?.OnPlayerDeath(playerId);
+        string idToReport = string.IsNullOrEmpty(playerId) && isLocalPlayer ? (GameManager.Instance != null ? "local_player_id" : "") : playerId;
+        // Si el GameManager tiene un ID real, lo usamos
+        if (isLocalPlayer && GameManager.Instance != null && !string.IsNullOrEmpty(GameManager.Instance.sessionId)) {
+             // Podríamos usar un ID más específico aquí si fuera necesario
+        }
+        
+        GameManager.Instance?.OnPlayerDeath(string.IsNullOrEmpty(playerId) ? idToReport : playerId);
     }
 }

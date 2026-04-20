@@ -197,19 +197,31 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath(string playerId)
     {
-        if (gameEnded || isTraining) return;
+        if (gameEnded) return;
+        
+        // En modo entrenamiento puro (donde se resetea el escenario automáticamente), 
+        // no mostramos la pantalla de GameOver a menos que queramos salir.
+        // Pero si el usuario dice que "sale que he ganado", es que isTraining está en false
+        // o estamos llamando a esto desde la IA fuera del flujo de ML-Agents.
+        if (isTraining && playerId != "rival_ia_id" && playerId != localPlayerId) return;
+
         gameEnded = true;
+        Debug.Log($"[GameManager] OnPlayerDeath: {playerId}. LocalPlayerId: {localPlayerId}");
 
         bool localPlayerDied = (localPlayerId == playerId);
-        string winnerName = localPlayerDied ? remotePlayerName : localPlayerName;
+        
+        // Si el ID que muere es el de la IA, el jugador local NO ha muerto (ha ganado)
+        if (playerId == "rival_ia_id") {
+            localPlayerDied = false;
+        }
+
+        string winnerName = localPlayerDied ? (remotePlayer != null ? remotePlayerName : "IA") : localPlayerName;
         
         // ── REPORTAR ESTADÍSTIQUES (NOMÉS MULTIJUGADOR) ──
-        if (StatsService.Instance != null)
+        if (StatsService.Instance != null && !isTraining)
         {
             List<PlayerResultData> results = new List<PlayerResultData>();
             
-            string winnerId = localPlayerDied ? "remote_opponent" : localPlayerId; 
-           
             if (!localPlayerDied)
             {
                 results.Add(new PlayerResultData { playerId = localPlayerId, score = 100 });
@@ -226,6 +238,7 @@ public class GameManager : MonoBehaviour
         GameOverData.WinnerName = winnerName;
         GameOverData.IsLocalWinner = !localPlayerDied;
 
+        Debug.Log($"[GameManager] GameOver. Winner: {winnerName}, IsLocalWinner: {GameOverData.IsLocalWinner}");
         SceneManager.LoadScene("GameOverScene");
     }
 
