@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
             CreateRemoteBomb(data.x, data.y);
         }
         else if (data.type == "player-death")
-            OnRemotePlayerDeath();
+            OnRemotePlayerDeath(data.playerId);
     }
 
     private void MoveRemotePlayer(float x, float y)
@@ -188,11 +188,14 @@ public class GameManager : MonoBehaviour
         lastRemotePosition = newPos;
     }
 
-    public void OnRemotePlayerDeath()
+    public void OnRemotePlayerDeath(string playerId)
     {
         if (remotePlayer == null) return;
         var rpc = remotePlayer.GetComponent<RemotePlayerController>();
         if (rpc != null) rpc.PlayDeathAnimation();
+        
+        // Ara també disparem la lògica de Game Over per la mort del remot
+        OnPlayerDeath(playerId);
     }
 
     public void OnPlayerDeath(string playerId)
@@ -210,6 +213,13 @@ public class GameManager : MonoBehaviour
 
         bool localPlayerDied = (localPlayerId == playerId);
         
+        // Enviar per xarxa que hem mort (només si som nosaltres)
+        if (localPlayerDied && !isTraining) {
+            string sId = sessionId;
+            string json = "{\"type\":\"player-death\",\"playerId\":\"" + localPlayerId + "\",\"sessionId\":\"" + sId + "\"}";
+            WebSocketManager.Instance?.SendRaw(json);
+        }
+
         // Si el ID que muere es el de la IA, el jugador local NO ha muerto (ha ganado)
         if (playerId == "rival_ia_id") {
             localPlayerDied = false;
