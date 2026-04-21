@@ -1,0 +1,58 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/LoginStyles.uss?fileID=7433441132597879392&amp;guid=1dc8d30291765b31c934ef36f7d44cd6&amp;type=3#LoginStyles" />
+
+    <ui:VisualElement name="root" class="root">
+        <ui:VisualElement name="card" class="card">
+
+            <!-- CABECERA: título estilo NES -->
+            <ui:VisualElement class="card-header">
+                <ui:Label name="titol" text="BOMBERMAN" class="titol" />
+                <ui:Label text="► START    CONTINUE" class="titol-sub" />
+            </ui:VisualElement>
+
+            <!-- Línea separadora -->
+            <ui:VisualElement class="pixel-row" />
+
+            <!-- BODY -->
+            <ui:VisualElement class="card-body">
+
+                <!-- PANEL LOGIN -->
+                <ui:VisualElement name="panell-login" class="panell">
+                    <ui:Label text="EMAIL" class="label" />
+                    <ui:TextField name="camp-email" placeholder-text="jugador@exemple.com" class="input" />
+
+                    <ui:Label text="PASSWORD" class="label" />
+                    <ui:TextField name="camp-password" placeholder-text="••••••••" password="true" class="input" />
+
+                    <!-- Toggle Tema -->
+                    <ui:Button name="btn-tema" text="MODE: DIA" class="boto boto-primary" style="margin-top: 14px; margin-bottom: 4px;" />
+
+                    <ui:Label name="text-error" class="text-error" />
+
+                    <ui:Button name="boto-login" text="► ACCEDER" class="boto boto-primary" />
+                    <ui:Button name="boto-mostrar-registre" text="CREAR CUENTA NUEVA" class="boto boto-secondary" />
+
+                </ui:VisualElement>
+
+                <!-- PANEL REGISTRE -->
+                <ui:VisualElement name="panell-registre" class="panell panell-ocult">
+                    <ui:Label text="NOMBRE" class="label" />
+                    <ui:TextField name="camp-usuari" placeholder-text="TU_NOMBRE" class="input" />
+
+                    <ui:Label text="EMAIL" class="label" />
+                    <ui:TextField name="camp-email-registre" placeholder-text="jugador@exemple.com" class="input" />
+
+                    <ui:Label text="PASSWORD" class="label" />
+                    <ui:TextField name="camp-password-registre" placeholder-text="min. 6 caracteres" password="true" class="input" />
+
+                    <ui:Label name="text-error-registre" class="text-error" />
+
+                    <ui:Button name="boto-confirmar-registre" text="► REGISTRARSE" class="boto boto-primary" />
+                    <ui:Button name="boto-cancelar-registre" text="◄ VOLVER" class="boto boto-secondary" />
+                </ui:VisualElement>
+
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

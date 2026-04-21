@@ -1,0 +1,198 @@
+/* ════════════════════════════════════════════════════════
+   BOMBERMAN — Login Screen  |  Estilo NES clásico
+   Negro · Amarillo oliva · Blanco
+   ════════════════════════════════════════════════════════ */
+
+/* ── ROOT ───────────────────────────────────────────────── */
+.root {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+
+/* ── CARD ───────────────────────────────────────────────── */
+.card {
+    width: 360px; /* Reducido de 380 */
+    padding: 0;
+    background-color: #000000;
+}
+
+/* ── CABECERA ───────────────────────────────────────────── */
+.card-header {
+    background-color: #000000;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    border-bottom-width: 3px;
+    border-bottom-color: #c8b400;
+}
+
+/* ── TÍTULO ─────────────────────────────────────────────── */
+.titol {
+    font-size: 34px;
+    color: #c8b400;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 2px;
+}
+
+.titol-sub {
+    font-size: 11px;
+    color: #ffffff;
+    -unity-text-align: middle-center;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+/* ── SEPARADOR ──────────────────────────────────────────── */
+.pixel-row {
+    height: 2px;
+    background-color: #ffffff;
+    margin-bottom: 0;
+}
+
+.pixel-dot {
+    display: none;
+}
+
+/* ── BODY ───────────────────────────────────────────────── */
+.card-body {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+/* ── LABELS ─────────────────────────────────────────────── */
+.label {
+    font-size: 11px;
+    color: #ffffff;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    -unity-font-style: bold;
+}
+
+/* ── INPUTS ─────────────────────────────────────────────── */
+.input {
+    height: 34px;
+    background-color: #000000;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #ffffff;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+/* Forzar fondo negro dentro del TextField */
+.input > #unity-text-input {
+    background-color: #000000;
+    color: #ffffff;
+    border-width: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.input:focus {
+    border-color: #c8b400;
+}
+
+.input:focus > #unity-text-input {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* ── ERROR ──────────────────────────────────────────────── */
+.text-error {
+    font-size: 10px;
+    color: #ff5555;
+    margin-top: 4px;
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
+
+/* ── BOTONS ─────────────────────────────────────────────── */
+.boto {
+    height: 32px; /* Reducido de 36 */
+    border-radius: 0;
+    margin-top: 4px;
+    border-width: 0;
+    -unity-font-style: bold;
+    font-size: 12px;
+}
+
+.boto-primary {
+    background-color: #c8b400;
+    color: #000000;
+    margin-top: 8px; /* Reducido de 12 */
+}
+
+.boto-primary:hover {
+    background-color: #e0ca00;
+}
+
+.boto-primary:disabled {
+    background-color: #444400;
+    color: #666600;
+}
+
+.boto-secondary {
+    background-color: transparent;
+    color: #888888;
+    border-width: 1px;
+    border-color: #333333;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.boto-secondary:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* ── PANELLS ────────────────────────────────────────────── */
+.panell {
+    flex-direction: column;
+}
+
+.panell-ocult {
+    display: none;
+}
+
+/* ── THEMES ──────────────────────────────────────────────── */
+.theme-night.root, .theme-night .card, .theme-night .card-body, .theme-night .card-header {
+    background-color: #000000;
+}
+
+.theme-day.root, .theme-day .card, .theme-day .card-body, .theme-day .card-header {
+    background-color: #c8b400; /* Amarillo Bomberman */
+}
+
+.theme-day .titol, .theme-day .label, .theme-day .titol-sub {
+    color: #000000;
+}
+
+.theme-day .pixel-row, .theme-day .title-divider {
+    background-color: #000000;
+}
+
+.theme-day .input {
+    border-color: #000000;
+    color: #000000;
+}
+
+.theme-day .input > #unity-text-input {
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.theme-day .boto-secondary {
+    border-color: #000000;
+    color: #000000;
+}

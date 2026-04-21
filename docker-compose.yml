@@ -1,0 +1,57 @@
+services:
+  gateway:
+    build: ./backend/gateway
+    ports:
+      - "8080:80"
+    depends_on:
+      - servei-auth
+      - servei-joc
+      - servei-estadistiques
+    networks:
+      - bomberman-network
+
+  servei-auth:
+    build: ./backend/servei-auth
+    environment:
+      - PORT=3001
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
+      - BCRYPT_SALT_ROUNDS=10
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+  servei-joc:
+    build: ./backend/servei-joc
+    environment:
+      - PORT=3002
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+  servei-estadistiques:
+    build: ./backend/servei-estadistiques
+    environment:
+      - PORT=3003
+      - MONGODB_URI=mongodb+srv://a24judsarand_db_user:CHispita1969@cluster0.twirhnq.mongodb.net/BomberMan?appName=Cluster0
+      - JWT_SECRET=super-secret-key-123
+    networks:
+      - bomberman-network
+    # Els ports no s'exposen a l'exterior
+
+  trainer:
+    build:
+      context: .
+      dockerfile: ./BomberMan_PROJ3/ML-Agents/Dockerfile
+    volumes:
+      - .:/workspace
+    ports:
+      - "5004:5004"
+    networks:
+      - bomberman-network
+
+networks:
+  bomberman-network:
+    driver: bridge

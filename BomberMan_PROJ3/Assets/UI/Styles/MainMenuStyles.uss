@@ -1,0 +1,207 @@
+/* ════════════════════════════════════════════════════════
+   BOMBERMAN — Main Menu  |  Estilo NES clásico
+   Negro · Amarillo oliva · Blanco
+   ════════════════════════════════════════════════════════ */
+
+/* ── ROOT ───────────────────────────────────────────────── */
+.root {
+    flex: 1;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+/* ── SECCIÓN MENÚ PRINCIPAL ─────────────────────────────── */
+.menu-section {
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+}
+
+/* ── TÍTULO ─────────────────────────────────────────────── */
+.title {
+    font-size: 42px;
+    color: #c8b400;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 6px;
+}
+
+.title-sub {
+    font-size: 13px;
+    color: #ffffff;
+    -unity-text-align: middle-center;
+    margin-bottom: 40px;
+}
+
+.title-divider {
+    height: 2px;
+    background-color: #ffffff;
+    width: 320px;
+    margin-bottom: 36px;
+}
+
+/* ── BOTONES PRINCIPALES ────────────────────────────────── */
+.btn-main {
+    width: 280px;
+    height: 44px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    border-radius: 0;
+    border-width: 0;
+    margin-bottom: 12px;
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.btn-main:hover {
+    background-color: #e0ca00;
+}
+
+.btn-main:disabled {
+    background-color: #444400;
+    color: #666600;
+}
+
+.btn-secondary {
+    width: 280px;
+    height: 44px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.btn-secondary:hover {
+    background-color: #111111;
+    border-color: #c8b400;
+    color: #c8b400;
+}
+
+/* ── FILA CÓDIGO + UNIRSE ───────────────────────────────── */
+.join-row {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 8px;
+    width: 280px;
+}
+
+.code-input {
+    flex-grow: 1;
+    height: 44px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    background-color: #000000;
+    border-width: 2px;
+    border-color: #ffffff;
+    border-radius: 0;
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+.code-input > #unity-text-input {
+    background-color: #000000;
+    color: #ffffff;
+    border-width: 0;
+    padding-left: 6px;
+}
+
+.code-input:focus {
+    border-color: #c8b400;
+}
+
+.btn-join {
+    width: 90px;
+    height: 44px;
+    font-size: 13px;
+    -unity-font-style: bold;
+    border-radius: 0;
+    border-width: 0;
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.btn-join:hover {
+    background-color: #e0ca00;
+}
+
+.btn-join:disabled {
+    background-color: #444400;
+    color: #666600;
+}
+
+/* ── SECCIÓN LOBBY ──────────────────────────────────────── */
+.lobby-section {
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+}
+
+.lobby-title {
+    font-size: 20px;
+    color: #ffffff;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 20px;
+}
+
+/* ── THEMES ──────────────────────────────────────────────── */
+.theme-night.root, .theme-night .menu-section {
+    background-color: #000000;
+}
+
+.theme-day.root, .theme-day .menu-section {
+    background-color: #c8b400; /* Amarillo Bomberman */
+}
+
+.theme-day .title, .theme-day .title-sub, .theme-day .lobby-title, .theme-day .lobby-players {
+    color: #000000;
+}
+
+.theme-day .title-divider, .theme-day .lobby-divider {
+    background-color: #000000;
+}
+
+.theme-day .code-input {
+    border-color: #000000;
+    color: #000000;
+}
+
+.theme-day .code-input > #unity-text-input {
+    background-color: #c8b400;
+    color: #000000;
+}
+
+.theme-day .btn-secondary {
+    border-color: #000000;
+    color: #000000;
+}
+
+.lobby-code {
+    font-size: 48px;
+    color: #c8b400;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-bottom: 16px;
+}
+
+.lobby-players {
+    font-size: 14px;
+    color: #888888;
+    -unity-text-align: middle-center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lobby-divider {
+    height: 2px;
+    background-color: #333333;
+    width: 280px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}

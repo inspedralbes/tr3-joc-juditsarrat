@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  servei-auth:
+    build: ./servei-auth
+    container_name: servei-auth
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - MONGODB_URI=${MONGODB_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - BCRYPT_SALT_ROUNDS=${BCRYPT_SALT_ROUNDS}
+    networks:
+      - bomberman_network
+
+  servei-joc:
+    build: ./servei-joc
+    container_name: servei-joc
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - MONGODB_URI=${MONGODB_URI}
+    networks:
+      - bomberman_network
+
+  servei-estadistiques:
+    build: ./servei-estadistiques
+    container_name: servei-estadistiques
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - MONGODB_URI=${MONGODB_URI}
+    networks:
+      - bomberman_network
+
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "${GATEWAY_PORT}:80"
+    depends_on:
+      - servei-auth
+      - servei-joc
+      - servei-estadistiques
+    networks:
+      - bomberman_network
+
+networks:
+  bomberman_network:
+    driver: bridge
