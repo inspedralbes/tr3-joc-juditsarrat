@@ -239,6 +239,13 @@ public class GameManager : MonoBehaviour
         GameOverData.IsLocalWinner = !localPlayerDied;
 
         Debug.Log($"[GameManager] GameOver. Winner: {winnerName}, IsLocalWinner: {GameOverData.IsLocalWinner}");
+        
+        // Esperem un segon perquè les animacions de mort es puguin veure
+        Invoke(nameof(LoadGameOverScene), 1.25f);
+    }
+
+    private void LoadGameOverScene()
+    {
         SceneManager.LoadScene("GameOverScene");
     }
 

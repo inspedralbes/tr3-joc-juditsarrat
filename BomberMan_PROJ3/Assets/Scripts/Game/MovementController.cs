@@ -139,17 +139,18 @@ public class MovementController : MonoBehaviour
             spriteRendererDeath.enabled = true;
         }
         Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+
+        // Notifiquem la mort immediatament al GameManager (però el GameManager esperarà 
+        // a canviar de escena fins que passi el temps d'animació).
+        string idToReport = playerId;
+        if (isLocalPlayer && GameManager.Instance != null) {
+            idToReport = GameManager.Instance.localPlayerId;
+        }
+        GameManager.Instance?.OnPlayerDeath(idToReport);
     }
 
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        
-        string idToReport = playerId;
-        if (isLocalPlayer && GameManager.Instance != null) {
-            idToReport = GameManager.Instance.localPlayerId;
-        }
-
-        GameManager.Instance?.OnPlayerDeath(idToReport);
     }
 }
